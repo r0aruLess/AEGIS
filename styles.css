@@ -1,0 +1,546 @@
+/* ==========================================================================
+   AEGIS GRC - MINIMALIST INTEGRATED RISK MANAGEMENT CONSOLE
+   Aesthetic: Monochromatic Dark, High-Contrast Swiss Typography, Fine Borders
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    /* Color Palette - Minimalist Warm Obsidian */
+    --bg-primary: #0a0a0a;        /* Pure obsidian black */
+    --bg-secondary: #121212;      /* Matte graphite */
+    --bg-tertiary: #1a1a1a;       /* Refined dark grey */
+    --bg-row-hover: #161616;      /* Extremely subtle row hover */
+    
+    --border-color: rgba(255, 255, 255, 0.06); /* Ultra-thin, crisp boundary */
+    --border-active: rgba(255, 255, 255, 0.15); /* Soft active boundary */
+    
+    --text-primary: #f5f5f7;      /* Clean apple-style off-white */
+    --text-secondary: #8e8e93;    /* Cool neutral grey */
+    --text-muted: #48484a;        /* Muted carbon grey */
+    
+    /* GRC Status Colors - Minimalist Muted Tones */
+    --color-passed: #34d399;       /* Sage Green */
+    --bg-passed: rgba(52, 211, 153, 0.05);
+    --border-passed: rgba(52, 211, 153, 0.15);
+    
+    --color-warning: #fbbf24;      /* Muted Ochre */
+    --bg-warning: rgba(251, 191, 36, 0.05);
+    --border-warning: rgba(251, 191, 36, 0.15);
+    
+    --color-failed: #f87171;       /* Muted Rust Red */
+    --bg-failed: rgba(248, 113, 113, 0.05);
+    --border-failed: rgba(248, 113, 113, 0.15);
+    
+    --color-exempt: #9ca3af;       /* Concrete Slate */
+    --bg-exempt: rgba(156, 163, 175, 0.05);
+    --border-exempt: rgba(156, 163, 175, 0.15);
+
+    /* Risk Profile Muted Badges */
+    --risk-critical: #f87171;
+    --risk-high: #fb923c;
+    --risk-medium: #fcd34d;
+    --risk-low: #60a5fa;
+    
+    /* Font Families */
+    --font-sans: 'Inter', -apple-system, system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    
+    --border-radius: 4px; /* Minimalist sharp/soft corners */
+    --transition-fast: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   RESET & SYSTEM BASE
+   ========================================================================== */
+body {
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+    font-family: var(--font-sans) !important;
+    letter-spacing: -0.011em;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Minimalist Clean Scrollbars */
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--bg-tertiary);
+    border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+}
+
+/* ==========================================================================
+   BOOTSTRAP COMPONENTS MINIMALIST OVERRIDES
+   ========================================================================== */
+
+/* Flat Matte Cards */
+.card {
+    background-color: var(--bg-secondary) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--border-radius) !important;
+    box-shadow: none !important;
+    transition: var(--transition-fast);
+}
+
+.card-header {
+    background-color: transparent !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    padding: 0.85rem 1.25rem !important;
+}
+
+/* Flat Sharp Buttons */
+.btn {
+    border-radius: var(--border-radius) !important;
+    font-size: 0.78rem !important;
+    font-weight: 500 !important;
+    letter-spacing: -0.01em;
+    padding: 0.35rem 0.85rem !important;
+    transition: var(--transition-fast) !important;
+}
+
+.btn-primary-grc {
+    background-color: var(--text-primary) !important;
+    color: var(--bg-primary) !important;
+    border: 1px solid var(--text-primary) !important;
+}
+.btn-primary-grc:hover {
+    background-color: transparent !important;
+    color: var(--text-primary) !important;
+    border-color: var(--text-primary) !important;
+}
+
+.btn-secondary-grc {
+    background-color: transparent !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-secondary) !important;
+}
+.btn-secondary-grc:hover {
+    border-color: var(--border-active) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Minimalist Navigation Tabs */
+.nav-tabs-grc {
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+.nav-link-grc {
+    background: none !important;
+    border: none !important;
+    color: var(--text-secondary) !important;
+    font-size: 0.82rem !important;
+    font-weight: 500 !important;
+    padding: 0.65rem 1rem !important;
+    position: relative;
+    transition: var(--transition-fast) !important;
+}
+
+.nav-link-grc:hover {
+    color: var(--text-primary) !important;
+}
+
+.nav-link-grc.active {
+    color: var(--text-primary) !important;
+}
+
+.nav-link-grc.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1.5px;
+    background-color: var(--text-primary);
+}
+
+/* GRC Flat Tables */
+.table-grc {
+    color: var(--text-primary) !important;
+}
+
+.table-grc th {
+    background-color: transparent !important;
+    color: var(--text-muted) !important;
+    font-size: 0.65rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    padding: 0.75rem 1rem !important;
+}
+
+.table-grc td {
+    background-color: transparent !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    padding: 0.9rem 1rem !important;
+    vertical-align: middle !important;
+}
+
+.table-row-grc {
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.table-row-grc:hover {
+    background-color: var(--bg-row-hover) !important;
+}
+
+.table-row-grc.active-expand {
+    background-color: var(--bg-row-hover) !important;
+    border-left: 2px solid var(--text-primary) !important;
+}
+
+/* Collapsible Auditor Drawer */
+.grc-drawer-row td {
+    padding: 0 !important;
+    background-color: #0d0d0d !important;
+}
+
+.grc-drawer-inner {
+    padding: 1.25rem 1.5rem !important;
+    display: grid;
+    grid-template-columns: 1.8fr 1.2fr;
+    gap: 2.5rem;
+}
+
+/* ==========================================================================
+   MINIMALIST BADGES & CONTROLS
+   ========================================================================== */
+
+/* Control Objective labels */
+.control-id-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    padding: 0.08rem 0.3rem;
+    border-radius: 2px;
+}
+
+.control-title {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.control-desc {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    line-height: 1.35;
+}
+
+/* Flat Auditor Roles Badges */
+.badge-owner {
+    background-color: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    font-size: 0.65rem;
+    font-weight: 500;
+    padding: 0.15rem 0.35rem;
+    border-radius: 2px;
+}
+
+/* Integration labels */
+.integration-tag {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Minimalist Compliance Status Badges (Vanta style, but flat & low-sat) */
+.badge-compliance {
+    font-size: 0.65rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.025em;
+    padding: 0.2rem 0.5rem !important;
+    border-radius: 2px !important;
+    display: inline-flex;
+    align-items: center;
+}
+
+.badge-passed {
+    background-color: var(--bg-passed) !important;
+    color: var(--color-passed) !important;
+    border: 1px solid var(--border-passed) !important;
+}
+
+.badge-warning {
+    background-color: var(--bg-warning) !important;
+    color: var(--color-warning) !important;
+    border: 1px solid var(--border-warning) !important;
+}
+
+.badge-failed {
+    background-color: var(--bg-failed) !important;
+    color: var(--color-failed) !important;
+    border: 1px solid var(--border-failed) !important;
+}
+
+.badge-exempt {
+    background-color: var(--bg-exempt) !important;
+    color: var(--color-exempt) !important;
+    border: 1px solid var(--border-exempt) !important;
+}
+
+/* Flat Risk Badges */
+.badge-risk {
+    font-size: 0.62rem !important;
+    font-weight: 600 !important;
+    padding: 0.1rem 0.3rem !important;
+    border-radius: 2px !important;
+    display: inline-block;
+    border: 1px solid transparent;
+}
+
+.badge-risk-crit { background: rgba(248, 113, 113, 0.05) !important; color: var(--risk-critical) !important; border-color: rgba(248, 113, 113, 0.15) !important; }
+.badge-risk-hi   { background: rgba(251, 146, 60, 0.05) !important; color: var(--risk-high) !important; border-color: rgba(251, 146, 60, 0.15) !important; }
+.badge-risk-med  { background: rgba(252, 211, 77, 0.05) !important; color: var(--risk-medium) !important; border-color: rgba(252, 211, 77, 0.15) !important; }
+.badge-risk-lo   { background: rgba(96, 165, 250, 0.05) !important; color: var(--risk-low) !important; border-color: rgba(96, 165, 250, 0.15) !important; }
+
+/* Flat inputs */
+.form-control-grc, .form-select-grc {
+    background-color: var(--bg-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-primary) !important;
+    border-radius: var(--border-radius) !important;
+    font-size: 0.75rem !important;
+    padding: 0.35rem 0.5rem !important;
+    transition: var(--transition-fast) !important;
+}
+
+.form-control-grc:focus, .form-select-grc:focus {
+    border-color: var(--border-active) !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* ==========================================================================
+   3X3 HEATMAP RISK GRID OVERRIDES
+   ========================================================================== */
+.heatmap-cell-grc {
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    height: 44px;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    border: 1px solid transparent;
+}
+
+.heatmap-cell-grc:hover {
+    border-color: var(--border-active);
+}
+
+.heatmap-cell-grc.active-filter {
+    border-color: var(--text-primary) !important;
+}
+
+.heatmap-cell-lbl {
+    font-size: 0.48rem;
+    opacity: 0.55;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* Minimalist Tonal Shades for ServiceNow cells */
+.color-green-grc  { background: #131d18; color: #6ee7b7; border-color: rgba(52, 211, 153, 0.08); }
+.color-green-grc:hover { background: #182a20; }
+
+.color-yellow-grc { background: #221c10; color: #fde047; border-color: rgba(251, 191, 36, 0.08); }
+.color-yellow-grc:hover { background: #302613; }
+
+.color-red-grc    { background: #241415; color: #fca5a5; border-color: rgba(248, 113, 113, 0.08); }
+.color-red-grc:hover { background: #35191b; }
+
+.x-axis-matrix {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    font-size: 0.58rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    padding-left: 15px;
+    margin-top: 0.2rem;
+}
+
+/* ==========================================================================
+   REMEDIATION QUEUE & AUDIT TIMELINE
+   ========================================================================== */
+.gap-row-grc {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-left: 2px solid var(--color-failed);
+    border-radius: var(--border-radius);
+    padding: 0.6rem 0.75rem;
+    transition: var(--transition-fast);
+}
+
+.gap-row-grc:hover {
+    border-color: var(--border-active);
+}
+
+.audit-history-item {
+    padding-left: 0.85rem;
+    border-left: 1px solid var(--border-color);
+    position: relative;
+    padding-bottom: 0.85rem;
+}
+
+.audit-history-item::before {
+    content: '';
+    position: absolute;
+    left: -3px;
+    top: 5px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--text-secondary);
+    border: 1px solid var(--bg-primary);
+}
+
+.audit-history-item.passed-item::before {
+    background-color: var(--color-passed);
+}
+
+/* Flat minimal integrations list */
+.sys-integration-box {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 0.35rem;
+    text-align: center;
+    font-size: 0.62rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.sys-integration-box.active-int {
+    color: var(--text-primary);
+}
+
+.sys-integration-box.active-int::after {
+    content: 'ONLINE';
+    display: block;
+    font-size: 0.44rem;
+    color: var(--color-passed);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-top: 0.05rem;
+}
+
+/* Flat Active Filter banner */
+.filter-info-banner-grc {
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    padding: 0.45rem 0.85rem;
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.72rem;
+}
+
+.btn-clear-grc-filter {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+/* Flat Toast Notifications */
+.toast-grc {
+    background-color: var(--bg-secondary) !important;
+    border: 1px solid var(--border-color) !important;
+    border-left: 2px solid var(--text-primary) !important;
+    border-radius: var(--border-radius) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+}
+
+.toast-header-grc {
+    background-color: transparent !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Center circle */
+.circular-progress-box {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    margin: 0 auto;
+}
+
+.circular-text-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.circular-text-inner span {
+    letter-spacing: -0.02em;
+}
+
+/* GRC KPI Flat Dashboard Row */
+.grc-metric-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 0.9rem 1.15rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: var(--transition-fast);
+}
+
+.grc-metric-card:hover {
+    border-color: var(--border-active);
+}
+
+.grc-metric-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--text-secondary);
+    letter-spacing: 0.05em;
+}
+
+.grc-metric-val {
+    font-size: 1.35rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+}
+
+.grc-metric-icon-wrapper {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    background-color: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+}

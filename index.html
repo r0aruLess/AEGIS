@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aegis GRC Console. Professional ServiceNow, Vanta, and Drata integration console. Unified Information Security & Privacy IRM system of record.">
+    <title>Aegis GRC • ISO 27001 & 27701 Governance Console</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="py-4">
+    <div class="container-fluid max-width-1680px px-lg-4">
+        
+        <!-- ==========================================================================
+             1. GRC BRAND HEADER & ACTIONS
+             ========================================================================== -->
+        <header class="d-flex justify-content-between align-items-center flex-wrap p-4 mb-4" id="grc-header">
+            <div class="d-flex align-items-center gap-3">
+                <div class="brand-logo">A</div>
+                <div class="brand-text">
+                    <h1 class="mb-0">Aegis GRC</h1>
+                    <div class="brand-subtext align-items-center gap-2 mt-1">
+                        <span>Integrated Governance & Risk Console</span>
+                        <span class="meta-divider text-muted">•</span>
+                        <span class="sync-badge" id="sync-status-indicator">Active Monitoring</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="d-flex align-items-center gap-2 mt-3 mt-md-0">
+                <button class="btn btn-secondary-grc d-flex align-items-center gap-2" id="btn-trigger-sync" title="Pull latest evidence records from connected APIs">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path></svg>
+                    Sync Integrations
+                </button>
+                <button class="btn btn-primary-grc d-flex align-items-center gap-2 text-dark" id="btn-export-csv" title="Generate raw auditor ledger CSV">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                    Export GRC Ledger
+                </button>
+            </div>
+        </header>
+
+        <!-- ==========================================================================
+             2. GRC KPI SUMMARY METRICS ROW
+             ========================================================================== -->
+        <section class="row g-3 mb-4" id="grc-kpi-row">
+            <!-- Metric 1: Aggregated Compliance -->
+            <div class="col-sm-6 col-lg-3">
+                <div class="grc-metric-card">
+                    <div class="grc-metric-info">
+                        <span class="grc-metric-label">Compliance Assurance Rate</span>
+                        <span class="grc-metric-val" id="metric-compliance-pct">0%</span>
+                    </div>
+                    <div class="grc-metric-icon-wrapper text-info">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M22 4L12 14.01l-3-3"></path></svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Metric 2: Active Controls -->
+            <div class="col-sm-6 col-lg-3">
+                <div class="grc-metric-card">
+                    <div class="grc-metric-info">
+                        <span class="grc-metric-label">Controls In Assessment</span>
+                        <span class="grc-metric-val" id="metric-active-controls">0</span>
+                    </div>
+                    <div class="grc-metric-icon-wrapper text-success">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="9" x2="15" y2="9"></line><line x1="9" y1="13" x2="15" y2="13"></line><line x1="9" y1="17" x2="15" y2="17"></line></svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Metric 3: Residual High Risks -->
+            <div class="col-sm-6 col-lg-3">
+                <div class="grc-metric-card">
+                    <div class="grc-metric-info">
+                        <span class="grc-metric-label">Residual Risk Posture</span>
+                        <span class="grc-metric-val" id="metric-residual-risk" style="color: var(--risk-medium);">Controlled</span>
+                    </div>
+                    <div class="grc-metric-icon-wrapper text-warning">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Metric 4: Open Auditor Gaps -->
+            <div class="col-sm-6 col-lg-3">
+                <div class="grc-metric-card">
+                    <div class="grc-metric-info">
+                        <span class="grc-metric-label">Open Remediation Gaps</span>
+                        <span class="grc-metric-val risk-warn" id="metric-open-gaps">0</span>
+                    </div>
+                    <div class="grc-metric-icon-wrapper text-danger">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             3. FRAMEWORK SCOPE NAVIGATION
+             ========================================================================== -->
+        <nav class="framework-nav-bar mb-3" aria-label="GRC Framework Scope">
+            <ul class="nav nav-tabs nav-tabs-grc" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link nav-link-grc active" id="tab-iso27001" data-bs-toggle="tab" role="tab" data-framework="ISO-27001">
+                        <svg class="me-1" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                        ISO/IEC 27001:2022 (ISMS Framework)
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link nav-link-grc" id="tab-iso27701" data-bs-toggle="tab" role="tab" data-framework="ISO-27701">
+                        <svg class="me-1" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        ISO/IEC 27701:2019 (PIMS Framework)
+                    </button>
+                </li>
+            </ul>
+            <div class="d-none d-md-block" style="font-size: 0.72rem; color: var(--text-muted); font-weight: 700; letter-spacing: 0.025em;">
+                GRC CLOUD SYNC STATE: <span class="text-info">OPERATIONAL</span>
+            </div>
+        </nav>
+
+        <!-- ==========================================================================
+             4. MAIN COLUMNS LAYOUT (BOOTSTRAP GRIDS)
+             ========================================================================== -->
+        <main class="row g-4">
+            
+            <!-- Left Side: Table of Control Objectives -->
+            <section class="col-lg-8">
+                <div class="card grc-table-card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h2 class="h6 mb-0 text-white font-weight-700">ISO Standards Controls Ledger</h2>
+                        <div class="position-relative d-flex align-items-center" style="width: 220px;">
+                            <span class="position-absolute text-muted" style="left: 0.65rem; font-size: 0.8rem; pointer-events: none;">🔍</span>
+                            <input type="text" id="grc-search" class="form-control-grc w-100 ps-4 py-1" placeholder="Filter controls ledger...">
+                        </div>
+                    </div>
+                    
+                    <div class="card-body p-0">
+                        <!-- Active Filters Banner -->
+                        <div id="filter-banner" style="display: none;" class="px-3 pt-3">
+                            <div class="filter-info-banner-grc mb-0">
+                                <span id="filter-banner-text" class="fw-semibold">Filter active</span>
+                                <button class="btn-clear-grc-filter" id="filter-clear-btn">✕ Reset Audit View</button>
+                            </div>
+                        </div>
+
+                        <!-- Bootstrap Table -->
+                        <div class="table-responsive">
+                            <table class="table table-grc align-middle table-hover">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 42%;">Control Objectives & Requirements</th>
+                                        <th style="width: 14%;">Owner / Frequency</th>
+                                        <th style="width: 16%;">Integration Feed</th>
+                                        <th style="width: 14%;">Assurance</th>
+                                        <th style="width: 14%;">Risk Profile (Inh ➔ Res)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="grc-controls-container">
+                                    <!-- Controls populated dynamically via app.js -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Side: Sidebar GRC Matrix & Audit logs -->
+            <aside class="col-lg-4">
+                <div class="d-flex flex-column gap-3">
+                    
+                    <!-- Circular Framework Chart -->
+                    <div class="card grc-sidebar-card">
+                        <div class="card-header py-2 px-3 border-0">
+                            <h3 class="h6 mb-0 text-white" id="sidebar-progress-title">Framework Scope Audit</h3>
+                        </div>
+                        <div class="card-body py-1">
+                            <div class="circular-progress-box">
+                                <svg width="120" height="120" style="transform: rotate(-90deg);">
+                                    <defs>
+                                        <linearGradient id="grc-circle-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="var(--accent-cyan)" />
+                                            <stop offset="100%" stop-color="var(--accent-blue)" />
+                                        </linearGradient>
+                                    </defs>
+                                    <circle class="svg-ring-bg" cx="60" cy="60" r="48" fill="none" stroke="var(--bg-primary)" stroke-width="8"></circle>
+                                    <circle id="progress-circle" cx="60" cy="60" r="48" fill="none" stroke="url(#grc-circle-grad)" stroke-width="8" stroke-linecap="round" style="transition: stroke-dashoffset 0.6s ease-in-out;" stroke-dasharray="301.59" stroke-dashoffset="301.59"></circle>
+                                </svg>
+                                <div class="circular-text-inner">
+                                    <span id="framework-percent" style="font-size: 1.25rem; font-weight: 800; color: #ffffff; display: block;">0%</span>
+                                    <span style="font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-secondary);">Mitigated</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3x3 Risk Heatmap Matrix (ServiceNow) -->
+                    <div class="card grc-sidebar-card">
+                        <div class="card-header py-2 px-3 border-0">
+                            <h3 class="h6 mb-0 text-white">Residual GRC Risk Heatmap</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="heatmap-description mb-3">
+                                Heatmap mapping controls by <strong>Likelihood</strong> (Auditing Fails) vs <strong>Impact</strong> (Inherent Threat). Click cells to isolate assets.
+                            </p>
+                            
+                            <div class="d-flex flex-column gap-1">
+                                <!-- Matrix Matrix -->
+                                <div class="d-flex gap-2 align-items-center">
+                                    <!-- Y Axis Label -->
+                                    <div class="d-flex flex-column justify-content-between align-items-center py-1 text-muted text-uppercase fw-bold" style="height: 150px; width: 12px; font-size: 0.55rem;">
+                                        <span>High</span>
+                                        <span>Med</span>
+                                        <span>Low</span>
+                                    </div>
+                                    
+                                    <!-- Grid Cells -->
+                                    <div class="row g-1 w-100 mx-0" id="heatmap-grid-container">
+                                        <!-- Row 1: High Likelihood -->
+                                        <div class="col-4 heatmap-cell-grc color-yellow-grc" id="cell-high-low" data-row="High" data-col="Low"><span class="heatmap-cell-lbl">M1</span><span class="heatmap-count">0</span></div>
+                                        <div class="col-4 heatmap-cell-grc color-red-grc" id="cell-high-med" data-row="High" data-col="Med"><span class="heatmap-cell-lbl">H1</span><span class="heatmap-count">0</span></div>
+                                        <div class="col-4 heatmap-cell-grc color-red-grc" id="cell-high-high" data-row="High" data-col="High"><span class="heatmap-cell-lbl">C1</span><span class="heatmap-count">0</span></div>
+                                        <!-- Row 2: Med Likelihood -->
+                                        <div class="col-4 heatmap-cell-grc color-green-grc" id="cell-med-low" data-row="Med" data-col="Low"><span class="heatmap-cell-lbl">L1</span><span class="heatmap-count">0</span></div>
+                                        <div class="col-4 heatmap-cell-grc color-yellow-grc" id="cell-med-med" data-row="Med" data-col="Med"><span class="heatmap-cell-lbl">M2</span><span class="heatmap-count">0</span></div>
+                                        <div class="col-4 heatmap-cell-grc color-red-grc" id="cell-med-high" data-row="Med" data-col="High"><span class="heatmap-cell-lbl">H2</span><span class="heatmap-count">0</span></div>
+                                        <!-- Row 3: Low Likelihood -->
+                                        <div class="col-4 heatmap-cell-grc color-green-grc" id="cell-low-low" data-row="Low" data-col="Low"><span class="heatmap-cell-lbl">L2</span><span class="heatmap-count">0</span></div>
+                                        <div class="col-4 heatmap-cell-grc color-green-grc" id="cell-low-med" data-row="Low" data-col="Med"><span class="heatmap-cell-lbl">L3</span><span class="heatmap-count">0</span></div>
+                                        <div class="col-4 heatmap-cell-grc color-yellow-grc" id="cell-low-high" data-row="Low" data-col="High"><span class="heatmap-cell-lbl">M3</span><span class="heatmap-count">0</span></div>
+                                    </div>
+                                </div>
+                                <!-- X Axis Labels -->
+                                <div class="row g-0 text-muted fw-bold text-uppercase" style="font-size: 0.58rem; padding-left: 20px;">
+                                    <span class="col-4 text-center">Low Imp</span>
+                                    <span class="col-4 text-center">Med Imp</span>
+                                    <span class="col-4 text-center">High Imp</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GRC Controls States (Lifecycle Indicators) -->
+                    <div class="card grc-sidebar-card">
+                        <div class="card-header py-2 px-3 border-0">
+                            <h3 class="h6 mb-0 text-white">Controls Lifecycle Statuses</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-2">
+                                <div class="col-6">
+                                    <div class="lifecycle-pill-box">
+                                        <span class="lifecycle-lbl">Monitoring</span>
+                                        <span class="lifecycle-count" id="count-state-monitoring">0</span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="lifecycle-pill-box">
+                                        <span class="lifecycle-lbl">Review</span>
+                                        <span class="lifecycle-count" id="count-state-review">0</span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="lifecycle-pill-box">
+                                        <span class="lifecycle-lbl">Draft</span>
+                                        <span class="lifecycle-count" id="count-state-draft">0</span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="lifecycle-pill-box">
+                                        <span class="lifecycle-lbl">Retired</span>
+                                        <span class="lifecycle-count" id="count-state-retired">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Priority Remediation Queue (Failed Gaps) -->
+                    <div class="card grc-sidebar-card">
+                        <div class="card-header py-2 px-3 border-0">
+                            <h3 class="h6 mb-0 text-white">Remediation Queue Gaps</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex flex-column gap-2" id="sidebar-gaps-container">
+                                <!-- Remediation queue list loaded dynamically via app.js -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Connected Audits History (Auditor timeline) -->
+                    <div class="card grc-sidebar-card">
+                        <div class="card-header py-2 px-3 border-0">
+                            <h3 class="h6 mb-0 text-white">Auditor Activity History</h3>
+                        </div>
+                        <div class="card-body pb-0">
+                            <div class="audit-history-item passed-item">
+                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                    <strong style="font-size: 0.72rem; color: #ffffff;">ISO 27001 Certification Audit</strong>
+                                    <span class="text-success" style="font-size: 0.65rem; font-weight: 700;">PASSED</span>
+                                </div>
+                                <p style="font-size: 0.68rem; color: var(--text-secondary); line-height: 1.3;">
+                                    Independent external audit completed by Schellman Group. 96% control effectiveness verified.
+                                </p>
+                            </div>
+                            <div class="audit-history-item">
+                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                    <strong style="font-size: 0.72rem; color: #ffffff;">ISO 27701 Privacy Assessment</strong>
+                                    <span class="text-warning" style="font-size: 0.65rem; font-weight: 700;">FINDINGS</span>
+                                </div>
+                                <p style="font-size: 0.68rem; color: var(--text-secondary); line-height: 1.3; margin-bottom: 0;">
+                                    Regulatory readiness review identified a DSAR automation gap (Control 7.3) assigned to DPO.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Connected System Integrations Hub -->
+                    <div class="card grc-sidebar-card">
+                        <div class="card-header py-2 px-3 border-0">
+                            <h3 class="h6 mb-0 text-white">GRC Connected Systems</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-2">
+                                <div class="col-3"><div class="sys-integration-box active-int" title="AWS Config Checks: Online">AWS</div></div>
+                                <div class="col-3"><div class="sys-integration-box active-int" title="Okta API Check: Online">Okta</div></div>
+                                <div class="col-3"><div class="sys-integration-box active-int" title="GitHub Webhooks: Online">GitHub</div></div>
+                                <div class="col-3"><div class="sys-integration-box active-int" title="Google Admin API: Online">GSuite</div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </aside>
+        </main>
+
+        <!-- ==========================================================================
+             5. GRC CONSOLE FOOTER & ALIGNMENT GUIDE SCROLL TARGET
+             ========================================================================== -->
+        <footer class="mt-5 mb-3 pt-3" id="readme">
+            <div class="text-muted">
+                © 2026 Aegis GRC Console • Integrated Governance, Risk & Compliance Console.
+            </div>
+            <div class="text-muted mt-2 mt-md-0">
+                Automated continuous compliance sync operational • Data encrypted locally (LocalStorage).
+            </div>
+        </footer>
+    </div>
+
+    <!-- ==========================================================================
+         6. TOAST NOTIFICATION SYSTEM CONTAINER
+         ========================================================================== -->
+    <div class="grc-toast-box">
+        <div class="toast toast-grc" role="alert" aria-live="assertive" aria-atomic="true" id="grc-toast" data-bs-delay="4000">
+            <div class="toast-header toast-header-grc py-1 px-3 d-flex justify-content-between align-items-center">
+                <strong class="me-auto" style="font-size:0.75rem;" id="toast-title">Aegis GRC Engine</strong>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close" style="font-size:0.6rem;"></button>
+            </div>
+            <div class="toast-body p-3" id="toast-message" style="font-size:0.78rem; line-height:1.4;">
+                System synchronized successfully.
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 Bundle JS CDN (includes Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
