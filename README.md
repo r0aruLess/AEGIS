@@ -6,7 +6,7 @@ An enterprise-grade, high-fidelity **Governance, Risk, and Compliance (GRC)** an
 
 ## 🌟 Modern GRC Framework Design
 
-Unlike standard baseline dashboards, Aegis GRC is built on real-world IT audit schemas, structured compliance matrices, and continuous integration paradigms.
+Unlike standard baseline dashboards, Aegis GRC is built on real-world IT audit schemas, structured compliance matrices, and continuous integration paradigms...
 
 ### 1. ServiceNow-style Control Objectives Ledger
 *   **Structured Schema**: Every control is bound to a high-level **Control Objective** (the standard/requirement description), an assigned **Control Owner** (e.g. CISO, DPO, HR Director, IT Security Lead), a **Test Frequency** (Continuous Automated, Quarterly, Annually), and a designated **Evidence/Integration Source** (e.g. AWS Config, Okta, GitHub, Google Workspace).
