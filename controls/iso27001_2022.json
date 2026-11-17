@@ -1,0 +1,3052 @@
+[
+  {
+    "id": "A.5.1",
+    "theme": "Organizational",
+    "title": "Policies for information security",
+    "objective": "Information security policy and topic-specific policies shall be defined, approved by management, published, communicated to and acknowledged by relevant personnel and relevant interested parties, and reviewed at planned intervals and if significant changes occur.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Identify",
+      "Protect"
+    ],
+    "capability": "Governance",
+    "domain": "Governance_and_Ecosystem",
+    "owner": "CISO",
+    "frequency": "Annually",
+    "evidence_source": "Google Workspace / Confluence Policy Portal",
+    "status": "PASSED",
+    "inherent_likelihood": 2,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Mandatory foundational control providing high-level executive direction and accountability for the organization's ISMS.",
+    "mappings": {
+      "soc2": [
+        "CC1.1",
+        "CC1.2"
+      ],
+      "nist_csf": [
+        "GV.PO-01",
+        "GV.PO-02"
+      ]
+    }
+  },
+  {
+    "id": "A.5.2",
+    "theme": "Organizational",
+    "title": "Information security roles and responsibilities",
+    "objective": "Information security roles and responsibilities shall be defined and allocated according to the organization needs.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Identify"
+    ],
+    "capability": "Governance",
+    "domain": "Governance_and_Ecosystem",
+    "owner": "CISO",
+    "frequency": "Annually",
+    "evidence_source": "HR Org Chart & Job Descriptions",
+    "status": "PASSED",
+    "inherent_likelihood": 2,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Establishes formal RACI matrix and lines of accountability across corporate leadership.",
+    "mappings": {
+      "soc2": [
+        "CC1.3"
+      ],
+      "nist_csf": [
+        "GV.RR-01",
+        "GV.RR-02"
+      ]
+    }
+  },
+  {
+    "id": "A.5.3",
+    "theme": "Organizational",
+    "title": "Segregation of duties",
+    "objective": "Conflicting duties and conflicting areas of responsibility shall be segregated.",
+    "control_type": "Preventive",
+    "properties": [
+      "Integrity",
+      "Confidentiality"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Identity_and_access_management",
+    "domain": "Protection",
+    "owner": "DevSecOps Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "GitHub Branch Protection & Okta Role RBAC",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Prevents unauthorized modifications to production code, infrastructure, and financial ledgers.",
+    "mappings": {
+      "soc2": [
+        "CC6.2",
+        "CC6.3"
+      ],
+      "nist_csf": [
+        "PR.AC-04"
+      ]
+    }
+  },
+  {
+    "id": "A.5.4",
+    "theme": "Organizational",
+    "title": "Management responsibilities",
+    "objective": "Management shall require all personnel to apply information security in accordance with the established information security policy and topic-specific policies of the organization.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Identify"
+    ],
+    "capability": "Governance",
+    "domain": "Governance_and_Ecosystem",
+    "owner": "CEO / Executive Leadership",
+    "frequency": "Quarterly",
+    "evidence_source": "Executive Management Review Minutes",
+    "status": "PASSED",
+    "inherent_likelihood": 2,
+    "inherent_impact": 3,
+    "soa_included": true,
+    "soa_justification": "Ensures executive leadership enforces security policy compliance across departmental heads.",
+    "mappings": {
+      "soc2": [
+        "CC1.4"
+      ],
+      "nist_csf": [
+        "GV.OC-01"
+      ]
+    }
+  },
+  {
+    "id": "A.5.5",
+    "theme": "Organizational",
+    "title": "Contact with authorities",
+    "objective": "The organization shall establish and maintain contact with relevant authorities.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Respond"
+    ],
+    "capability": "Legal_and_compliance",
+    "domain": "Governance_and_Ecosystem",
+    "owner": "Legal Counsel",
+    "frequency": "Annually",
+    "evidence_source": "Regulatory Contact Register (CERT-In / FTC / Data Protection Authority)",
+    "status": "PASSED",
+    "inherent_likelihood": 2,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Required for statutory notifications of critical cybersecurity incidents and data breaches.",
+    "mappings": {
+      "soc2": [
+        "CC7.3"
+      ],
+      "nist_csf": [
+        "RS.CO-02"
+      ]
+    }
+  },
+  {
+    "id": "A.5.6",
+    "theme": "Organizational",
+    "title": "Contact with special interest groups",
+    "objective": "The organization shall establish and maintain contact with special interest groups or other specialist security forums and professional associations.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Identify"
+    ],
+    "capability": "Threat_and_vulnerability_management",
+    "domain": "Defense",
+    "owner": "Security Engineering Lead",
+    "frequency": "Quarterly",
+    "evidence_source": "ISAC & OWASP Membership Records",
+    "status": "PASSED",
+    "inherent_likelihood": 2,
+    "inherent_impact": 2,
+    "soa_included": true,
+    "soa_justification": "Keeps engineering abreast of emerging threat vectors, zero-days, and peer intelligence.",
+    "mappings": {
+      "soc2": [
+        "CC2.1"
+      ],
+      "nist_csf": [
+        "ID.RA-02"
+      ]
+    }
+  },
+  {
+    "id": "A.5.7",
+    "theme": "Organizational",
+    "title": "Threat intelligence",
+    "objective": "Information relating to information security threats shall be collected and analysed to produce threat intelligence.",
+    "control_type": "Detective",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Detect",
+      "Identify"
+    ],
+    "capability": "Threat_and_vulnerability_management",
+    "domain": "Defense",
+    "owner": "SOC Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "CrowdStrike Falcon / AlienVault OTX Feed",
+    "status": "WARNING",
+    "inherent_likelihood": 4,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "2022 new control: proactive consumption of IoCs and attacker TTPs to fortify defenses.",
+    "mappings": {
+      "soc2": [
+        "CC7.1"
+      ],
+      "nist_csf": [
+        "DE.CM-01",
+        "ID.RA-03"
+      ]
+    }
+  },
+  {
+    "id": "A.5.8",
+    "theme": "Organizational",
+    "title": "Information security in project management",
+    "objective": "Information security shall be integrated into project management.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Application_security",
+    "domain": "Governance_and_Ecosystem",
+    "owner": "Head of Product",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "Jira Product Spec Security Checklists",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 3,
+    "soa_included": true,
+    "soa_justification": "Ensures security risk assessments precede any engineering sprint or infrastructure deployment.",
+    "mappings": {
+      "soc2": [
+        "CC8.1"
+      ],
+      "nist_csf": [
+        "PR.PS-01"
+      ]
+    }
+  },
+  {
+    "id": "A.5.9",
+    "theme": "Organizational",
+    "title": "Inventory of information and other associated assets",
+    "objective": "An inventory of information and other associated assets, including owners, shall be developed and maintained.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Identify"
+    ],
+    "capability": "Asset_management",
+    "domain": "Governance_and_Ecosystem",
+    "owner": "IT Operations Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "AWS Systems Manager & Kandji MDM API",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "You cannot secure what you do not know. Real-time asset inventory across cloud and endpoints.",
+    "mappings": {
+      "soc2": [
+        "CC6.1"
+      ],
+      "nist_csf": [
+        "ID.AM-01",
+        "ID.AM-02"
+      ]
+    }
+  },
+  {
+    "id": "A.5.10",
+    "theme": "Organizational",
+    "title": "Acceptable use of information and other associated assets",
+    "objective": "Rules for the acceptable use and procedures for handling information and other associated assets shall be identified, documented and implemented.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Asset_management",
+    "domain": "Protection",
+    "owner": "HR Director",
+    "frequency": "Annually",
+    "evidence_source": "Employee Onboarding Attestation Platform",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 3,
+    "soa_included": true,
+    "soa_justification": "Sets enforceable boundaries for workstation, corporate email, and cloud storage usage.",
+    "mappings": {
+      "soc2": [
+        "CC2.3"
+      ],
+      "nist_csf": [
+        "PR.AT-01"
+      ]
+    }
+  },
+  {
+    "id": "A.5.11",
+    "theme": "Organizational",
+    "title": "Return of assets",
+    "objective": "Personnel and other interested parties as appropriate shall return all the organization's assets in their possession upon change or termination of their employment, contract or agreement.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Availability"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Asset_management",
+    "domain": "Protection",
+    "owner": "IT Operations Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "Offboarding Checklist / Kandji MDM Remote Wipe",
+    "status": "PASSED",
+    "inherent_likelihood": 2,
+    "inherent_impact": 3,
+    "soa_included": true,
+    "soa_justification": "Prevents unauthorized data retention by exiting employees or contractors.",
+    "mappings": {
+      "soc2": [
+        "CC6.3"
+      ],
+      "nist_csf": [
+        "PR.IP-11"
+      ]
+    }
+  },
+  {
+    "id": "A.5.12",
+    "theme": "Organizational",
+    "title": "Classification of information",
+    "objective": "Information shall be classified in accordance with the information security needs of the organization based on confidentiality, integrity, availability and relevant interested party requirements.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Identify"
+    ],
+    "capability": "Information_protection",
+    "domain": "Governance_and_Ecosystem",
+    "owner": "CISO",
+    "frequency": "Annually",
+    "evidence_source": "Data Classification Standard (Public, Internal, Confidential, Restricted)",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Enables tiered protection controls aligned to data sensitivity and regulatory impact.",
+    "mappings": {
+      "soc2": [
+        "CC6.1"
+      ],
+      "nist_csf": [
+        "ID.AM-05"
+      ]
+    }
+  },
+  {
+    "id": "A.5.13",
+    "theme": "Organizational",
+    "title": "Labelling of information",
+    "objective": "An appropriate set of procedures for information labelling shall be developed and implemented in accordance with the information classification scheme adopted by the organization.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Information_protection",
+    "domain": "Protection",
+    "owner": "IT Operations Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "Google Workspace DLP Data Loss Prevention Labels",
+    "status": "WARNING",
+    "inherent_likelihood": 3,
+    "inherent_impact": 3,
+    "soa_included": true,
+    "soa_justification": "Automated tagging of customer PII and restricted IP in email and documents.",
+    "mappings": {
+      "soc2": [
+        "CC6.1"
+      ],
+      "nist_csf": [
+        "PR.DS-05"
+      ]
+    }
+  },
+  {
+    "id": "A.5.14",
+    "theme": "Organizational",
+    "title": "Information transfer",
+    "objective": "Information transfer rules, procedures, or agreements shall be in place for all types of transfer facilities within the organization and between the organization and other parties.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Information_protection",
+    "domain": "Protection",
+    "owner": "DevSecOps Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "TLS 1.3 Cipher Enforcement & AWS S3 Bucket Policies",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Protects electronic data in transit across public and external network channels.",
+    "mappings": {
+      "soc2": [
+        "CC6.6"
+      ],
+      "nist_csf": [
+        "PR.DS-02"
+      ]
+    }
+  },
+  {
+    "id": "A.5.15",
+    "theme": "Organizational",
+    "title": "Access control",
+    "objective": "Rules to control physical and logical access to information and other associated assets shall be established and documented based on business and information security requirements.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Identity_and_access_management",
+    "domain": "Protection",
+    "owner": "CISO",
+    "frequency": "Quarterly",
+    "evidence_source": "Access Control Policy & Okta Group RBAC Rules",
+    "status": "PASSED",
+    "inherent_likelihood": 4,
+    "inherent_impact": 5,
+    "soa_included": true,
+    "soa_justification": "Critical baseline ensuring need-to-know access restriction across all corporate digital assets.",
+    "mappings": {
+      "soc2": [
+        "CC6.1",
+        "CC6.3"
+      ],
+      "nist_csf": [
+        "PR.AC-01",
+        "PR.AC-04"
+      ]
+    }
+  },
+  {
+    "id": "A.5.16",
+    "theme": "Organizational",
+    "title": "Identity management",
+    "objective": "The full lifecycle of identities shall be managed.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Identity_and_access_management",
+    "domain": "Protection",
+    "owner": "IT Security Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "Okta SCIM User Lifecycle Automation",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Automates onboarding, role provisioning, and immediate deprovisioning on departure.",
+    "mappings": {
+      "soc2": [
+        "CC6.2"
+      ],
+      "nist_csf": [
+        "PR.AC-01"
+      ]
+    }
+  },
+  {
+    "id": "A.5.17",
+    "theme": "Organizational",
+    "title": "Authentication information",
+    "objective": "Allocation and management of authentication information shall be controlled by a management process, including advising personnel on appropriate handling of authentication information.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Identity_and_access_management",
+    "domain": "Protection",
+    "owner": "IT Security Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "FIDO2 WebAuthn & Okta Verify Telemetry",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 5,
+    "soa_included": true,
+    "soa_justification": "Enforces phishing-resistant MFA tokens and secrets management for all corporate staff.",
+    "mappings": {
+      "soc2": [
+        "CC6.1"
+      ],
+      "nist_csf": [
+        "PR.AC-07"
+      ]
+    }
+  },
+  {
+    "id": "A.5.18",
+    "theme": "Organizational",
+    "title": "Access rights",
+    "objective": "Access rights to information and other associated assets shall be provisioned, reviewed, modified and removed in accordance with the organization's topic-specific policy on and rules for access control.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Identity_and_access_management",
+    "domain": "Protection",
+    "owner": "IT Security Lead",
+    "frequency": "Quarterly",
+    "evidence_source": "Quarterly User Access Review (UAR) Campaign Logs",
+    "status": "WARNING",
+    "inherent_likelihood": 4,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Quarterly privilege audits to remove orphan accounts and prevent privilege creep.",
+    "mappings": {
+      "soc2": [
+        "CC6.3"
+      ],
+      "nist_csf": [
+        "PR.AC-04"
+      ]
+    }
+  },
+  {
+    "id": "A.5.19",
+    "theme": "Organizational",
+    "title": "Information security in supplier relationships",
+    "objective": "Processes and procedures shall be defined and implemented to manage the information security risks associated with the use of supplier's products or services.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Identify",
+      "Protect"
+    ],
+    "capability": "Supplier_relationships_security",
+    "domain": "Governance_and_Ecosystem",
+    "owner": "Vendor Risk Lead",
+    "frequency": "Quarterly",
+    "evidence_source": "Third-Party Vendor Risk Register & SIG Questionnaires",
+    "status": "PASSED",
+    "inherent_likelihood": 4,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Evaluates cybersecurity and compliance risks of all external SaaS and vendor providers.",
+    "mappings": {
+      "soc2": [
+        "CC9.2"
+      ],
+      "nist_csf": [
+        "GV.SC-01",
+        "GV.SC-04"
+      ]
+    }
+  },
+  {
+    "id": "A.5.20",
+    "theme": "Organizational",
+    "title": "Addressing information security within supplier agreements",
+    "objective": "Relevant information security requirements shall be established and agreed with each supplier based on the type of supplier relationship.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Supplier_relationships_security",
+    "domain": "Governance_and_Ecosystem",
+    "owner": "Legal Counsel",
+    "frequency": "Annually",
+    "evidence_source": "Standard DPA & Security Addendums in DocuSign",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Binds suppliers to breach notification SLAs, right to audit, and encryption standards.",
+    "mappings": {
+      "soc2": [
+        "CC9.2"
+      ],
+      "nist_csf": [
+        "GV.SC-05"
+      ]
+    }
+  },
+  {
+    "id": "A.5.21",
+    "theme": "Organizational",
+    "title": "Managing information security in the ICT supply chain",
+    "objective": "Processes and procedures shall be defined and implemented to manage the information security risks associated with the ICT products and services supply chain.",
+    "control_type": "Preventive",
+    "properties": [
+      "Integrity",
+      "Confidentiality"
+    ],
+    "concepts": [
+      "Protect",
+      "Detect"
+    ],
+    "capability": "Supplier_relationships_security",
+    "domain": "Defense",
+    "owner": "DevSecOps Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "Software Bill of Materials (SBOM) & Dependabot Scanning",
+    "status": "PASSED",
+    "inherent_likelihood": 4,
+    "inherent_impact": 5,
+    "soa_included": true,
+    "soa_justification": "Protects against upstream software supply chain compromises and vulnerable dependencies.",
+    "mappings": {
+      "soc2": [
+        "CC9.2"
+      ],
+      "nist_csf": [
+        "GV.SC-07",
+        "GV.SC-08"
+      ]
+    }
+  },
+  {
+    "id": "A.5.22",
+    "theme": "Organizational",
+    "title": "Monitoring, review and change management of supplier services",
+    "objective": "The organization shall regularly monitor, review, evaluate and manage change in supplier information security practices and service delivery.",
+    "control_type": "Detective",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Detect"
+    ],
+    "capability": "Supplier_relationships_security",
+    "domain": "Governance_and_Ecosystem",
+    "owner": "Vendor Risk Lead",
+    "frequency": "Annually",
+    "evidence_source": "Annual SOC 2 Type II Report Reviews of Critical Vendors",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Tracks external vendor security audits and service modification notices.",
+    "mappings": {
+      "soc2": [
+        "CC9.2"
+      ],
+      "nist_csf": [
+        "GV.SC-06"
+      ]
+    }
+  },
+  {
+    "id": "A.5.23",
+    "theme": "Organizational",
+    "title": "Information security for use of cloud services",
+    "objective": "Processes for acquisition, use, management and exit from cloud services shall be established in accordance with the organization's information security requirements.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Identify",
+      "Protect"
+    ],
+    "capability": "Supplier_relationships_security",
+    "domain": "Protection",
+    "owner": "Cloud Architecture Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "AWS Well-Architected Review & Cloud Custodian Policies",
+    "status": "PASSED",
+    "inherent_likelihood": 4,
+    "inherent_impact": 5,
+    "soa_included": true,
+    "soa_justification": "2022 new control: defines shared responsibility model, architecture, and exit strategy for cloud.",
+    "mappings": {
+      "soc2": [
+        "CC6.1",
+        "CC9.2"
+      ],
+      "nist_csf": [
+        "GV.SC-04"
+      ]
+    }
+  },
+  {
+    "id": "A.5.24",
+    "theme": "Organizational",
+    "title": "Information security incident management planning and preparation",
+    "objective": "The organization shall plan and prepare for managing information security incidents by defining, establishing and communicating information security incident management processes, roles and responsibilities.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Respond"
+    ],
+    "capability": "Information_security_event_management",
+    "domain": "Defense",
+    "owner": "CISO",
+    "frequency": "Annually",
+    "evidence_source": "Incident Response Plan (IRP) v3.2 & Tabletop Exercise Report",
+    "status": "PASSED",
+    "inherent_likelihood": 4,
+    "inherent_impact": 5,
+    "soa_included": true,
+    "soa_justification": "Establishes incident severity tiers, escalation playbooks, and communications protocol.",
+    "mappings": {
+      "soc2": [
+        "CC7.3"
+      ],
+      "nist_csf": [
+        "RS.MA-01",
+        "RS.MA-02"
+      ]
+    }
+  },
+  {
+    "id": "A.5.25",
+    "theme": "Organizational",
+    "title": "Assessment and decision on information security events",
+    "objective": "The organization shall assess information security events and decide if they are to be categorized as information security incidents.",
+    "control_type": "Detective",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Detect",
+      "Respond"
+    ],
+    "capability": "Information_security_event_management",
+    "domain": "Defense",
+    "owner": "SOC Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "SIEM Automated Triage Rules (Datadog Security Monitoring)",
+    "status": "PASSED",
+    "inherent_likelihood": 4,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Filters raw telemetry to isolate actionable security incidents without alert fatigue.",
+    "mappings": {
+      "soc2": [
+        "CC7.2",
+        "CC7.3"
+      ],
+      "nist_csf": [
+        "DE.AE-02",
+        "RS.AN-01"
+      ]
+    }
+  },
+  {
+    "id": "A.5.26",
+    "theme": "Organizational",
+    "title": "Response to information security incidents",
+    "objective": "Information security incidents shall be responded to in accordance with the documented procedures.",
+    "control_type": "Corrective",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Respond"
+    ],
+    "capability": "Information_security_event_management",
+    "domain": "Defense",
+    "owner": "Incident Commander",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "PagerDuty Incident Bridge & Root Cause Analyses",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 5,
+    "soa_included": true,
+    "soa_justification": "Guides containment, eradication, and post-incident recovery procedures.",
+    "mappings": {
+      "soc2": [
+        "CC7.3"
+      ],
+      "nist_csf": [
+        "RS.MI-01",
+        "RS.MI-02"
+      ]
+    }
+  },
+  {
+    "id": "A.5.27",
+    "theme": "Organizational",
+    "title": "Learning from information security incidents",
+    "objective": "Knowledge gained from information security incidents shall be used to strengthen and improve the information security controls.",
+    "control_type": "Corrective",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Recover",
+      "Identify"
+    ],
+    "capability": "Information_security_event_management",
+    "domain": "Resilience",
+    "owner": "CISO",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "Blameless Post-Mortem Repositories",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 3,
+    "soa_included": true,
+    "soa_justification": "Feeds incident findings back into preventive engineering and risk assessment registers.",
+    "mappings": {
+      "soc2": [
+        "CC7.4"
+      ],
+      "nist_csf": [
+        "RC.CO-03",
+        "ID.IM-01"
+      ]
+    }
+  },
+  {
+    "id": "A.5.28",
+    "theme": "Organizational",
+    "title": "Collection of evidence",
+    "objective": "The organization shall define and apply procedures for the identification, collection, acquisition and preservation of evidence related to information security events.",
+    "control_type": "Corrective",
+    "properties": [
+      "Integrity",
+      "Confidentiality"
+    ],
+    "concepts": [
+      "Respond"
+    ],
+    "capability": "Information_security_event_management",
+    "domain": "Defense",
+    "owner": "Forensics Lead",
+    "frequency": "Quarterly",
+    "evidence_source": "Immutable S3 Object-Locked Forensic Evidence Store",
+    "status": "PASSED",
+    "inherent_likelihood": 2,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Ensures chain of custody and forensic admissibility for legal and law enforcement use.",
+    "mappings": {
+      "soc2": [
+        "CC7.3"
+      ],
+      "nist_csf": [
+        "RS.AN-03"
+      ]
+    }
+  },
+  {
+    "id": "A.5.29",
+    "theme": "Organizational",
+    "title": "Information security during disruption",
+    "objective": "The organization shall plan how to maintain information security at an appropriate level during disruption.",
+    "control_type": "Preventive",
+    "properties": [
+      "Availability",
+      "Confidentiality",
+      "Integrity"
+    ],
+    "concepts": [
+      "Protect",
+      "Recover"
+    ],
+    "capability": "Continuity",
+    "domain": "Resilience",
+    "owner": "Head of Infrastructure",
+    "frequency": "Annually",
+    "evidence_source": "Business Continuity Plan (BCP) & Disaster Recovery Runbook",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 5,
+    "soa_included": true,
+    "soa_justification": "Maintains encryption and access control guardrails even when operating in failover modes.",
+    "mappings": {
+      "soc2": [
+        "A1.2"
+      ],
+      "nist_csf": [
+        "PR.IR-01",
+        "RC.RP-01"
+      ]
+    }
+  },
+  {
+    "id": "A.5.30",
+    "theme": "Organizational",
+    "title": "ICT readiness for business continuity",
+    "objective": "ICT readiness shall be planned, implemented, maintained and tested based on business continuity objectives and ICT continuity requirements.",
+    "control_type": "Preventive",
+    "properties": [
+      "Availability"
+    ],
+    "concepts": [
+      "Recover"
+    ],
+    "capability": "Continuity",
+    "domain": "Resilience",
+    "owner": "Head of Infrastructure",
+    "frequency": "Quarterly",
+    "evidence_source": "Multi-Region Cloud Failover Simulation Drill Results",
+    "status": "FAILED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 5,
+    "soa_included": true,
+    "soa_justification": "2022 new control: verifies RTO and RPO targets across production cloud infrastructure.",
+    "mappings": {
+      "soc2": [
+        "A1.3"
+      ],
+      "nist_csf": [
+        "RC.RP-01"
+      ]
+    }
+  },
+  {
+    "id": "A.5.31",
+    "theme": "Organizational",
+    "title": "Legal, statutory, regulatory and contractual requirements",
+    "objective": "Legal, statutory, regulatory and contractual requirements relevant to information security and the organization's approach to meet these requirements shall be identified, documented and kept up to date.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Identify"
+    ],
+    "capability": "Legal_and_compliance",
+    "domain": "Governance_and_Ecosystem",
+    "owner": "General Counsel",
+    "frequency": "Annually",
+    "evidence_source": "Legal Compliance Matrix (GDPR, HIPAA, DPDP Act 2023)",
+    "status": "PASSED",
+    "inherent_likelihood": 2,
+    "inherent_impact": 5,
+    "soa_included": true,
+    "soa_justification": "Ensures systematic alignment with cross-border data protection and industry legislation.",
+    "mappings": {
+      "soc2": [
+        "CC2.1"
+      ],
+      "nist_csf": [
+        "GV.OC-03"
+      ]
+    }
+  },
+  {
+    "id": "A.5.32",
+    "theme": "Organizational",
+    "title": "Intellectual property rights",
+    "objective": "The organization shall implement appropriate procedures to protect intellectual property rights.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Legal_and_compliance",
+    "domain": "Governance_and_Ecosystem",
+    "owner": "General Counsel",
+    "frequency": "Annually",
+    "evidence_source": "Proprietary Software Copyrights & FOSSA License Audits",
+    "status": "PASSED",
+    "inherent_likelihood": 2,
+    "inherent_impact": 3,
+    "soa_included": true,
+    "soa_justification": "Protects trade secrets and prevents open-source copyleft licensing infractions.",
+    "mappings": {
+      "soc2": [
+        "CC2.1"
+      ],
+      "nist_csf": [
+        "PR.DS-01"
+      ]
+    }
+  },
+  {
+    "id": "A.5.33",
+    "theme": "Organizational",
+    "title": "Protection of records",
+    "objective": "Records shall be protected from loss, destruction, falsification, unauthorized access and unauthorized release in accordance with legal, statutory, regulatory, contractual and business requirements.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Legal_and_compliance",
+    "domain": "Protection",
+    "owner": "Head of IT",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "7-Year S3 Glacier Immutable Retention Vault",
+    "status": "PASSED",
+    "inherent_likelihood": 2,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Meets financial and corporate tax statutory document preservation mandates.",
+    "mappings": {
+      "soc2": [
+        "CC6.1"
+      ],
+      "nist_csf": [
+        "PR.DS-03"
+      ]
+    }
+  },
+  {
+    "id": "A.5.34",
+    "theme": "Organizational",
+    "title": "Privacy and protection of PII",
+    "objective": "The organization shall identify and meet the requirements regarding the preservation of privacy and protection of PII according to applicable laws and regulations and contractual requirements.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity"
+    ],
+    "concepts": [
+      "Identify",
+      "Protect"
+    ],
+    "capability": "Legal_and_compliance",
+    "domain": "Governance_and_Ecosystem",
+    "owner": "DPO",
+    "frequency": "Quarterly",
+    "evidence_source": "Data Protection Impact Assessments (DPIAs) & RoPA Records",
+    "status": "WARNING",
+    "inherent_likelihood": 4,
+    "inherent_impact": 5,
+    "soa_included": true,
+    "soa_justification": "Serves as direct structural hinge to ISO/IEC 27701:2025 and privacy regulations.",
+    "mappings": {
+      "soc2": [
+        "P1.1",
+        "P2.1"
+      ],
+      "nist_csf": [
+        "GV.PO-02"
+      ]
+    }
+  },
+  {
+    "id": "A.5.35",
+    "theme": "Organizational",
+    "title": "Independent review of information security",
+    "objective": "The organization's approach to managing information security and its implementation including people, processes and technologies shall be reviewed independently at planned intervals, or when significant changes occur.",
+    "control_type": "Detective",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Identify"
+    ],
+    "capability": "Information_security_assurance",
+    "domain": "Governance_and_Ecosystem",
+    "owner": "CISO",
+    "frequency": "Annually",
+    "evidence_source": "External ISO 27001 Surveillance Audit Report (Schellman)",
+    "status": "PASSED",
+    "inherent_likelihood": 2,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Provides third-party accredited validation of ISMS operational effectiveness.",
+    "mappings": {
+      "soc2": [
+        "CC4.1"
+      ],
+      "nist_csf": [
+        "GV.OC-04"
+      ]
+    }
+  },
+  {
+    "id": "A.5.36",
+    "theme": "Organizational",
+    "title": "Compliance with policies and standards for information security",
+    "objective": "Managers shall regularly review the compliance of information processing and procedures within their area of responsibility with the appropriate security policies, topic-specific policies and standards.",
+    "control_type": "Detective",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Detect"
+    ],
+    "capability": "Information_security_assurance",
+    "domain": "Governance_and_Ecosystem",
+    "owner": "Internal Audit Lead",
+    "frequency": "Quarterly",
+    "evidence_source": "Continuous Compliance Monitoring Dashboard",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 3,
+    "soa_included": true,
+    "soa_justification": "Validates that departmental practices adhere strictly to documented policies.",
+    "mappings": {
+      "soc2": [
+        "CC4.2"
+      ],
+      "nist_csf": [
+        "GV.OC-05"
+      ]
+    }
+  },
+  {
+    "id": "A.5.37",
+    "theme": "Organizational",
+    "title": "Documented operating procedures",
+    "objective": "Operating procedures for information processing facilities shall be documented and made available to personnel who need them.",
+    "control_type": "Preventive",
+    "properties": [
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "System_and_network_security",
+    "domain": "Protection",
+    "owner": "DevOps Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "Git-Backed Engineering Runbook Docs",
+    "status": "PASSED",
+    "inherent_likelihood": 2,
+    "inherent_impact": 3,
+    "soa_included": true,
+    "soa_justification": "Eliminates single points of failure by maintaining explicit operational standard operating procedures.",
+    "mappings": {
+      "soc2": [
+        "CC5.3"
+      ],
+      "nist_csf": [
+        "PR.PS-01"
+      ]
+    }
+  },
+  {
+    "id": "A.6.1",
+    "theme": "People",
+    "title": "Screening",
+    "objective": "Background verification checks on all candidates to become personnel shall be carried out in accordance with relevant laws, regulations and ethics and should be proportional to the business requirements, the classification of the information to be accessed and the perceived risks.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity"
+    ],
+    "concepts": [
+      "Identify"
+    ],
+    "capability": "Human_resource_security",
+    "domain": "Protection",
+    "owner": "HR Director",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "Checkr Background Check Integration",
+    "status": "WARNING",
+    "inherent_likelihood": 3,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Validates candidate criminal background, identity, and education prior to provisioning access.",
+    "mappings": {
+      "soc2": [
+        "CC1.4"
+      ],
+      "nist_csf": [
+        "PR.AT-01"
+      ]
+    }
+  },
+  {
+    "id": "A.6.2",
+    "theme": "People",
+    "title": "Terms and conditions of employment",
+    "objective": "The employment contractual agreements shall state the personnel's and the organization's responsibilities for information security.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Human_resource_security",
+    "domain": "Governance_and_Ecosystem",
+    "owner": "HR Director",
+    "frequency": "Annually",
+    "evidence_source": "Executed Employment Agreements & Handbooks",
+    "status": "PASSED",
+    "inherent_likelihood": 2,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Legally binds all staff to security directives from day one of tenure.",
+    "mappings": {
+      "soc2": [
+        "CC1.4"
+      ],
+      "nist_csf": [
+        "GV.RR-02"
+      ]
+    }
+  },
+  {
+    "id": "A.6.3",
+    "theme": "People",
+    "title": "Information security awareness, education and training",
+    "objective": "Personnel of the organization and, where relevant, contractors shall receive appropriate information security awareness, education and training and regular updates of the organization's information security policy, topic-specific policies and procedures, as relevant for their job function.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Human_resource_security",
+    "domain": "Protection",
+    "owner": "Security Awareness Lead",
+    "frequency": "Quarterly",
+    "evidence_source": "KnowBe4 Security Training LMS & Phishing Simulation Metrics",
+    "status": "PASSED",
+    "inherent_likelihood": 4,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Educates staff against social engineering, business email compromise, and credential phishing.",
+    "mappings": {
+      "soc2": [
+        "CC2.2"
+      ],
+      "nist_csf": [
+        "PR.AT-01"
+      ]
+    }
+  },
+  {
+    "id": "A.6.4",
+    "theme": "People",
+    "title": "Disciplinary process",
+    "objective": "A disciplinary process shall be formalized and communicated to take actions against personnel and other relevant interested parties who have committed an information security policy violation.",
+    "control_type": "Corrective",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Respond"
+    ],
+    "capability": "Human_resource_security",
+    "domain": "Governance_and_Ecosystem",
+    "owner": "HR Director",
+    "frequency": "Annually",
+    "evidence_source": "Corporate Disciplinary Framework Document",
+    "status": "PASSED",
+    "inherent_likelihood": 2,
+    "inherent_impact": 3,
+    "soa_included": true,
+    "soa_justification": "Defines escalating disciplinary consequences for intentional security violations.",
+    "mappings": {
+      "soc2": [
+        "CC1.5"
+      ],
+      "nist_csf": [
+        "GV.RR-02"
+      ]
+    }
+  },
+  {
+    "id": "A.6.5",
+    "theme": "People",
+    "title": "Responsibilities after termination or change of employment",
+    "objective": "Information security responsibilities and duties that remain valid after termination or change of employment shall be defined, enforced and communicated to relevant personnel and other interested parties.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Human_resource_security",
+    "domain": "Governance_and_Ecosystem",
+    "owner": "HR Director",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "Offboarding Confidentiality Reminder Attestation",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Ensures post-employment confidentiality obligations endure indefinitely.",
+    "mappings": {
+      "soc2": [
+        "CC6.3"
+      ],
+      "nist_csf": [
+        "PR.AC-02"
+      ]
+    }
+  },
+  {
+    "id": "A.6.6",
+    "theme": "People",
+    "title": "Confidentiality or non-disclosure agreements",
+    "objective": "Confidentiality or non-disclosure agreements reflecting the organization's needs for the protection of information shall be identified, documented, regularly reviewed and signed by personnel and other relevant interested parties.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Information_protection",
+    "domain": "Governance_and_Ecosystem",
+    "owner": "Legal Counsel",
+    "frequency": "Annually",
+    "evidence_source": "DocuSign NDA Registry",
+    "status": "PASSED",
+    "inherent_likelihood": 2,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Legally restricts disclosure of proprietary source code, IP, and client customer data.",
+    "mappings": {
+      "soc2": [
+        "CC1.4"
+      ],
+      "nist_csf": [
+        "GV.PO-01"
+      ]
+    }
+  },
+  {
+    "id": "A.6.7",
+    "theme": "People",
+    "title": "Remote working",
+    "objective": "Security measures shall be implemented when personnel are working remotely to protect information accessed, processed or stored outside the organization's premises.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Human_resource_security",
+    "domain": "Protection",
+    "owner": "IT Security Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "Tailscale Zero-Trust Remote Access & FileVault MDM",
+    "status": "PASSED",
+    "inherent_likelihood": 4,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "2022 revised control: mandates disk encryption, VPN/zero-trust, and split-tunnel security for remote staff.",
+    "mappings": {
+      "soc2": [
+        "CC6.6"
+      ],
+      "nist_csf": [
+        "PR.AC-03"
+      ]
+    }
+  },
+  {
+    "id": "A.6.8",
+    "theme": "People",
+    "title": "Information security event reporting",
+    "objective": "The organization shall provide a mechanism for personnel to report observed or suspected information security events through appropriate channels in a timely manner.",
+    "control_type": "Detective",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Detect",
+      "Respond"
+    ],
+    "capability": "Information_security_event_management",
+    "domain": "Defense",
+    "owner": "SOC Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "Slack #security-incident Bot & PhishAlarm Button",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Empowers employees to immediately report suspicious emails, anomalies, or lost devices.",
+    "mappings": {
+      "soc2": [
+        "CC7.3"
+      ],
+      "nist_csf": [
+        "DE.DP-01"
+      ]
+    }
+  },
+  {
+    "id": "A.7.1",
+    "theme": "Physical",
+    "title": "Physical security perimeters",
+    "objective": "Security perimeters shall be defined and used to protect areas that contain information and other associated assets.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Physical_security",
+    "domain": "Protection",
+    "owner": "Facilities Director",
+    "frequency": "Quarterly",
+    "evidence_source": "Physical Facility Lease Agreement & Perimeter Badge Controls",
+    "status": "PASSED",
+    "inherent_likelihood": 2,
+    "inherent_impact": 3,
+    "soa_included": true,
+    "soa_justification": "Ensures commercial building entry requires biometric/badge verification before office access.",
+    "mappings": {
+      "soc2": [
+        "CC6.4"
+      ],
+      "nist_csf": [
+        "PR.PE-01"
+      ]
+    }
+  },
+  {
+    "id": "A.7.2",
+    "theme": "Physical",
+    "title": "Physical entry",
+    "objective": "Secure areas shall be protected by appropriate entry controls and access points.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Physical_security",
+    "domain": "Protection",
+    "owner": "Facilities Director",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "Brivo Cloud Access Card Reader Logs",
+    "status": "PASSED",
+    "inherent_likelihood": 2,
+    "inherent_impact": 3,
+    "soa_included": true,
+    "soa_justification": "Controls access to corporate offices, server rooms, and executive suites.",
+    "mappings": {
+      "soc2": [
+        "CC6.4"
+      ],
+      "nist_csf": [
+        "PR.PE-02"
+      ]
+    }
+  },
+  {
+    "id": "A.7.3",
+    "theme": "Physical",
+    "title": "Securing offices, rooms and facilities",
+    "objective": "Physical security for offices, rooms and facilities shall be designed and implemented.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Physical_security",
+    "domain": "Protection",
+    "owner": "Facilities Director",
+    "frequency": "Quarterly",
+    "evidence_source": "Physical Security Quarterly Walkthrough Audit",
+    "status": "PASSED",
+    "inherent_likelihood": 2,
+    "inherent_impact": 3,
+    "soa_included": true,
+    "soa_justification": "Restricts internal areas containing confidential paper records or comms wiring.",
+    "mappings": {
+      "soc2": [
+        "CC6.4"
+      ],
+      "nist_csf": [
+        "PR.PE-01"
+      ]
+    }
+  },
+  {
+    "id": "A.7.4",
+    "theme": "Physical",
+    "title": "Physical security monitoring",
+    "objective": "Premises shall be continuously monitored for unauthorized physical access.",
+    "control_type": "Detective",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Detect"
+    ],
+    "capability": "Physical_security",
+    "domain": "Defense",
+    "owner": "Facilities Director",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "Verkada CCTV Cloud Recording with 90-Day Retention",
+    "status": "PASSED",
+    "inherent_likelihood": 2,
+    "inherent_impact": 3,
+    "soa_included": true,
+    "soa_justification": "2022 new control: continuous video surveillance and intrusion alarm telemetry at facility entrances.",
+    "mappings": {
+      "soc2": [
+        "CC6.4"
+      ],
+      "nist_csf": [
+        "PR.PE-03"
+      ]
+    }
+  },
+  {
+    "id": "A.7.5",
+    "theme": "Physical",
+    "title": "Protecting against physical and environmental threats",
+    "objective": "Protection against physical and environmental threats, such as natural disasters and other intentional or unintentional physical threats to infrastructure shall be designed and implemented.",
+    "control_type": "Preventive",
+    "properties": [
+      "Availability"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Physical_security",
+    "domain": "Resilience",
+    "owner": "Facilities Director",
+    "frequency": "Annually",
+    "evidence_source": "Fire Suppression & Climate Control Inspection Certificates",
+    "status": "PASSED",
+    "inherent_likelihood": 2,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Protects on-site network racks against fire, water leakage, and temperature spikes.",
+    "mappings": {
+      "soc2": [
+        "A1.2"
+      ],
+      "nist_csf": [
+        "PR.PE-04"
+      ]
+    }
+  },
+  {
+    "id": "A.7.6",
+    "theme": "Physical",
+    "title": "Working in secure areas",
+    "objective": "Security measures for working in secure areas shall be designed and implemented.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Physical_security",
+    "domain": "Protection",
+    "owner": "Facilities Director",
+    "frequency": "Annually",
+    "evidence_source": "Clean Room and Data Closet Operating Guide",
+    "status": "PASSED",
+    "inherent_likelihood": 1,
+    "inherent_impact": 3,
+    "soa_included": true,
+    "soa_justification": "Restricts unaccompanied visitor and vendor access to sensitive network enclosures.",
+    "mappings": {
+      "soc2": [
+        "CC6.4"
+      ],
+      "nist_csf": [
+        "PR.PE-02"
+      ]
+    }
+  },
+  {
+    "id": "A.7.7",
+    "theme": "Physical",
+    "title": "Clear desk and clear screen",
+    "objective": "Clear desk rules for papers and removable storage media and clear screen rules for information processing facilities shall be defined and appropriately enforced.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Information_protection",
+    "domain": "Protection",
+    "owner": "IT Security Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "Kandji MDM 5-Minute Inactive Screen Lock Policy",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 2,
+    "soa_included": true,
+    "soa_justification": "Enforces automated workstation locking and mandates locking physical filing cabinets.",
+    "mappings": {
+      "soc2": [
+        "CC6.4"
+      ],
+      "nist_csf": [
+        "PR.AC-03"
+      ]
+    }
+  },
+  {
+    "id": "A.7.8",
+    "theme": "Physical",
+    "title": "Equipment siting and protection",
+    "objective": "Equipment shall be sited and protected to reduce risks from environmental threats and hazards, and opportunities for unauthorized access.",
+    "control_type": "Preventive",
+    "properties": [
+      "Availability",
+      "Confidentiality"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Physical_security",
+    "domain": "Protection",
+    "owner": "Head of IT",
+    "frequency": "Quarterly",
+    "evidence_source": "Rack Enclosure Environmental Sensors Telemetry",
+    "status": "PASSED",
+    "inherent_likelihood": 2,
+    "inherent_impact": 3,
+    "soa_included": true,
+    "soa_justification": "Ensures physical switches and power supplies are housed in locked, ventilated cabinets.",
+    "mappings": {
+      "soc2": [
+        "CC6.4"
+      ],
+      "nist_csf": [
+        "PR.PE-04"
+      ]
+    }
+  },
+  {
+    "id": "A.7.9",
+    "theme": "Physical",
+    "title": "Security of assets off-premises",
+    "objective": "Off-site assets shall be protected.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Asset_management",
+    "domain": "Protection",
+    "owner": "Head of IT",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "BitLocker / FileVault Hardware Encryption Telemetry",
+    "status": "PASSED",
+    "inherent_likelihood": 4,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Guarantees corporate laptops operating outside the office have full disk encryption enforced.",
+    "mappings": {
+      "soc2": [
+        "CC6.1"
+      ],
+      "nist_csf": [
+        "PR.DS-01"
+      ]
+    }
+  },
+  {
+    "id": "A.7.10",
+    "theme": "Physical",
+    "title": "Storage media",
+    "objective": "Storage media shall be managed through their lifecycle of acquisition, use, transportation and disposal in accordance with the organization's classification scheme and handling requirements.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Asset_management",
+    "domain": "Protection",
+    "owner": "Head of IT",
+    "frequency": "Quarterly",
+    "evidence_source": "USB Mass Storage Disablement MDM Profile",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Prevents unauthorized data exfiltration via thumb drives and manages decommissioning.",
+    "mappings": {
+      "soc2": [
+        "CC6.5"
+      ],
+      "nist_csf": [
+        "PR.DS-03"
+      ]
+    }
+  },
+  {
+    "id": "A.7.11",
+    "theme": "Physical",
+    "title": "Supporting utilities",
+    "objective": "Information processing facilities shall be protected from power failures and other disruptions caused by failures in supporting utilities.",
+    "control_type": "Preventive",
+    "properties": [
+      "Availability"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Physical_security",
+    "domain": "Resilience",
+    "owner": "Facilities Director",
+    "frequency": "Annually",
+    "evidence_source": "UPS Battery Backup Maintenance Log",
+    "status": "PASSED",
+    "inherent_likelihood": 2,
+    "inherent_impact": 3,
+    "soa_included": true,
+    "soa_justification": "Ensures orderly shutdown of local edge network appliances during municipal power loss.",
+    "mappings": {
+      "soc2": [
+        "A1.2"
+      ],
+      "nist_csf": [
+        "PR.PE-05"
+      ]
+    }
+  },
+  {
+    "id": "A.7.12",
+    "theme": "Physical",
+    "title": "Cabling security",
+    "objective": "Cables carrying power, data or supporting information services shall be protected from interception, interference or damage.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Availability"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Physical_security",
+    "domain": "Protection",
+    "owner": "Head of IT",
+    "frequency": "Annually",
+    "evidence_source": "Conduit Infrastructure Inspection Report",
+    "status": "PASSED",
+    "inherent_likelihood": 1,
+    "inherent_impact": 3,
+    "soa_included": true,
+    "soa_justification": "Prevents unauthorized physical wiretapping or accidental cable severance.",
+    "mappings": {
+      "soc2": [
+        "CC6.4"
+      ],
+      "nist_csf": [
+        "PR.PE-01"
+      ]
+    }
+  },
+  {
+    "id": "A.7.13",
+    "theme": "Physical",
+    "title": "Equipment maintenance",
+    "objective": "Equipment shall be maintained correctly to ensure its continued availability and integrity.",
+    "control_type": "Preventive",
+    "properties": [
+      "Availability",
+      "Integrity"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Asset_management",
+    "domain": "Protection",
+    "owner": "Head of IT",
+    "frequency": "Annually",
+    "evidence_source": "Vendor Hardware Maintenance Contracts",
+    "status": "PASSED",
+    "inherent_likelihood": 2,
+    "inherent_impact": 2,
+    "soa_included": true,
+    "soa_justification": "Ensures manufacturer warranty coverage and firmware patch application.",
+    "mappings": {
+      "soc2": [
+        "A1.1"
+      ],
+      "nist_csf": [
+        "PR.MA-01"
+      ]
+    }
+  },
+  {
+    "id": "A.7.14",
+    "theme": "Physical",
+    "title": "Secure disposal or re-use of equipment",
+    "objective": "Items of equipment containing storage media shall be verified to ensure that any sensitive data and licensed software has been removed or securely overwritten prior to disposal or re-use.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Asset_management",
+    "domain": "Protection",
+    "owner": "Head of IT",
+    "frequency": "Quarterly",
+    "evidence_source": "NIST 800-88 De-gaussing & Destruction Certificates (e-Waste Partner)",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Certifies total cryptographic erasure of discarded SSDs and hard drives.",
+    "mappings": {
+      "soc2": [
+        "CC6.5"
+      ],
+      "nist_csf": [
+        "PR.DS-03"
+      ]
+    }
+  },
+  {
+    "id": "A.8.1",
+    "theme": "Technological",
+    "title": "User endpoint devices",
+    "objective": "Information stored on, processed by or accessible via user endpoint devices shall be protected.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "System_and_network_security",
+    "domain": "Protection",
+    "owner": "IT Security Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "Kandji / Intune MDM Health & CrowdStrike EDR Agent",
+    "status": "PASSED",
+    "inherent_likelihood": 4,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Enforces EDR, automatic OS patching, and firewall on all employee laptops.",
+    "mappings": {
+      "soc2": [
+        "CC6.6"
+      ],
+      "nist_csf": [
+        "PR.AC-03",
+        "PR.PT-01"
+      ]
+    }
+  },
+  {
+    "id": "A.8.2",
+    "theme": "Technological",
+    "title": "Privileged access rights",
+    "objective": "The allocation and use of privileged access rights shall be restricted and managed.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Identity_and_access_management",
+    "domain": "Protection",
+    "owner": "Cloud Security Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "AWS IAM Identity Center / PIM Just-In-Time Elevation Logs",
+    "status": "PASSED",
+    "inherent_likelihood": 4,
+    "inherent_impact": 5,
+    "soa_included": true,
+    "soa_justification": "Disallows permanent admin rights; requires temporary MFA session elevation.",
+    "mappings": {
+      "soc2": [
+        "CC6.3"
+      ],
+      "nist_csf": [
+        "PR.AC-04"
+      ]
+    }
+  },
+  {
+    "id": "A.8.3",
+    "theme": "Technological",
+    "title": "Information access restriction",
+    "objective": "Access to information and other associated assets shall be restricted in accordance with the established topic-specific policy on access control.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Identity_and_access_management",
+    "domain": "Protection",
+    "owner": "Lead Database Administrator",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "PostgreSQL Row-Level Security & AWS KMS Envelope Policies",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Restricts database queries to authenticated tenant scopes and designated services.",
+    "mappings": {
+      "soc2": [
+        "CC6.1"
+      ],
+      "nist_csf": [
+        "PR.AC-04"
+      ]
+    }
+  },
+  {
+    "id": "A.8.4",
+    "theme": "Technological",
+    "title": "Access to source code",
+    "objective": "Read and write access to source code, development tools and software libraries shall be appropriately managed.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Application_security",
+    "domain": "Protection",
+    "owner": "DevSecOps Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "GitHub Enterprise Organization RBAC & 2FA Enforcement",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 5,
+    "soa_included": true,
+    "soa_justification": "Protects core intellectual property and prohibits direct commits to main branch.",
+    "mappings": {
+      "soc2": [
+        "CC6.3",
+        "CC8.1"
+      ],
+      "nist_csf": [
+        "PR.AC-04"
+      ]
+    }
+  },
+  {
+    "id": "A.8.5",
+    "theme": "Technological",
+    "title": "Secure authentication",
+    "objective": "Secure authentication technologies and procedures shall be implemented based on information access restrictions and the topic-specific policy on access control.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Identity_and_access_management",
+    "domain": "Protection",
+    "owner": "IT Security Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "Okta FastPass Phishing-Resistant FIDO2 Authentication",
+    "status": "PASSED",
+    "inherent_likelihood": 4,
+    "inherent_impact": 5,
+    "soa_included": true,
+    "soa_justification": "Eliminates plain password vulnerabilities via hardware-backed WebAuthn authenticators.",
+    "mappings": {
+      "soc2": [
+        "CC6.1"
+      ],
+      "nist_csf": [
+        "PR.AC-07"
+      ]
+    }
+  },
+  {
+    "id": "A.8.6",
+    "theme": "Technological",
+    "title": "Capacity management",
+    "objective": "The use of resources shall be monitored and adjusted in line with current and expected capacity requirements.",
+    "control_type": "Preventive",
+    "properties": [
+      "Availability"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "System_and_network_security",
+    "domain": "Resilience",
+    "owner": "DevOps Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "AWS CloudWatch Auto-Scaling Triggers & Memory/Disk Alarms",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 3,
+    "soa_included": true,
+    "soa_justification": "Prevents denial of service caused by unexpected traffic surges or resource exhaustion.",
+    "mappings": {
+      "soc2": [
+        "A1.1"
+      ],
+      "nist_csf": [
+        "PR.PS-05"
+      ]
+    }
+  },
+  {
+    "id": "A.8.7",
+    "theme": "Technological",
+    "title": "Protection against malware",
+    "objective": "Protection against malware shall be implemented and supported by appropriate user awareness.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Protect",
+      "Detect"
+    ],
+    "capability": "Threat_and_vulnerability_management",
+    "domain": "Defense",
+    "owner": "SOC Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "CrowdStrike Falcon Sensor Live Quarantine Status",
+    "status": "PASSED",
+    "inherent_likelihood": 4,
+    "inherent_impact": 5,
+    "soa_included": true,
+    "soa_justification": "Blocks ransomware, trojans, and malicious payloads at kernel runtime.",
+    "mappings": {
+      "soc2": [
+        "CC6.8"
+      ],
+      "nist_csf": [
+        "DE.CM-04",
+        "PR.PT-01"
+      ]
+    }
+  },
+  {
+    "id": "A.8.8",
+    "theme": "Technological",
+    "title": "Management of technical vulnerabilities",
+    "objective": "Information about technical vulnerabilities of information systems in use shall be obtained, the organization's exposure to such vulnerabilities evaluated and appropriate measures taken.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Identify",
+      "Protect"
+    ],
+    "capability": "Threat_and_vulnerability_management",
+    "domain": "Defense",
+    "owner": "Vulnerability Management Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "Snyk Container & AWS Inspector Automated Scans",
+    "status": "WARNING",
+    "inherent_likelihood": 4,
+    "inherent_impact": 5,
+    "soa_included": true,
+    "soa_justification": "Identifies unpatched CVEs across base images and infrastructure packages with SLA tracking.",
+    "mappings": {
+      "soc2": [
+        "CC7.1"
+      ],
+      "nist_csf": [
+        "ID.RA-01",
+        "RS.MI-03"
+      ]
+    }
+  },
+  {
+    "id": "A.8.9",
+    "theme": "Technological",
+    "title": "Configuration management",
+    "objective": "Configurations, including security configurations, of hardware, software, services and networks shall be established, documented, implemented, monitored and reviewed.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Secure_configuration",
+    "domain": "Protection",
+    "owner": "DevSecOps Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "Terraform Cloud Baseline Drift Detection & AWS Config",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "2022 new control: mandates Infrastructure-as-Code (IaC) configuration baselines and drift enforcement.",
+    "mappings": {
+      "soc2": [
+        "CC8.1"
+      ],
+      "nist_csf": [
+        "PR.IP-01",
+        "PR.IP-03"
+      ]
+    }
+  },
+  {
+    "id": "A.8.10",
+    "theme": "Technological",
+    "title": "Information deletion",
+    "objective": "Data stored in information systems, devices or in any other storage media shall be deleted when no longer required.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Information_protection",
+    "domain": "Protection",
+    "owner": "Data Protection Officer",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "AWS S3 Lifecycle Expiration Rules & Cron Deletion Workers",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "2022 new control: enforces storage limitation and automated deletion of expired PII.",
+    "mappings": {
+      "soc2": [
+        "CC6.5"
+      ],
+      "nist_csf": [
+        "PR.DS-03"
+      ]
+    }
+  },
+  {
+    "id": "A.8.11",
+    "theme": "Technological",
+    "title": "Data masking",
+    "objective": "Data masking shall be used in accordance with the organization's topic-specific policy on access control and other related topic-specific policies, and business requirements, taking applicable legislation into consideration.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Information_protection",
+    "domain": "Protection",
+    "owner": "Lead Software Architect",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "PostgreSQL Dynamic Masking & Logging Filter Regex",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "2022 new control: ensures credit cards, passwords, and PII are redacted from application logs.",
+    "mappings": {
+      "soc2": [
+        "CC6.1"
+      ],
+      "nist_csf": [
+        "PR.DS-01"
+      ]
+    }
+  },
+  {
+    "id": "A.8.12",
+    "theme": "Technological",
+    "title": "Data leakage prevention",
+    "objective": "Data leakage prevention measures shall be applied to systems, networks and any other devices that process, store or transmit sensitive information.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality"
+    ],
+    "concepts": [
+      "Protect",
+      "Detect"
+    ],
+    "capability": "Information_protection",
+    "domain": "Defense",
+    "owner": "IT Security Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "Google Workspace DLP & Nightfall API Cloud DLP",
+    "status": "WARNING",
+    "inherent_likelihood": 4,
+    "inherent_impact": 5,
+    "soa_included": true,
+    "soa_justification": "2022 new control: monitors outbound transfers, webhooks, and attachments for data leaks.",
+    "mappings": {
+      "soc2": [
+        "CC6.7"
+      ],
+      "nist_csf": [
+        "PR.DS-05",
+        "DE.CM-01"
+      ]
+    }
+  },
+  {
+    "id": "A.8.13",
+    "theme": "Technological",
+    "title": "Information backup",
+    "objective": "Backup copies of information, software and systems shall be maintained and regularly tested in accordance with the agreed topic-specific policy on backup.",
+    "control_type": "Corrective",
+    "properties": [
+      "Availability",
+      "Integrity"
+    ],
+    "concepts": [
+      "Recover"
+    ],
+    "capability": "Continuity",
+    "domain": "Resilience",
+    "owner": "DevOps Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "AWS Backup Automated Daily Snapshots & Drill Verification",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 5,
+    "soa_included": true,
+    "soa_justification": "Ensures encrypted, air-gapped snapshots exist to recover from ransomware or database corruption.",
+    "mappings": {
+      "soc2": [
+        "A1.2"
+      ],
+      "nist_csf": [
+        "PR.IP-04"
+      ]
+    }
+  },
+  {
+    "id": "A.8.14",
+    "theme": "Technological",
+    "title": "Redundancy of information processing facilities",
+    "objective": "Information processing facilities shall be implemented with redundancy sufficient to meet availability requirements.",
+    "control_type": "Preventive",
+    "properties": [
+      "Availability"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Continuity",
+    "domain": "Resilience",
+    "owner": "Cloud Architecture Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "Multi-AZ Aurora Cluster & Multi-Zone Kubernetes Nodes",
+    "status": "PASSED",
+    "inherent_likelihood": 2,
+    "inherent_impact": 5,
+    "soa_included": true,
+    "soa_justification": "Eliminates single points of failure across power, networking, and server instances.",
+    "mappings": {
+      "soc2": [
+        "A1.3"
+      ],
+      "nist_csf": [
+        "PR.PT-05"
+      ]
+    }
+  },
+  {
+    "id": "A.8.15",
+    "theme": "Technological",
+    "title": "Logging",
+    "objective": "Logs that record activities, exceptions, faults and other relevant events shall be produced, stored, protected and analysed.",
+    "control_type": "Detective",
+    "properties": [
+      "Integrity",
+      "Confidentiality"
+    ],
+    "concepts": [
+      "Detect"
+    ],
+    "capability": "Information_security_event_management",
+    "domain": "Defense",
+    "owner": "SOC Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "AWS CloudTrail & Datadog Centralized Log Pipeline",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Generates immutable audit trails of API requests, logins, and system changes.",
+    "mappings": {
+      "soc2": [
+        "CC7.2"
+      ],
+      "nist_csf": [
+        "PR.PT-01",
+        "DE.CM-01"
+      ]
+    }
+  },
+  {
+    "id": "A.8.16",
+    "theme": "Technological",
+    "title": "Monitoring activities",
+    "objective": "Networks, systems and applications shall be monitored for anomalous behavior and appropriate actions taken to evaluate potential information security incidents.",
+    "control_type": "Detective",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Detect"
+    ],
+    "capability": "Information_security_event_management",
+    "domain": "Defense",
+    "owner": "SOC Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "Datadog SIEM Anomaly Detection & PagerDuty Alerts",
+    "status": "PASSED",
+    "inherent_likelihood": 4,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "2022 new control: continuous telemetry monitoring for unauthorized egress or suspicious access spikes.",
+    "mappings": {
+      "soc2": [
+        "CC7.2"
+      ],
+      "nist_csf": [
+        "DE.AE-01",
+        "DE.CM-01"
+      ]
+    }
+  },
+  {
+    "id": "A.8.17",
+    "theme": "Technological",
+    "title": "Clock synchronization",
+    "objective": "The clocks of information processing systems used by the organization shall be synchronized to approved time sources.",
+    "control_type": "Preventive",
+    "properties": [
+      "Integrity"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "System_and_network_security",
+    "domain": "Defense",
+    "owner": "DevOps Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "Amazon Time Sync Service (NTP) Stratum 1 Telemetry",
+    "status": "PASSED",
+    "inherent_likelihood": 2,
+    "inherent_impact": 3,
+    "soa_included": true,
+    "soa_justification": "Crucial for reliable timestamp correlation during security incident investigations.",
+    "mappings": {
+      "soc2": [
+        "CC7.2"
+      ],
+      "nist_csf": [
+        "PR.PT-01"
+      ]
+    }
+  },
+  {
+    "id": "A.8.18",
+    "theme": "Technological",
+    "title": "Use of privileged utility programs",
+    "objective": "The use of utility programs that might be capable of overriding system and application controls shall be restricted and tightly controlled.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "System_and_network_security",
+    "domain": "Protection",
+    "owner": "IT Security Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "Linux sudoers Audit & Teleport Session Recording",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Prevents unauthorized debugger or direct raw disk editor execution on production hosts.",
+    "mappings": {
+      "soc2": [
+        "CC6.3"
+      ],
+      "nist_csf": [
+        "PR.AC-04"
+      ]
+    }
+  },
+  {
+    "id": "A.8.19",
+    "theme": "Technological",
+    "title": "Installation of software on operational systems",
+    "objective": "Procedures and measures shall be implemented to securely manage software installation on operational systems.",
+    "control_type": "Preventive",
+    "properties": [
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Secure_configuration",
+    "domain": "Protection",
+    "owner": "DevOps Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "Immutable Read-Only Container RootFS & AppLocker Policies",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Disallows ad-hoc binary installation on production compute nodes.",
+    "mappings": {
+      "soc2": [
+        "CC8.1"
+      ],
+      "nist_csf": [
+        "PR.IP-01"
+      ]
+    }
+  },
+  {
+    "id": "A.8.20",
+    "theme": "Technological",
+    "title": "Networks security",
+    "objective": "Networks and network devices shall be secured, managed and controlled to protect information in systems and applications.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "System_and_network_security",
+    "domain": "Defense",
+    "owner": "Cloud Network Engineer",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "AWS Security Groups, VPC Route Tables & NACLs",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 5,
+    "soa_included": true,
+    "soa_justification": "Blocks unsolicited inbound traffic and enforces egress filtering.",
+    "mappings": {
+      "soc2": [
+        "CC6.6"
+      ],
+      "nist_csf": [
+        "PR.AC-05",
+        "PR.PT-04"
+      ]
+    }
+  },
+  {
+    "id": "A.8.21",
+    "theme": "Technological",
+    "title": "Security of network services",
+    "objective": "Security mechanisms, service levels and service requirements of network services shall be identified, implemented and monitored.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "System_and_network_security",
+    "domain": "Defense",
+    "owner": "Cloud Network Engineer",
+    "frequency": "Quarterly",
+    "evidence_source": "Cloudflare Enterprise SLA & DDoS Protection Status",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Governs managed DNS, CDN, and WAF perimeter security services.",
+    "mappings": {
+      "soc2": [
+        "CC6.6"
+      ],
+      "nist_csf": [
+        "PR.PT-04"
+      ]
+    }
+  },
+  {
+    "id": "A.8.22",
+    "theme": "Technological",
+    "title": "Segregation of networks",
+    "objective": "Groups of information services, users and information systems shall be segregated on the organization's networks.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "System_and_network_security",
+    "domain": "Defense",
+    "owner": "Cloud Network Engineer",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "AWS VPC Private Subnet Isolation & Calico Network Policies",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Isolates production databases from public-facing web servers and corporate VPNs.",
+    "mappings": {
+      "soc2": [
+        "CC6.6"
+      ],
+      "nist_csf": [
+        "PR.AC-05"
+      ]
+    }
+  },
+  {
+    "id": "A.8.23",
+    "theme": "Technological",
+    "title": "Web filtering",
+    "objective": "Access to external websites shall be managed to reduce exposure to malicious content.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "System_and_network_security",
+    "domain": "Defense",
+    "owner": "IT Security Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "Cloudflare Gateway DNS / NextDNS Content Filter Logs",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 3,
+    "soa_included": true,
+    "soa_justification": "2022 new control: prevents employees from navigating to known malware, C2, and phishing domains.",
+    "mappings": {
+      "soc2": [
+        "CC6.6"
+      ],
+      "nist_csf": [
+        "PR.PT-04"
+      ]
+    }
+  },
+  {
+    "id": "A.8.24",
+    "theme": "Technological",
+    "title": "Use of cryptography",
+    "objective": "Rules for the effective use of cryptography, including cryptographic key management, shall be defined and implemented.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Information_protection",
+    "domain": "Protection",
+    "owner": "DevSecOps Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "AWS KMS Automatic Annual Key Rotation Telemetry",
+    "status": "PASSED",
+    "inherent_likelihood": 4,
+    "inherent_impact": 5,
+    "soa_included": true,
+    "soa_justification": "Mandates AES-256 for storage volumes and automated KMS envelope encryption.",
+    "mappings": {
+      "soc2": [
+        "CC6.1",
+        "CC6.7"
+      ],
+      "nist_csf": [
+        "PR.DS-01",
+        "PR.DS-02"
+      ]
+    }
+  },
+  {
+    "id": "A.8.25",
+    "theme": "Technological",
+    "title": "Secure development life cycle",
+    "objective": "Rules for the secure development of software and systems shall be established and applied.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Application_security",
+    "domain": "Protection",
+    "owner": "Head of Engineering",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "Secure SDLC Policy & GitHub Branch Protection Configuration",
+    "status": "PASSED",
+    "inherent_likelihood": 4,
+    "inherent_impact": 5,
+    "soa_included": true,
+    "soa_justification": "Embeds automated security guardrails across sprint planning, code review, and CI/CD.",
+    "mappings": {
+      "soc2": [
+        "CC8.1"
+      ],
+      "nist_csf": [
+        "PR.IP-01"
+      ]
+    }
+  },
+  {
+    "id": "A.8.26",
+    "theme": "Technological",
+    "title": "Application security requirements",
+    "objective": "Information security requirements shall be identified, specified and approved when developing or acquiring applications.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Identify"
+    ],
+    "capability": "Application_security",
+    "domain": "Governance_and_Ecosystem",
+    "owner": "Lead Application Architect",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "Architectural RFCs & Threat Modeling Templates",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Validates authentication, tenant segregation, and data integrity requirements before development.",
+    "mappings": {
+      "soc2": [
+        "CC8.1"
+      ],
+      "nist_csf": [
+        "PR.IP-01"
+      ]
+    }
+  },
+  {
+    "id": "A.8.27",
+    "theme": "Technological",
+    "title": "Secure system architecture and engineering principles",
+    "objective": "Principles for engineering secure systems shall be established, documented, maintained and applied to any information system development activities.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Application_security",
+    "domain": "Protection",
+    "owner": "Lead Application Architect",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "Zero-Trust System Architecture Whitepaper",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "2022 revised control: enforces defense-in-depth, fail-safe defaults, and least privilege in designs.",
+    "mappings": {
+      "soc2": [
+        "CC8.1"
+      ],
+      "nist_csf": [
+        "PR.IP-01"
+      ]
+    }
+  },
+  {
+    "id": "A.8.28",
+    "theme": "Technological",
+    "title": "Secure coding",
+    "objective": "Secure coding principles shall be applied to software development.",
+    "control_type": "Preventive",
+    "properties": [
+      "Integrity",
+      "Confidentiality"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Application_security",
+    "domain": "Protection",
+    "owner": "DevSecOps Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "GitHub Actions CodeQL & Semgrep Static Analysis Pipeline",
+    "status": "PASSED",
+    "inherent_likelihood": 4,
+    "inherent_impact": 5,
+    "soa_included": true,
+    "soa_justification": "2022 new control: automated SAST scanning to block OWASP Top 10 flaws before code merge.",
+    "mappings": {
+      "soc2": [
+        "CC8.1"
+      ],
+      "nist_csf": [
+        "PR.IP-01"
+      ]
+    }
+  },
+  {
+    "id": "A.8.29",
+    "theme": "Technological",
+    "title": "Security testing in development and acceptance",
+    "objective": "Security testing processes shall be defined and implemented in the development life cycle.",
+    "control_type": "Detective",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Detect"
+    ],
+    "capability": "Application_security",
+    "domain": "Protection",
+    "owner": "QA & Security Automation Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "Automated DAST (OWASP ZAP) & Annual CREST Pen-Test Report",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Validates dynamic application resilience against SQLi, XSS, and broken object level auth.",
+    "mappings": {
+      "soc2": [
+        "CC8.1"
+      ],
+      "nist_csf": [
+        "PR.IP-01"
+      ]
+    }
+  },
+  {
+    "id": "A.8.30",
+    "theme": "Technological",
+    "title": "Outsourced development",
+    "objective": "The organization shall direct, monitor and review the activities related to outsourced system development.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Application_security",
+    "domain": "Governance_and_Ecosystem",
+    "owner": "DevSecOps Lead",
+    "frequency": "Quarterly",
+    "evidence_source": "Contractor Code Review Checklist & Dedicated Branch Sandbox",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Subjects external engineering contractors to mandatory internal automated security gates.",
+    "mappings": {
+      "soc2": [
+        "CC8.1"
+      ],
+      "nist_csf": [
+        "GV.SC-05"
+      ]
+    }
+  },
+  {
+    "id": "A.8.31",
+    "theme": "Technological",
+    "title": "Separation of development, test and production environments",
+    "objective": "Development, testing and production environments shall be separated and secured.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Application_security",
+    "domain": "Protection",
+    "owner": "DevOps Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "AWS Organizations Isolated Accounts (Dev vs Staging vs Prod)",
+    "status": "PASSED",
+    "inherent_likelihood": 4,
+    "inherent_impact": 5,
+    "soa_included": true,
+    "soa_justification": "Prevents untested code from breaking production and isolates sensitive customer data.",
+    "mappings": {
+      "soc2": [
+        "CC8.1"
+      ],
+      "nist_csf": [
+        "PR.IP-01"
+      ]
+    }
+  },
+  {
+    "id": "A.8.32",
+    "theme": "Technological",
+    "title": "Change management",
+    "objective": "Changes to information processing facilities and information systems shall be subject to change management procedures.",
+    "control_type": "Preventive",
+    "properties": [
+      "Integrity",
+      "Availability"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Secure_configuration",
+    "domain": "Protection",
+    "owner": "DevOps Lead",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "GitHub Pull Request Mandatory Peer Review & CI Approval Gates",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Ensures all changes are tested, peer-approved, and documented before deployment.",
+    "mappings": {
+      "soc2": [
+        "CC8.1"
+      ],
+      "nist_csf": [
+        "PR.IP-03"
+      ]
+    }
+  },
+  {
+    "id": "A.8.33",
+    "theme": "Technological",
+    "title": "Test information",
+    "objective": "Test information shall be appropriately selected, secured and managed.",
+    "control_type": "Preventive",
+    "properties": [
+      "Confidentiality",
+      "Integrity"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Information_protection",
+    "domain": "Protection",
+    "owner": "Lead Database Administrator",
+    "frequency": "Continuous (Automated)",
+    "evidence_source": "Synthetic Seed Data Generation Scripts",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Strictly prohibits copying production customer PII into staging or local dev databases.",
+    "mappings": {
+      "soc2": [
+        "CC8.1"
+      ],
+      "nist_csf": [
+        "PR.DS-01"
+      ]
+    }
+  },
+  {
+    "id": "A.8.34",
+    "theme": "Technological",
+    "title": "Protection of information systems during audit testing",
+    "objective": "Audit tests and other assurance activities involving the assessment of operational systems shall be planned and agreed between the tester and appropriate management.",
+    "control_type": "Preventive",
+    "properties": [
+      "Availability",
+      "Integrity"
+    ],
+    "concepts": [
+      "Protect"
+    ],
+    "capability": "Information_security_assurance",
+    "domain": "Governance_and_Ecosystem",
+    "owner": "Internal Audit Lead",
+    "frequency": "Annually",
+    "evidence_source": "Pen-Test Rules of Engagement (RoE) Document",
+    "status": "PASSED",
+    "inherent_likelihood": 2,
+    "inherent_impact": 4,
+    "soa_included": true,
+    "soa_justification": "Prevents invasive vulnerability scanners from causing outages on production clusters.",
+    "mappings": {
+      "soc2": [
+        "CC4.1"
+      ],
+      "nist_csf": [
+        "GV.OC-04"
+      ]
+    }
+  }
+]

@@ -1,0 +1,251 @@
+Finding_Text,Target_Control_ID,Control_Name,Theme
+Quarterly user access reviews were not performed for the cloud production environment during Q2.,A.5.18,Access rights,Organizational
+Orphaned user accounts discovered belonging to 14 terminated employees still active in Active Directory.,A.5.18,Access rights,Organizational
+Developers granted permanent administrator and root privileges on production database instances.,A.5.18,Access rights,Organizational
+Lack of documented managerial approval tickets for elevated access rights granted to temporary contractors.,A.5.18,Access rights,Organizational
+Principle of least privilege violated with 22 team members assigned excessive superuser roles.,A.5.18,Access rights,Organizational
+"Separation of duties conflict: the same engineering user can write code, approve pull requests, and deploy.",A.5.18,Access rights,Organizational
+Offboarding workflow failed to deprovision access rights for 5 departing contractors within 24 hours.,A.5.18,Access rights,Organizational
+Generic shared administrator login utilized by multiple shift engineers without individual attribution.,A.5.18,Access rights,Organizational
+Role-based access control (RBAC) definitions have not been reviewed or updated following reorganization.,A.5.18,Access rights,Organizational
+Privilege creep observed: internal transferred employees retained historical access rights to payroll systems.,A.5.18,Access rights,Organizational
+Emergency break-glass administrative access accounts were activated without subsequent log review or justification.,A.5.18,Access rights,Organizational
+Third-party support team was assigned persistent administrative rights instead of time-limited access.,A.5.18,Access rights,Organizational
+User access review was conducted without manager sign-off or documented revocation records.,A.5.18,Access rights,Organizational
+System administrator accounts permitted wildcard IAM policy permissions (Action: * on Resource: *).,A.5.18,Access rights,Organizational
+Service accounts utilized for internal microservice communication possessed unnecessary global admin rights.,A.5.18,Access rights,Organizational
+Inactive user accounts with no login activity for over 180 days were not automatically disabled.,A.5.18,Access rights,Organizational
+"Contractor access agreements lacked defined expiration dates, resulting in indefinite active status.",A.5.18,Access rights,Organizational
+Privileged access management (PAM) solution not enforced for accessing production bastion hosts.,A.5.18,Access rights,Organizational
+Access rights to sensitive customer billing records granted without documented business justification.,A.5.18,Access rights,Organizational
+Audit trail revealed 8 users whose access rights exceeded their documented job roles.,A.5.18,Access rights,Organizational
+SCIM automated user deprovisioning failed between HRIS software and SaaS applications.,A.5.18,Access rights,Organizational
+Production SSH access granted to all engineering staff without role restriction or ticketing.,A.5.18,Access rights,Organizational
+Absence of formal entitlement re-certification process for users with privileged access rights.,A.5.18,Access rights,Organizational
+"Default administrative accounts (admin, sa, root) remained active with default access rights.",A.5.18,Access rights,Organizational
+Just-in-time (JIT) access requests were automatically approved without peer or supervisor authorization.,A.5.18,Access rights,Organizational
+Critical cloud service provider SOC 2 Type II report expired 11 months ago without renewed review.,A.5.19,Supplier relationships,Organizational
+Procurement onboarded a new SaaS vendor without completing a third-party security risk assessment.,A.5.19,Supplier relationships,Organizational
+Vendor master contract lacks a mandatory 72-hour security incident notification SLA requirement.,A.5.19,Supplier relationships,Organizational
+Third-party supplier risk register is not maintained to track external vendor compliance posture.,A.5.19,Supplier relationships,Organizational
+No formal Data Processing Addendum (DPA) signed with marketing SaaS supplier processing customer emails.,A.5.19,Supplier relationships,Organizational
+Annual vendor security re-assessment was not performed for Tier-1 suppliers hosting corporate data.,A.5.19,Supplier relationships,Organizational
+Vendor contracts fail to include right-to-audit clauses or certified data sanitization requirements.,A.5.19,Supplier relationships,Organizational
+Sub-processor list for critical payment vendor was not reviewed prior to contract renewal.,A.5.19,Supplier relationships,Organizational
+Third-party consulting firm had unmonitored site-to-site access without signed confidentiality agreements.,A.5.19,Supplier relationships,Organizational
+Absence of documented vendor tiering criteria to categorize suppliers based on data risk and criticality.,A.5.19,Supplier relationships,Organizational
+SaaS vendor security questionnaire completed with multiple non-compliant answers without risk acceptance.,A.5.19,Supplier relationships,Organizational
+Vendor offboarding procedure not executed: terminated supplier retained remote connectivity to internal portals.,A.5.19,Supplier relationships,Organizational
+Bridge letters not requested from vendors operating on outdated SOC 2 observation periods.,A.5.19,Supplier relationships,Organizational
+Critical infrastructure supplier failed to provide evidence of annual disaster recovery tabletop testing.,A.5.19,Supplier relationships,Organizational
+Third-party vendor background verification checks for offshore developers were not verified by management.,A.5.19,Supplier relationships,Organizational
+Supplier security SLAs for critical vulnerability remediation were omitted from master service agreements.,A.5.19,Supplier relationships,Organizational
+New cloud vendor integrated into core workflow without legal or information security committee sign-off.,A.5.19,Supplier relationships,Organizational
+Vendor access to internal customer databases provisioned without dedicated third-party NDA on file.,A.5.19,Supplier relationships,Organizational
+Lack of continuous monitoring for third-party vendor security ratings and public breach notifications.,A.5.19,Supplier relationships,Organizational
+Supply chain risk assessment failed to identify fourth-party hosting dependencies for critical payment processor.,A.5.19,Supplier relationships,Organizational
+Supplier compliance tracking does not verify whether third parties maintain active ISO 27001 certifications.,A.5.19,Supplier relationships,Organizational
+Third-party vendor data retention periods exceed agreed contractual limits without remediation.,A.5.19,Supplier relationships,Organizational
+Vendor risk management program does not evaluate supplier business continuity or financial solvency.,A.5.19,Supplier relationships,Organizational
+Supplier exit strategy and transition runbooks not documented for Tier-1 mission-critical vendors.,A.5.19,Supplier relationships,Organizational
+Security team omitted SIG Lite questionnaire reviews for external managed service providers.,A.5.19,Supplier relationships,Organizational
+Remote employee laptops discovered operating without FileVault or BitLocker full-disk encryption.,A.8.1,User endpoint devices,Technological
+Mobile Device Management (MDM) enrollment agent uninstalled on 8 company-issued MacBooks.,A.8.1,User endpoint devices,Technological
+Endpoint screen lock auto-lock timeout was disabled across 15 developer desktop computers.,A.8.1,User endpoint devices,Technological
+Personal non-company laptops (BYOD) accessing internal repositories without endpoint security controls.,A.8.1,User endpoint devices,Technological
+"USB mass storage ports not restricted, allowing employees to connect unencrypted external thumb drives.",A.8.1,User endpoint devices,Technological
+Missing Endpoint Detection and Response (EDR) agent on newly provisioned developer workstations.,A.8.1,User endpoint devices,Technological
+Local administrative rights enabled on standard business laptops allowing unauthorized software installation.,A.8.1,User endpoint devices,Technological
+Remote wipe command failed on lost company smartphone due to expired MDM management certificates.,A.8.1,User endpoint devices,Technological
+Corporate laptops do not enforce host-based personal firewalls to block unauthorized incoming connections.,A.8.1,User endpoint devices,Technological
+Automated third-party application patch management not configured for desktop browsers and tools.,A.8.1,User endpoint devices,Technological
+Endpoint security agent tamper protection disabled by users to execute unauthorized local scripts.,A.8.1,User endpoint devices,Technological
+Workstation baseline security configurations not formally documented or enforced across remote workers.,A.8.1,User endpoint devices,Technological
+Stolen employee laptop lacked hardware TPM chip encryption for securing local credentials.,A.8.1,User endpoint devices,Technological
+Corporate endpoints permitted automatic connection to unsecured public Wi-Fi networks without VPN.,A.8.1,User endpoint devices,Technological
+Bluetooth file sharing enabled on corporate workstations without restriction or security logging.,A.8.1,User endpoint devices,Technological
+Endpoint inventory database out of sync with active workstation fleet by more than 20% discrepancy.,A.8.1,User endpoint devices,Technological
+Antivirus virus definitions and signature updates failing to sync on 12 remote laptops for over 30 days.,A.8.1,User endpoint devices,Technological
+Employee laptops allowed installation of peer-to-peer file sharing and torrent applications.,A.8.1,User endpoint devices,Technological
+Lost laptop incident reported 5 days late due to lack of employee device security awareness training.,A.8.1,User endpoint devices,Technological
+MDM profile does not enforce minimum 8-character PIN passcode on company-managed mobile smartphones.,A.8.1,User endpoint devices,Technological
+Employee workstations permitted boots from external unverified USB drives via unlocked BIOS.,A.8.1,User endpoint devices,Technological
+Decommissioned employee laptops disposed of without serialized certificates of hard drive destruction.,A.8.1,User endpoint devices,Technological
+Endpoint DLP software disabled on engineering laptops allowing unrestricted clipboard and file exports.,A.8.1,User endpoint devices,Technological
+Workstations permitted execution of unsigned binaries and unapproved scripts in user temp directories.,A.8.1,User endpoint devices,Technological
+Operating system updates postponed indefinitely by users due to lack of enforced MDM restart policies.,A.8.1,User endpoint devices,Technological
+Cloud infrastructure management console accessed via single-factor password without MFA enforcement.,A.8.5,Secure authentication,Technological
+Employee VPN allows authentication via insecure SMS text one-time passcodes vulnerable to SIM swapping.,A.8.5,Secure authentication,Technological
+Password policy permits weak 8-character passwords without complexity or dictionary breach validation.,A.8.5,Secure authentication,Technological
+Administrative login portals lack account lockout mechanisms after consecutive failed authentication attempts.,A.8.5,Secure authentication,Technological
+Service accounts utilize static passwords that have not been rotated or changed in over 12 months.,A.8.5,Secure authentication,Technological
+Internal developer dashboard login does not integrate with central Okta SSO and uses local credentials.,A.8.5,Secure authentication,Technological
+Web user session tokens remain valid indefinitely after browser closure due to missing session timeout.,A.8.5,Secure authentication,Technological
+Production server SSH access permits password-based login rather than requiring SSH key authentication.,A.8.5,Secure authentication,Technological
+Phishing-resistant WebAuthn or FIDO2 hardware MFA tokens not enforced for administrative superusers.,A.8.5,Secure authentication,Technological
+Self-service password reset workflow relies exclusively on easily guessed security challenge questions.,A.8.5,Secure authentication,Technological
+MFA exemption granted to executive accounts without documented expiration dates or compensatory controls.,A.8.5,Secure authentication,Technological
+API authentication relies on basic HTTP authentication headers transmitting cleartext credentials.,A.8.5,Secure authentication,Technological
+Simultaneous concurrent user logins from geographically impossible locations not flagged by auth system.,A.8.5,Secure authentication,Technological
+Customer login portal lacks rate limiting or CAPTCHA protection against automated credential stuffing.,A.8.5,Secure authentication,Technological
+Default administrative factory passwords remained unchanged on production network switches.,A.8.5,Secure authentication,Technological
+Remember Me authentication cookies persist login state across untrusted devices for 90 days.,A.8.5,Secure authentication,Technological
+Authentication server logs do not record source IP addresses or failed login attempt telemetry.,A.8.5,Secure authentication,Technological
+Microservices authenticate using unencrypted static API bearer tokens without JWT signature verification.,A.8.5,Secure authentication,Technological
+Single sign-on (SSO) SAML assertion tokens accepted without verifying digital signature validity.,A.8.5,Secure authentication,Technological
+Root AWS account login does not have a physical hardware MFA token configured in executive safe.,A.8.5,Secure authentication,Technological
+"Password history check not enforced, allowing users to alternate between 2 previous passwords.",A.8.5,Secure authentication,Technological
+OAuth 2.0 authorization code flow implemented without PKCE protection against authorization code injection.,A.8.5,Secure authentication,Technological
+Session revocation does not terminate active user sessions across all connected mobile and web devices.,A.8.5,Secure authentication,Technological
+Privileged admin portal allows remember password browser auto-fill without re-authentication prompt.,A.8.5,Secure authentication,Technological
+Multi-factor authentication challenge prompt suppressed for trusted IP ranges that included public Wi-Fi.,A.8.5,Secure authentication,Technological
+Production web servers running unpatched OpenSSL library with known critical vulnerability (CVE-2023-3817).,A.8.8,Management of technical vulnerabilities,Technological
+"Critical security patch for Linux kernel vulnerability not deployed after 45 days, breaching 14-day SLA.",A.8.8,Management of technical vulnerabilities,Technological
+Monthly automated vulnerability scanning is not configured for customer-facing Kubernetes production nodes.,A.8.8,Management of technical vulnerabilities,Technological
+Container base images in production registry contain 8 Critical and 15 High CVEs according to scan reports.,A.8.8,Management of technical vulnerabilities,Technological
+Third-party penetration testing identified unpatched log4j remote code execution vulnerability on analytics worker.,A.8.8,Management of technical vulnerabilities,Technological
+Vulnerability management policy lacks a formal SLA timeline for remediating Low and Medium vulnerabilities.,A.8.8,Management of technical vulnerabilities,Technological
+Production server running deprecated PHP runtime reaching official vendor end-of-life without updates.,A.8.8,Management of technical vulnerabilities,Technological
+Security operations team does not subscribe to threat intelligence advisories or zero-day vulnerability alerts.,A.8.8,Management of technical vulnerabilities,Technological
+External attack surface scanner identified exposed Apache server disclosing outdated version banners.,A.8.8,Management of technical vulnerabilities,Technological
+DevOps team deployed staging containers to production without executing automated vulnerability gate checks.,A.8.8,Management of technical vulnerabilities,Technological
+High severity vulnerability in internal DNS server identified during audit remains unpatched for 75 days.,A.8.8,Management of technical vulnerabilities,Technological
+Lack of automated patch management software across on-premises test lab infrastructure.,A.8.8,Management of technical vulnerabilities,Technological
+"Authenticated vulnerability scanner credentials expired, causing weekly scans to fail silently for 2 months.",A.8.8,Management of technical vulnerabilities,Technological
+Remediation verification scans are not performed after patching to confirm vulnerability resolution.,A.8.8,Management of technical vulnerabilities,Technological
+Legacy database operating system has not received security patches since vendor end-of-support in 2022.,A.8.8,Management of technical vulnerabilities,Technological
+"Container Dockerfile configurations do not pin package versions, causing unpredictable vulnerability regressions.",A.8.8,Management of technical vulnerabilities,Technological
+No vulnerability tracking ticket created for critical zero-day exploit announced in national CVE database.,A.8.8,Management of technical vulnerabilities,Technological
+Server AMI golden images used for auto-scaling groups have not been patched or rebuilt in 150 days.,A.8.8,Management of technical vulnerabilities,Technological
+Penetration test findings from previous annual audit were not remediated within the agreed 90-day window.,A.8.8,Management of technical vulnerabilities,Technological
+Vulnerability scanning excluded external APIs and customer portal subdomains from audit scope.,A.8.8,Management of technical vulnerabilities,Technological
+Critical zero-day vulnerability patch released by vendor was not evaluated or tested within 48 hours.,A.8.8,Management of technical vulnerabilities,Technological
+Lack of formal patch exception logging mechanism for legacy systems that cannot be patched immediately.,A.8.8,Management of technical vulnerabilities,Technological
+Production container registry lacks automated continuous vulnerability scanning upon image push.,A.8.8,Management of technical vulnerabilities,Technological
+Firmware security updates have not been applied to enterprise edge routing hardware for over 2 years.,A.8.8,Management of technical vulnerabilities,Technological
+Static vulnerability reports sent via email instead of being tracked in an automated ticketing workflow.,A.8.8,Management of technical vulnerabilities,Technological
+AWS S3 bucket hosting confidential customer files configured with public read access enabled to internet.,A.8.12,Data leakage prevention,Technological
+Application debug logs contain unmasked customer credit card numbers and plain social security numbers.,A.8.12,Data leakage prevention,Technological
+Production customer personally identifiable information (PII) replicated to unencrypted test environment.,A.8.12,Data leakage prevention,Technological
+Lack of egress filtering or data loss prevention (DLP) controls on corporate email allowing bulk data export.,A.8.12,Data leakage prevention,Technological
+"Employee exported 50,000 customer contact records to personal cloud storage without DLP alert.",A.8.12,Data leakage prevention,Technological
+Sensitive tenant database records stored in world-readable temporary directory on staging server.,A.8.12,Data leakage prevention,Technological
+Public git repository accidentally committed customer identity verification documents and passports.,A.8.12,Data leakage prevention,Technological
+Data loss prevention (DLP) agent running in monitor-only mode and not actively blocking data exfiltration.,A.8.12,Data leakage prevention,Technological
+Contractor downloaded 10GB of customer financial records to unencrypted personal USB drive without block.,A.8.12,Data leakage prevention,Technological
+API responses return complete customer profile records including unredacted tax IDs to browser frontend.,A.8.12,Data leakage prevention,Technological
+Absence of automated data classification labeling across cloud object stores holding confidential data.,A.8.12,Data leakage prevention,Technological
+Clipboard copying and screenshots of sensitive customer records permitted during remote virtual desktop sessions.,A.8.12,Data leakage prevention,Technological
+Database snapshots containing customer personal data shared across AWS accounts without DLP authorization.,A.8.12,Data leakage prevention,Technological
+Customer support ticket system attachments containing medical records accessible via unauthenticated URLs.,A.8.12,Data leakage prevention,Technological
+Outbound web proxy does not inspect or block data leakage patterns matching credit card or IBAN numbers.,A.8.12,Data leakage prevention,Technological
+"Data retention policy not enforced, allowing 6-year-old customer personal data to linger on test servers.",A.8.12,Data leakage prevention,Technological
+Insecure direct object reference (IDOR) allowed external users to enumerate and download customer contracts.,A.8.12,Data leakage prevention,Technological
+Unrestricted file upload mechanism allowed external data exfiltration via reverse shell upload.,A.8.12,Data leakage prevention,Technological
+Corporate cloud storage folders shared publicly with 'Anyone with the link can view' permissions.,A.8.12,Data leakage prevention,Technological
+Production database query results containing customer names exported to unmonitored Slack channels.,A.8.12,Data leakage prevention,Technological
+Lack of endpoint DLP controls to prevent printing or local downloading of proprietary patent documents.,A.8.12,Data leakage prevention,Technological
+Customer PII exposed in unredacted URL query parameters captured in third-party analytics trackers.,A.8.12,Data leakage prevention,Technological
+Marketing team forwarded unencrypted customer email database lists to third-party survey provider.,A.8.12,Data leakage prevention,Technological
+Confidential source code repositories cloned to personal laptops without data loss prevention safeguards.,A.8.12,Data leakage prevention,Technological
+Egress bandwidth anomaly indicating 500GB outbound data transfer to unknown IP was not alerted by DLP.,A.8.12,Data leakage prevention,Technological
+PostgreSQL database automated backups failed silently for 14 consecutive days without engineer alerts.,A.8.13,Information backup,Technological
+Annual disaster recovery backup restoration drill was not conducted during the past 12 months.,A.8.13,Information backup,Technological
+"Database backup snapshots are stored in the same geographic region as production, vulnerable to regional outage.",A.8.13,Information backup,Technological
+Database restoration test revealed corrupted transaction logs resulting in unrecoverable 48-hour data loss.,A.8.13,Information backup,Technological
+Backup storage buckets do not have Object Lock or write-once-read-many (WORM) ransomware protection.,A.8.13,Information backup,Technological
+Absence of automated monitoring alerts notifying team when scheduled nightly backup jobs fail to execute.,A.8.13,Information backup,Technological
+Recovery Time Objective (RTO) and Recovery Point Objective (RPO) metrics are not documented or tested.,A.8.13,Information backup,Technological
+Offsite tape and cold storage backups have not undergone integrity verification or restore tests in 2 years.,A.8.13,Information backup,Technological
+Kubernetes cluster state and etcd configuration backups are not scheduled or retained automatically.,A.8.13,Information backup,Technological
+Backup retention policy does not satisfy statutory 7-year regulatory financial record keeping mandates.,A.8.13,Information backup,Technological
+Manual database dump process used instead of automated point-in-time recovery (PITR) backup snapshots.,A.8.13,Information backup,Technological
+Disaster recovery plan contains obsolete server hostnames and outdated operational restoration procedures.,A.8.13,Information backup,Technological
+Secondary disaster recovery cloud site lacks sufficient compute capacity to handle production failover.,A.8.13,Information backup,Technological
+Virtual machine snapshot restoration procedure failed during simulated disaster recovery exercise.,A.8.13,Information backup,Technological
+Backup operator permissions granted to standard developers allowing unauthorized manual snapshot deletion.,A.8.13,Information backup,Technological
+"Differential backup strategy not documented, leading to confusion during multi-step database restore trial.",A.8.13,Information backup,Technological
+Critical customer database excluded from daily automated backup synchronization schedule.,A.8.13,Information backup,Technological
+Database backup replication across secondary cloud availability zones was disabled without approval.,A.8.13,Information backup,Technological
+Disaster recovery communication tree contains contact details for former employees who left the firm.,A.8.13,Information backup,Technological
+Cold backup archives stored on unencrypted external hard drives without physical chain of custody.,A.8.13,Information backup,Technological
+"Database backup job exceeded allocated maintenance window, causing production API timeouts.",A.8.13,Information backup,Technological
+No formal verification performed to ensure database backups are free from ransomware encryption before restore.,A.8.13,Information backup,Technological
+"Application state and configuration files excluded from backup runbook, preventing full system rebuild.",A.8.13,Information backup,Technological
+Disaster recovery failover simulation revealed that secondary DNS records were improperly configured.,A.8.13,Information backup,Technological
+"Backup deletion protection was not configured, allowing accidental removal of critical monthly snapshots.",A.8.13,Information backup,Technological
+Production database security group allows unrestricted inbound network traffic from 0.0.0.0/0 on port 5432.,A.8.20,Networks security,Technological
+SSH administrative port 22 open directly to the public internet across multiple cloud compute instances.,A.8.20,Networks security,Technological
+Internal office network lacks network segmentation between guest Wi-Fi and production server subnets.,A.8.20,Networks security,Technological
+Virtual Private Cloud (VPC) lacks flow logging enabled for network traffic analysis and intrusion detection.,A.8.20,Networks security,Technological
+"Web Application Firewall (WAF) is unconfigured on the public API gateway, leaving endpoints exposed.",A.8.20,Networks security,Technological
+Internal microservices communicate across unsegmented network without network boundary isolation.,A.8.20,Networks security,Technological
+Intrusion Detection System (IDS) alerts disabled due to alert fatigue without tuning rule thresholds.,A.8.20,Networks security,Technological
+Default route table directs all private subnet database traffic through an internet gateway.,A.8.20,Networks security,Technological
+Production Kubernetes nodes share common flat subnet with public-facing ingress load balancers.,A.8.20,Networks security,Technological
+Network architecture diagram has not been updated following the deployment of new European cloud VPC.,A.8.20,Networks security,Technological
+Unrestricted egress firewall rules permit compromised production instances to connect to arbitrary IPs.,A.8.20,Networks security,Technological
+Remote Desktop Protocol (RDP) port 3389 discovered open to external internet on staging Windows server.,A.8.20,Networks security,Technological
+VPC peering connection configured without security group route filtering between prod and staging.,A.8.20,Networks security,Technological
+DNS zone transfers permitted from external unauthorized nameservers without access control.,A.8.20,Networks security,Technological
+Lack of Network Access Control Lists (NACLs) to provide packet filtering at subnet boundaries.,A.8.20,Networks security,Technological
+Production web servers lack DDoS mitigation protection against volumetric network flood attacks.,A.8.20,Networks security,Technological
+Bastion jump host placed in public subnet without IP whitelisting restricting inbound administrative access.,A.8.20,Networks security,Technological
+Internal network switches operate with default unencrypted SNMP community strings (public and private).,A.8.20,Networks security,Technological
+Demilitarized Zone (DMZ) architecture not implemented to isolate internet-facing services from database.,A.8.20,Networks security,Technological
+Network perimeter penetration test identified open Telnet and FTP ports on legacy border gateway.,A.8.20,Networks security,Technological
+Cloud security groups contain unused stale rules permitting ingress from deprecated office IP ranges.,A.8.20,Networks security,Technological
+Split-tunneling permitted on remote workforce VPN without corporate network traffic inspection.,A.8.20,Networks security,Technological
+Network intrusion prevention system (NIPS) signatures out of date by more than 90 days.,A.8.20,Networks security,Technological
+Lack of ingress rate limiting on public API endpoints resulting in denial of service vulnerability.,A.8.20,Networks security,Technological
+Internal corporate DNS servers resolve external malicious domains without protective DNS filtering.,A.8.20,Networks security,Technological
+Production database storage volumes stored without AWS KMS AES-256 customer-managed key encryption at rest.,A.8.24,Use of cryptography,Technological
+Web server SSL/TLS configuration supports deprecated TLS 1.0 and TLS 1.1 protocols and weak CBC ciphers.,A.8.24,Use of cryptography,Technological
+Cryptographic master encryption keys stored in plaintext configuration files inside application code.,A.8.24,Use of cryptography,Technological
+Internal credit card tokenization service utilizes obsolete 3DES cipher rather than modern AES-256-GCM.,A.8.24,Use of cryptography,Technological
+Root certificate authority and intermediate TLS signing keys lack automated annual rotation schedules.,A.8.24,Use of cryptography,Technological
+Customer passwords stored in database using weak MD5 and SHA-1 hashing algorithms without salt.,A.8.24,Use of cryptography,Technological
+Application secrets and API private keys hardcoded in plaintext within Docker container environment vars.,A.8.24,Use of cryptography,Technological
+Database connection strings transmit credentials over unencrypted cleartext database protocols.,A.8.24,Use of cryptography,Technological
+Lack of hardware security module (HSM) or dedicated KMS key management policy governing key lifecycle.,A.8.24,Use of cryptography,Technological
+"Cryptographic keys utilized for both encryption and digital signing, violating key separation principles.",A.8.24,Use of cryptography,Technological
+Expired SSL/TLS certificate on customer payment portal caused browser security warnings for 36 hours.,A.8.24,Use of cryptography,Technological
+Data-at-rest encryption disabled on Elasticsearch analytics cluster containing customer search queries.,A.8.24,Use of cryptography,Technological
+Symmetric encryption keys shared across all tenant environments rather than using isolated per-tenant keys.,A.8.24,Use of cryptography,Technological
+Weak RSA 1024-bit key pairs used for internal server identity certificates instead of modern 2048-bit keys.,A.8.24,Use of cryptography,Technological
+Cryptographic initialization vectors (IV) statically reused across multiple encryption operations in cipher.,A.8.24,Use of cryptography,Technological
+Key custodian procedures not documented for emergency revocation of compromised TLS wildcard certs.,A.8.24,Use of cryptography,Technological
+Cleartext HTTP traffic allowed on customer registration endpoint without mandatory HTTPS redirect.,A.8.24,Use of cryptography,Technological
+Lack of envelope encryption for large binary customer document attachments stored in object storage.,A.8.24,Use of cryptography,Technological
+Cryptographic salt length for bcrypt password hashing algorithm set below the minimum 12-round threshold.,A.8.24,Use of cryptography,Technological
+S3 bucket storage encryption uses default Amazon S3 keys rather than customer-controlled KMS keys.,A.8.24,Use of cryptography,Technological
+Public API accepts SSL certificates signed by untrusted or expired internal root certificates.,A.8.24,Use of cryptography,Technological
+Database field-level encryption not applied to sensitive columns storing taxpayer identification numbers.,A.8.24,Use of cryptography,Technological
+Cryptographic key backup copies stored in unencrypted S3 bucket without KMS envelope protection.,A.8.24,Use of cryptography,Technological
+Production web servers do not enforce HTTP Strict Transport Security (HSTS) response headers.,A.8.24,Use of cryptography,Technological
+Private PGP decryption keys stored on shared network drive without passphrase protection.,A.8.24,Use of cryptography,Technological
+Production payment microservice vulnerable to SQL injection due to unsanitized raw string query concat.,A.8.28,Secure coding,Technological
+Hardcoded GitHub personal access token and AWS secret access key discovered in git commit history.,A.8.28,Secure coding,Technological
+CI/CD build pipeline does not enforce automated static application security testing (SAST) before merge.,A.8.28,Secure coding,Technological
+Cross-site scripting (XSS) vulnerability identified in customer portal dashboard search input field.,A.8.28,Secure coding,Technological
+Pull request merged to production main branch without required independent peer code review sign-off.,A.8.28,Secure coding,Technological
+Application backend deserializes untrusted user JSON payloads without input schema validation checks.,A.8.28,Secure coding,Technological
+Software bill of materials (SBOM) and software dependency scanning (SCA) missing from build automation.,A.8.28,Secure coding,Technological
+Insecure direct object reference (IDOR) flaw allows users to manipulate user_id parameters in code.,A.8.28,Secure coding,Technological
+"Development and testing libraries (e.g., debug console, mock endpoints) inadvertently deployed in build.",A.8.28,Secure coding,Technological
+Absence of secure coding training for engineering staff covering OWASP Top 10 web vulnerabilities.,A.8.28,Secure coding,Technological
+Server-side request forgery (SSRF) flaw in document conversion service allows access to cloud metadata.,A.8.28,Secure coding,Technological
+Cross-site request forgery (CSRF) tokens not validated on state-changing administrative POST endpoints.,A.8.28,Secure coding,Technological
+"Code repository branch protection rules disabled, allowing developers to push directly to production main.",A.8.28,Secure coding,Technological
+Application displays detailed verbose stack traces and database schema errors directly to end users.,A.8.28,Secure coding,Technological
+File upload endpoint allows execution of arbitrary executable scripts without file extension filtering.,A.8.28,Secure coding,Technological
+Security unit tests and automated regression test suites are not integrated into pull request checks.,A.8.28,Secure coding,Technological
+Third-party JavaScript libraries loaded from external CDNs without Subresource Integrity (SRI) hashes.,A.8.28,Secure coding,Technological
+Lack of automated pre-commit secret detection hooks to prevent developers from committing credentials.,A.8.28,Secure coding,Technological
+Command injection vulnerability in server-side reporting script executing unvalidated shell commands.,A.8.28,Secure coding,Technological
+XML external entity (XXE) injection flaw discovered in XML parsing module used for invoice processing.,A.8.28,Secure coding,Technological
+Application source code repository accessible to all corporate employees without team-based restrictions.,A.8.28,Secure coding,Technological
+Open redirect vulnerability in login callback handler allowing redirection to untrusted external URLs.,A.8.28,Secure coding,Technological
+Dynamic code evaluation (eval()) used in production JavaScript to parse configuration objects.,A.8.28,Secure coding,Technological
+Lack of Content Security Policy (CSP) headers to prevent execution of unauthorized inline scripts.,A.8.28,Secure coding,Technological
+Software development lifecycle (SDLC) policy lacks mandatory threat modeling for new feature releases.,A.8.28,Secure coding,Technological

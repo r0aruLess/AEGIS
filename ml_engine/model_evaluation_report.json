@@ -1,0 +1,215 @@
+{
+  "dataset_total": 250,
+  "train_samples_80pct": 200,
+  "test_samples_20pct": 50,
+  "accuracy": 84.0,
+  "macro_precision": 86.92,
+  "macro_recall": 84.0,
+  "macro_f1_score": 84.24,
+  "classes_evaluated": [
+    "A.5.18",
+    "A.5.19",
+    "A.8.1",
+    "A.8.12",
+    "A.8.13",
+    "A.8.20",
+    "A.8.24",
+    "A.8.28",
+    "A.8.5",
+    "A.8.8"
+  ],
+  "confusion_matrix": [
+    [
+      4,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      4,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      3,
+      1,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      4,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      4,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      4
+    ]
+  ],
+  "per_class_metrics": {
+    "A.5.18": {
+      "control_name": "Access rights",
+      "test_samples": 5,
+      "precision": 100.0,
+      "recall": 80.0,
+      "f1_score": 88.89
+    },
+    "A.5.19": {
+      "control_name": "Supplier relationships",
+      "test_samples": 5,
+      "precision": 100.0,
+      "recall": 100.0,
+      "f1_score": 100.0
+    },
+    "A.8.1": {
+      "control_name": "User endpoint devices",
+      "test_samples": 5,
+      "precision": 62.5,
+      "recall": 100.0,
+      "f1_score": 76.92
+    },
+    "A.8.12": {
+      "control_name": "Data leakage prevention",
+      "test_samples": 5,
+      "precision": 80.0,
+      "recall": 80.0,
+      "f1_score": 80.0
+    },
+    "A.8.13": {
+      "control_name": "Information backup",
+      "test_samples": 5,
+      "precision": 100.0,
+      "recall": 100.0,
+      "f1_score": 100.0
+    },
+    "A.8.20": {
+      "control_name": "Networks security",
+      "test_samples": 5,
+      "precision": 100.0,
+      "recall": 60.0,
+      "f1_score": 75.0
+    },
+    "A.8.24": {
+      "control_name": "Use of cryptography",
+      "test_samples": 5,
+      "precision": 80.0,
+      "recall": 80.0,
+      "f1_score": 80.0
+    },
+    "A.8.28": {
+      "control_name": "Secure coding",
+      "test_samples": 5,
+      "precision": 80.0,
+      "recall": 80.0,
+      "f1_score": 80.0
+    },
+    "A.8.5": {
+      "control_name": "Secure authentication",
+      "test_samples": 5,
+      "precision": 66.67,
+      "recall": 80.0,
+      "f1_score": 72.73
+    },
+    "A.8.8": {
+      "control_name": "Management of technical vulnerabilities",
+      "test_samples": 5,
+      "precision": 100.0,
+      "recall": 80.0,
+      "f1_score": 88.89
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "framework": "ISO/IEC 42001:2023 & EU AI Act (2024/1689)",
+  "eu_ai_act_tiers": [
+    {
+      "tier": "Prohibited",
+      "description": "Unacceptable risk systems: social scoring, cognitive behavioral manipulation, untargeted facial recognition scraping, biometric categorization inferred from sensitive attributes.",
+      "obligation": "Complete market ban across EU jurisdiction."
+    },
+    {
+      "tier": "High Risk",
+      "description": "AI used in critical infrastructure, education admission, HR recruitment/resume filtering, credit scoring, law enforcement, and biometric identification.",
+      "obligation": "Mandatory conformity assessments, fundamental rights impact assessment, high-quality training datasets, logging, human oversight, and CE marking."
+    },
+    {
+      "tier": "Specific Transparency / Limited Risk",
+      "description": "AI systems interacting with humans (chatbots/copilots), emotion recognition, biometric categorization, generative AI / deepfakes.",
+      "obligation": "Mandatory disclosure to users that they are interacting with AI; synthetic media watermarking."
+    },
+    {
+      "tier": "Minimal / No Risk",
+      "description": "AI-enabled video games, spam filters, inventory optimization.",
+      "obligation": "Free use; voluntary codes of conduct."
+    }
+  ],
+  "systems_inventory": [
+    {
+      "id": "AI-SYS-01",
+      "name": "Customer Support Copilot",
+      "purpose": "Automated intent classification and generative drafting for tier-1 support tickets.",
+      "model": "Gemini 1.5 Flash / Claude 3.5 Sonnet",
+      "tier": "Specific Transparency / Limited Risk",
+      "status": "COMPLIANT",
+      "transparency_notice": "User notified that response is AI-drafted; human agent review required before dispatch.",
+      "human_in_loop": true
+    },
+    {
+      "id": "AI-SYS-02",
+      "name": "Candidate Resume Parser & Matcher",
+      "purpose": "Automated scoring of incoming engineering applicants against job criteria.",
+      "model": "Custom Embedding Model + Logistic Ranker",
+      "tier": "High Risk",
+      "status": "UNDER_ASSESSMENT",
+      "transparency_notice": "HR Recruitment tool subject to Annex III High Risk requirements under EU AI Act.",
+      "human_in_loop": true
+    },
+    {
+      "id": "AI-SYS-03",
+      "name": "Internal Code Review Assistant",
+      "purpose": "Static AST & LLM scanning for repository security vulnerabilities and style violations.",
+      "model": "Claude 3.5 Haiku",
+      "tier": "Minimal / No Risk",
+      "status": "COMPLIANT",
+      "transparency_notice": "Developer tool only; no external PII processed.",
+      "human_in_loop": true
+    }
+  ],
+  "controls_42001": [
+    {
+      "id": "AI.5.1",
+      "title": "AI Policy & Governance Framework",
+      "requirement": "Establish acceptable use policies and executive steering committee for all generative and predictive AI deployments.",
+      "owner": "Head of AI Ethics & CISO",
+      "status": "PASSED"
+    },
+    {
+      "id": "AI.6.2",
+      "title": "AI Risk Assessment & System Classification",
+      "requirement": "Evaluate bias, data poisoning, prompt injection, and hallucination risks before putting any model into production.",
+      "owner": "Lead AI Engineer",
+      "status": "PASSED"
+    },
+    {
+      "id": "AI.7.3",
+      "title": "Data Quality & Data Provenance for AI Training",
+      "requirement": "Ensure data used for fine-tuning or RAG originates from authorized sources without copyright infringement or toxic bias.",
+      "owner": "Data Engineering Lead",
+      "status": "PASSED"
+    },
+    {
+      "id": "AI.8.4",
+      "title": "Continuous Human Oversight & Kill Switch",
+      "requirement": "Mandate human-in-the-loop validation for high-stakes decisions and technical kill switches for aberrant autonomous actions.",
+      "owner": "VP Engineering",
+      "status": "PASSED"
+    }
+  ]
+}

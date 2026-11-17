@@ -1,0 +1,122 @@
+[
+  {
+    "clause": "Clause 4",
+    "id": "PIMS.4.1",
+    "role": "Governance",
+    "title": "Understanding the organization and its privacy context",
+    "objective": "The organization shall determine external and internal issues, legal mandates, and interested party expectations relevant to its Privacy Information Management System (PIMS) as a standalone management system.",
+    "owner": "Data Protection Officer",
+    "status": "PASSED",
+    "inherent_likelihood": 2,
+    "inherent_impact": 4,
+    "transition_note": "ISO/IEC 27701:2025 standalone clause 4 replaces 2019 extension clause."
+  },
+  {
+    "clause": "Clause 5",
+    "id": "PIMS.5.1",
+    "role": "Governance",
+    "title": "PIMS Leadership and commitment",
+    "objective": "Top management shall demonstrate leadership with respect to the privacy management system, establishing the formal corporate PIMS policy and privacy objectives.",
+    "owner": "Executive Board / DPO",
+    "status": "PASSED",
+    "inherent_likelihood": 2,
+    "inherent_impact": 5,
+    "transition_note": "Direct management commitment requirement under 2025 edition."
+  },
+  {
+    "clause": "Clause 6",
+    "id": "PIMS.6.1",
+    "role": "Risk Management",
+    "title": "Privacy Risk Assessment & Treatment",
+    "objective": "The organization shall apply a dedicated privacy risk assessment process considering impacts on PII principals (data subjects), independent of corporate asset risks.",
+    "owner": "DPO / Risk Lead",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 5,
+    "transition_note": "Standalone privacy risk assessment methodology mandated in 2025 edition."
+  },
+  {
+    "clause": "Annex A.1",
+    "id": "PIMS.A.1.1",
+    "role": "PII Controller",
+    "title": "Conditions for collection and processing",
+    "objective": "The organization shall determine, document, and publish lawful bases for processing PII, including freely given, specific, and informed consent.",
+    "owner": "Legal Counsel",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 5,
+    "transition_note": "Aligned with GDPR Art. 6/7 & India DPDP Act 2023 Sec. 6."
+  },
+  {
+    "clause": "Annex A.1",
+    "id": "PIMS.A.1.2",
+    "role": "PII Controller",
+    "title": "Privacy Notice & Transparency",
+    "objective": "Clear, accessible, and concise privacy notices shall be provided to PII principals at or before the time of PII collection.",
+    "owner": "Legal Counsel / Product",
+    "status": "PASSED",
+    "inherent_likelihood": 2,
+    "inherent_impact": 4,
+    "transition_note": "Mandates multi-lingual notices under DPDP Act & EU transparency directives."
+  },
+  {
+    "clause": "Annex A.2",
+    "id": "PIMS.A.2.1",
+    "role": "PII Controller",
+    "title": "Obligations to PII Principals (DSAR Rights)",
+    "objective": "The organization shall provide automated and verified mechanisms for PII principals to exercise their rights of access, correction, erasure, and data portability within statutory timelines (30 days GDPR / 72h critical).",
+    "owner": "DPO / Support Lead",
+    "status": "WARNING",
+    "inherent_likelihood": 4,
+    "inherent_impact": 5,
+    "transition_note": "Includes SLA timer tracking and audit trail of principal verification."
+  },
+  {
+    "clause": "Annex A.2",
+    "id": "PIMS.A.2.2",
+    "role": "PII Controller",
+    "title": "Privacy by Design and Default",
+    "objective": "Systems and processes shall embed data minimization, pseudonymization, and purpose limitation into the engineering lifecycle by default.",
+    "owner": "Lead Architect",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 4,
+    "transition_note": "Technical enforcement in database schemas and API payloads."
+  },
+  {
+    "clause": "Annex A.3",
+    "id": "PIMS.A.3.1",
+    "role": "PII Controller & Processor",
+    "title": "Cross-Border PII Transfer Accountability",
+    "objective": "The organization shall verify adequacy decisions, Standard Contractual Clauses (SCCs), or local regulatory authorizations before initiating international PII transfers.",
+    "owner": "General Counsel",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 5,
+    "transition_note": "Reflects updated cross-border transfer requirements under DPDP Act 2023 & Schrems II."
+  },
+  {
+    "clause": "Annex A.4",
+    "id": "PIMS.A.4.1",
+    "role": "PII Processor",
+    "title": "Subprocessor Management & Notification",
+    "objective": "Processors shall not engage sub-processors without prior written authorization from the customer/controller and shall enforce equivalent privacy terms.",
+    "owner": "Vendor Risk Lead",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 4,
+    "transition_note": "Subprocessor registry and 30-day change objection window."
+  },
+  {
+    "clause": "Annex A.4",
+    "id": "PIMS.A.4.2",
+    "role": "PII Processor",
+    "title": "Breach Notification to Controllers",
+    "objective": "Processors shall notify controllers without undue delay (within 24-48 hours) upon confirming a security incident affecting customer PII.",
+    "owner": "Incident Commander",
+    "status": "PASSED",
+    "inherent_likelihood": 3,
+    "inherent_impact": 5,
+    "transition_note": "Critical contractual SLA requirement for B2B SaaS platforms."
+  }
+]

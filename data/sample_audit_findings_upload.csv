@@ -1,0 +1,11 @@
+Finding_ID,Finding_Text,Likelihood,Impact,Control_Status
+AUD-FINDING-001,"Software engineering team pushed hardcoded AWS production secret keys and API credentials into public GitHub repository",4,5,FAILED
+AUD-FINDING-002,"Production PostgreSQL database snapshot backups have not undergone quarterly automated restoration and recovery testing",3,4,WARNING
+AUD-FINDING-003,"Single sign-on enforcement audit revealed 14 contractor accounts lack mandatory hardware security key multi-factor authentication",4,4,FAILED
+AUD-FINDING-004,"Customer personally identifiable data stored in cold S3 archiving buckets is unencrypted at rest without KMS key rotation",3,5,FAILED
+AUD-FINDING-005,"Production Kubernetes ingress firewall allows unrestricted external 0.0.0.0/0 traffic to internal Redis cache cluster",4,4,FAILED
+AUD-FINDING-006,"Third-party payroll SaaS vendor SOC 2 Type II attestation report expired 8 months ago without renewed security assessment",3,3,WARNING
+AUD-FINDING-007,"Quarterly vulnerability scanning identified 12 unpatched critical kernel CVEs on external-facing customer API gateways",4,5,FAILED
+AUD-FINDING-008,"Application central audit logs lack automated real-time SIEM alerting for anomalous administrative privilege escalation events",2,4,PASSED
+AUD-FINDING-009,"Physical access badges to server room and network wiring closet were not revoked for 3 employees terminated last month",2,3,FAILED
+AUD-FINDING-010,"Code merge pipeline allowed developer pull request to merge into main branch without mandatory second-engineer peer review",3,4,WARNING
