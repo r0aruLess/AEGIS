@@ -1,0 +1,13 @@
+[project]
+name = "aegis-grc"
+version = "0.1.0"
+description = "AEGIS GRC Engineering Portfolio & ML Control Gap Classifier"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "jupyter>=1.1.1",
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.5",
+    "pandas>=3.1.1",
+    "scikit-learn>=1.9.1",
+]

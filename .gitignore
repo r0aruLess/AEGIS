@@ -1,0 +1,30 @@
+# Environment & Secrets
+.env
+.env.*
+*.pem
+*.key
+*.token
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+env/
+venv/
+.pytest_cache/
+
+# Databases
+*.sqlite
+*.db-shm
+*.db-wal
+
+# OS / Editor artifacts
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Evidence temp logs
+evidence/*.tmp
