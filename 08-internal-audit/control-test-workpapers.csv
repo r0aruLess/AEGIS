@@ -1,0 +1,7 @@
+Workpaper_ID,Control_ID,Control_Title,Sample_Size,Testing_Procedure,Observed_Evidence,Test_Result,Auditor_Notes
+WP-01,A.5.15,Access control,25 users,Inspect Okta user directory against HR active roster,All 25 active users had approved tickets; 0 orphaned accounts found,Pass,Effective SCIM integration
+WP-02,A.8.5,Secure authentication,50 logins,Inspect Okta sign-in logs for MFA enforcement,100% of logins challenged with WebAuthn/FIDO2 MFA,Pass,No single-factor bypasses
+WP-03,A.8.8,Management of technical vulnerabilities,10 container images,Review Trivy / AWS ECR vulnerability scan reports,2 container images had Critical CVEs unpatched > 14 days,Exception,Logged as Audit Finding IA-2026-01
+WP-04,A.8.12,Data leakage prevention,5 S3 buckets,Check S3 bucket policies for public access block and KMS CMK,All 5 buckets block public access; KMS CMK enabled,Pass,Enforced via Terraform IaC
+WP-05,A.8.24,Use of cryptography,3 RDS clusters,Verify RDS encryption status and TLS parameter groups,All clusters use AWS KMS AES-256; TLS 1.3 enforced,Pass,Meets high-assurance standard
+WP-06,A.5.19,Information security in supplier relationships,5 vendors,Check vendor files for annual SOC 2 and signed DPA,1 Tier-2 vendor lacked updated 2025 SOC 2 report,Exception,Logged as Audit Finding IA-2026-02

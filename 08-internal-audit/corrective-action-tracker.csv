@@ -1,0 +1,4 @@
+CAPA_ID,Audit_Finding_Ref,Classification,Root_Cause,Corrective_Action_Plan,Owner,Target_Date,Current_Status,Verification_Evidence
+CAPA-2026-01,IA-2026-01,Minor Non-Conformity,CI/CD build pipeline did not block on high-severity container CVEs,Implement mandatory fail gate in GitHub Actions Trivy step,Lead DevOps,2026-03-31,In Progress,PR #142 submitted in testing
+CAPA-2026-02,IA-2026-02,Minor Non-Conformity,Manual spreadsheet tracking of third-party annual SOC 2 renewals,Implement automated webhook alert 60 days prior to report expiration,GRC Analyst,2026-04-15,In Progress,Procurement calendar configured
+CAPA-2026-03,IA-2026-OFI-1,Opportunity for Improvement,Access reviews conducted via email approval chains,Transition quarterly user access reviews directly into Okta Access Certifications,SecOps Lead,2026-05-30,Open,Okta Identity Governance license provisioned

@@ -1,0 +1,8 @@
+KRI_ID,Metric_Name,Domain,Target_Threshold,Current_Value,Status,Quarterly_Trend
+KRI-01,Percentage of Controls Passing Automated Check,Compliance,>= 90%,93.5%,Green,Improving (+4.5%)
+KRI-02,Mean Time to Patch Critical Vulnerabilities (MTTR),Security Ops,<= 14 Days,9.2 Days,Green,Stable
+KRI-03,Phishing Simulation Failure Rate,Human Risk,< 5.0%,2.4%,Green,Improving (-1.8%)
+KRI-04,Quarterly User Access Review Completion Rate,Governance,100%,100%,Green,Stable
+KRI-05,Unresolved Audit Findings Exceeding SLA,Audit,0,0,Green,Stable
+KRI-06,Third-Party Tier 1 Vendors with Valid SOC 2,Vendor Risk,100%,100%,Green,Stable
+KRI-07,Customer Data Encryption Coverage at Rest,Data Security,100%,100%,Green,Stable
