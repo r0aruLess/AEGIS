@@ -1,16 +1,19 @@
 # CloudSphere Analytics Inc. • Interested Parties & Requirements Matrix
+
 **Standard Alignment:** ISO/IEC 27001:2022 (Clause 4.2) & ISO/IEC 27701:2025 (Clause 4.2)  
 **Classification:** Internal / Auditor Disclosable  
 **Last Reviewed:** 2026-05-18  
+**Owner:** Lead GRC Analyst | Approved By: CISO & General Counsel
 
 ---
 
 ## Stakeholder Needs & Expectations Register
 
-| Interested Party | Stakeholder Category | Needs & Expectations | Compliance Mechanism & Control Alignment |
-|---|---|---|---|
-| **Enterprise B2B Customers** | External (Commercial) | 99.9% uptime SLA, customer data confidentiality, zero data co-mingling, annual SOC 2 Type II and ISO 27001 certificate verification, breach notification within 48 hours. | Multi-tenant logical database isolation (A.8.3), TLS 1.3 encryption (A.8.24), third-party independent audit reports (A.5.35). |
-| **Data Protection Authorities (EU DPAs / DPBI India / FTC)** | External (Regulatory) | Lawful processing bases, transparency notices, DSAR fulfillment within 30 days, cross-border transfer safeguards, breach reporting within 72 hours. | ISO/IEC 27701:2025 PIMS standalone console, RoPA register, automated DSAR portal, executed Standard Contractual Clauses (SCCs). |
-| **Board of Directors & Investors** | Internal (Governance) | Mitigation of catastrophic financial and ransomware risks, avoidance of regulatory penalties, preservation of brand reputation. | Quarterly CISO risk reporting, defensible 5×5 risk register, FAIR Monte Carlo quantitative loss modeling, cyber insurance coverage. |
-| **Employees & Contractors** | Internal (Operational) | Clear security policies, timely access provisioning/deprovisioning, safe remote working tools, transparent disciplinary process. | Acceptable Use Policy, single sign-on (SSO) with Okta FastPass (A.8.5), annual security awareness training (A.6.3). |
-| **Cloud & Critical SaaS Vendors (AWS, Okta, GitHub)** | External (Supply Chain) | Clear mutual operational boundaries, prompt payment, adherence to acceptable use guidelines, incident collaboration. | Cloud Shared Responsibility Model (A.5.23), executed Vendor DPAs (A.5.20), annual SOC 2 review (A.5.22). |
+| Interested Party | Stakeholder Category | Documented Needs & Expectations | Compliance Mechanism & Verification Cadence | Responsible Owner |
+|---|---|---|---|---|
+| **Enterprise B2B Customers** | External (Commercial) | 99.9% uptime SLA, customer data segregation, zero co-mingling of PII, annual SOC 2 Type II and ISO 27001 audit report access, 72-hour breach notification. | Multi-tenant logical isolation, annual SOC 2 Type II audit report shared under NDA, DPA with Standard Contractual Clauses (SCCs). | CISO & General Counsel |
+| **Data Subjects (PII Principals)** | External (Statutory) | Lawful processing, prompt fulfillment of access/rectification/erasure requests (DSARs), transparent privacy notices. | Privacy Hub portal with 30-day automated SLA tracking; Article 30 Records of Processing Activities (RoPA). | Data Protection Officer (DPO) |
+| **Regulatory Authorities (EDPB, FTC, DPA India)** | External (Statutory) | Compliance with EU GDPR, US State Laws (CCPA/CPRA), and India DPDP Act 2023. Prompt security breach notifications. | Legal and Regulatory Register; annual external penetration testing; designated EU & UK Article 27 representatives. | General Counsel & DPO |
+| **Executive Leadership & Board of Directors** | Internal (Governance) | Fiduciary risk management, mitigation of brand/regulatory liabilities, defensible residual risk profiles, return on security investment. | Quarterly Board Audit Committee briefings, FAIR Monte Carlo loss exposure dashboards, executive risk appetite metrics. | CISO |
+| **CloudSphere Employees & Contractors** | Internal (Operational) | Clear acceptable use guidelines, privacy of personal communications on corporate laptops, ergonomic and remote work hardware support. | Corporate Acceptable Use Policy, transparent employee privacy notice, Kandji MDM automated policy enforcement. | Head of People & IT Operations Lead |
+| **Critical Cloud Vendors (AWS, Okta, Datadog)** | External (Supply Chain) | Strict compliance with terms of service, prompt invoice payment, adherence to responsible disclosure programs. | Vendor Risk Management (TPRM) assessments, annual SIG Lite questionnaires, executed DPAs. | Associate GRC Analyst |

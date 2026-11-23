@@ -1,37 +1,28 @@
 # CloudSphere Analytics Inc. • ISMS & PIMS Scope Statement
+
 **Document Reference:** CS-ISMS-SCOPE-001  
 **Standards Alignment:** ISO/IEC 27001:2022 (Clause 4.3) & ISO/IEC 27701:2025 (Clause 4.3)  
 **Classification:** Public / Auditor Disclosable  
-**Effective Date:** 2026-05-15  
-**Version:** 3.0  
+**Effective Date:** 2026-05-15 | Version: 3.0  
 **Approved By:** Chief Information Security Officer (CISO) & Chief Executive Officer (CEO)
 
 ---
 
-## 1. Scope Boundary
-The Information Security Management System (ISMS) and Privacy Information Management System (PIMS) encompass all operational activities, systems, personnel, and intellectual property associated with the development, operation, and maintenance of the **CloudSphere B2B Analytics Platform**.
+## 1. Scope Boundary & Organizational Context
+The Information Security Management System (ISMS) and Privacy Information Management System (PIMS) encompass all operational activities, cloud infrastructure, personnel, and intellectual property assets utilized by **CloudSphere Analytics Inc.** in the design, development, maintenance, and delivery of its multi-tenant B2B customer behavioral analytics SaaS platform.
+
+### In-Scope Boundaries:
+1.  **Cloud Workloads & Environments:** Production AWS accounts (`us-east-1` primary and `eu-central-1` EU residency zone), including Amazon EKS container workloads, Aurora PostgreSQL databases, S3 storage buckets, and KMS key management.
+2.  **Corporate IT & Identity Services:** Okta Universal Directory, Google Workspace, GitHub Enterprise Cloud, and Datadog SIEM platforms.
+3.  **Human Resources & Remote Endpoints:** All 150 full-time equivalents (FTEs) and vetted contractors operating corporate-managed MacBook endpoints equipped with Kandji MDM, FileVault encryption, and EDR agents.
+
+### Explicit Scope Exclusions & Justification:
+*   **Physical Data Center Infrastructure:** CloudSphere operates as a **100% remote-first SaaS company with zero owned physical corporate offices or physical data centers**.
+*   **Justification:** Physical facility perimeters, biometric building controls, diesel generator utilities, cabling conduits, and server chassis destruction (ISO/IEC 27001:2022 Controls A.7.11, A.7.12, A.7.13, A.7.14) are **excluded from CloudSphere's direct operational boundary**. Assurance is inherited via the **AWS Cloud Shared Responsibility Model**, validated annually through independent inspection of AWS SOC 2 Type II (Criteria CC6.4, CC6.5) and ISO/IEC 27001 certification.
 
 ---
 
-## 2. Organizational Boundaries
-The scope includes all 150 full-time employees, authorized contractors, and business functions:
-*   Executive Leadership & Governance
-*   Software Engineering & DevSecOps
-*   Cloud Infrastructure & Site Reliability Engineering (SRE)
-*   Product Management & UI/UX Design
-*   Customer Support & Customer Success
-*   Human Resources & Talent Acquisition
-*   Finance, Legal, and Compliance
-
----
-
-## 3. Physical & Cloud Hosting Boundaries
-*   **Physical Facilities:** Corporate office suite located at 100 Montgomery Street, Suite 1400, San Francisco, CA. The facility houses administrative and executive offices; **zero server hardware is hosted on-premise**.
-*   **Cloud Production Environments:** Amazon Web Services (AWS) multi-account infrastructure in AWS US-East-1 (Primary) and AWS EU-Central-1 (Secondary / European Privacy Region).
-*   **Remote Personnel:** Distributed remote employees operating within the United States, Canada, the European Union, and India, governed under corporate MDM endpoint baselines (Control A.6.7 & A.8.1).
-
----
-
-## 4. Scope Exclusions & Defensible Justifications
-*   **Physical Environmental Controls for Core Servers (A.7.5 & A.7.11):**
-    *   *Justification:* CloudSphere operates exclusively as a cloud-native SaaS on AWS. Physical environmental controls (redundant power supplies, fire suppression, diesel generators, physical perimeter fencing) are managed directly by Amazon Web Services under the **Cloud Shared Responsibility Model**. CloudSphere verifies these controls annually via AWS's independent third-party SOC 2 Type II and ISO 27001 certification audit reports.
+## 2. PIMS Role Determination (ISO/IEC 27701:2025 Clause 4.3)
+Under the revised requirements of ISO/IEC 27701:2025:
+*   **CloudSphere as a PII Processor:** Acts as a Data Processor / Data Fiduciary on behalf of its enterprise B2B customers when processing end-user telemetry, clickstream behavioral logs, and customer account identifiers ingested via CloudSphere SDKs.
+*   **CloudSphere as a PII Controller:** Acts as a Data Controller with respect to direct corporate employee records, recruitment data, enterprise client billing contacts, and sales engagement records.
