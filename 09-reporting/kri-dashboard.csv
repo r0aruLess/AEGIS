@@ -1,8 +1,9 @@
-KRI_ID,Metric_Name,Domain,Target_Threshold,Current_Value,Status,Quarterly_Trend
-KRI-01,Percentage of Controls Passing Automated Check,Compliance,>= 90%,93.5%,Green,Improving (+4.5%)
-KRI-02,Mean Time to Patch Critical Vulnerabilities (MTTR),Security Ops,<= 14 Days,9.2 Days,Green,Stable
-KRI-03,Phishing Simulation Failure Rate,Human Risk,< 5.0%,2.4%,Green,Improving (-1.8%)
-KRI-04,Quarterly User Access Review Completion Rate,Governance,100%,100%,Green,Stable
-KRI-05,Unresolved Audit Findings Exceeding SLA,Audit,0,0,Green,Stable
-KRI-06,Third-Party Tier 1 Vendors with Valid SOC 2,Vendor Risk,100%,100%,Green,Stable
-KRI-07,Customer Data Encryption Coverage at Rest,Data Security,100%,100%,Green,Stable
+Metric_ID,KRI_Metric_Name,Target_Threshold,Actual_Value,Status,Reporting_Cadence,Responsible_Owner
+KRI-01,Phishing-Resistant MFA Enforcement Rate,100%,100%,GREEN,Monthly,IT Operations & Identity Lead
+KRI-02,Employee Offboarding 24h SLA Compliance Rate,>= 98.0%,100%,GREEN,Monthly,IT Operations & Identity Lead
+KRI-03,Critical Vulnerability Patch Velocity (CVSS >= 9.0),<= 7 days,4.2 days,GREEN,Weekly,DevSecOps Engineer
+KRI-04,High Vulnerability Patch Velocity (CVSS 7.0-8.9),<= 30 days,18.5 days,GREEN,Monthly,DevSecOps Engineer
+KRI-05,Tier 1 Vendor SOC 2 / DPA Compliance Rate,100%,100%,GREEN,Quarterly,Lead GRC Analyst
+KRI-06,Disaster Recovery RTO Drill Compliance,Pass (<= 4h),FAIL (Timeout),AMBER,Quarterly,Head of Infrastructure & SRE
+KRI-07,Quarterly User Access Review (UAR) Sign-Off,100% in 14d,100%,GREEN,Quarterly,Lead GRC Analyst
+KRI-08,Statutory DSAR Fulfillment Rate (30-day SLA),100%,100%,GREEN,Monthly,Data Protection Officer (DPO)
