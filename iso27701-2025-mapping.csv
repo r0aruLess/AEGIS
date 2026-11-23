@@ -1,0 +1,11 @@
+Standard_Clause_or_Control,Title_and_Scope,Role,CloudSphere_Implementation_Mechanism,Assurance_Evidence,Owner
+Clause 4,Understanding the organization and its privacy context,Both,Documented PIMS scope statement and interested parties matrix,CS-ISMS-SCOPE-001,Data Protection Officer (DPO)
+Clause 5,PIMS Leadership and commitment,Both,Information security and privacy steering committee charter,CISO & DPO joint steering committee minutes,Executive Leadership / CISO
+Clause 6,Privacy Risk Assessment & Treatment,Both,Standalone privacy risk assessment targeting harm to PII Principals,CS-DPIA-2026-001 & CS-RISK-METH-001,Data Protection Officer (DPO)
+Annex A.1,Conditions for collection and processing,Processor,Customer Master Services Agreements and executed DPAs with SCCs,Signed enterprise customer DPAs,General Counsel
+Annex A.1,Privacy Notice & Transparency,Controller,Published public Privacy Policy and in-app privacy notices,Public Trust Center / privacy.cloudsphere.com,Data Protection Officer (DPO)
+Annex A.2,Obligations to PII Principals (DSAR Rights),Both,Formal DSAR SOP with 30-day statutory SLA tracking in Aegis Privacy Hub,CS-SOP-PRIV-001 / Jira Privacy Queue,Data Protection Officer (DPO)
+Annex A.2,Privacy by Design and Default,Processor,Automated IP masking (/24 truncation) and salted tokenization in SDK,SDK ingestion source code & architecture review,Lead Application Architect
+Annex A.3,Cross-Border PII Transfer Accountability,Both,Standard Contractual Clauses (SCCs) and EU-US Data Privacy Framework,Legal and Regulatory Register,General Counsel
+Annex A.4,Subprocessor Management & Notification,Processor,Mandatory vendor security assessment and 30-day customer advance notice,CS-POL-005 TPRM Policy / trust directory,Lead GRC Analyst
+Annex A.4,Breach Notification to Controllers,Processor,Incident Response Procedure mandating prompt notification to clients,CS-SOP-004 Incident Management Procedure,SecOps & Incident Response Lead
