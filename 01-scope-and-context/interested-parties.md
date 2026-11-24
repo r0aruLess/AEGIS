@@ -1,19 +1,19 @@
-# CloudSphere Analytics Inc. • Interested Parties & Requirements Matrix
+# Interested Parties and Requirements Matrix
 
-**Standard Alignment:** ISO/IEC 27001:2022 (Clause 4.2) & ISO/IEC 27701:2025 (Clause 4.2)  
-**Classification:** Internal / Auditor Disclosable  
-**Last Reviewed:** 2026-05-18  
-**Owner:** Lead GRC Analyst | Approved By: CISO & General Counsel
+Standards: ISO/IEC 27001:2022 (Clause 4.2), ISO/IEC 27701:2025 (Clause 4.2)  
+Owner: Lead GRC Analyst  
+Approved by: CISO and General Counsel  
+Last reviewed: May 18, 2026  
 
 ---
 
-## Stakeholder Needs & Expectations Register
+## Stakeholder Needs and Expectations
 
-| Interested Party | Stakeholder Category | Documented Needs & Expectations | Compliance Mechanism & Verification Cadence | Responsible Owner |
+| Stakeholder | Category | Expectations and Requirements | Compliance Mechanism | Owner |
 |---|---|---|---|---|
-| **Enterprise B2B Customers** | External (Commercial) | 99.9% uptime SLA, customer data segregation, zero co-mingling of PII, annual SOC 2 Type II and ISO 27001 audit report access, 72-hour breach notification. | Multi-tenant logical isolation, annual SOC 2 Type II audit report shared under NDA, DPA with Standard Contractual Clauses (SCCs). | CISO & General Counsel |
-| **Data Subjects (PII Principals)** | External (Statutory) | Lawful processing, prompt fulfillment of access/rectification/erasure requests (DSARs), transparent privacy notices. | Privacy Hub portal with 30-day automated SLA tracking; Article 30 Records of Processing Activities (RoPA). | Data Protection Officer (DPO) |
-| **Regulatory Authorities (EDPB, FTC, DPA India)** | External (Statutory) | Compliance with EU GDPR, US State Laws (CCPA/CPRA), and India DPDP Act 2023. Prompt security breach notifications. | Legal and Regulatory Register; annual external penetration testing; designated EU & UK Article 27 representatives. | General Counsel & DPO |
-| **Executive Leadership & Board of Directors** | Internal (Governance) | Fiduciary risk management, mitigation of brand/regulatory liabilities, defensible residual risk profiles, return on security investment. | Quarterly Board Audit Committee briefings, FAIR Monte Carlo loss exposure dashboards, executive risk appetite metrics. | CISO |
-| **CloudSphere Employees & Contractors** | Internal (Operational) | Clear acceptable use guidelines, privacy of personal communications on corporate laptops, ergonomic and remote work hardware support. | Corporate Acceptable Use Policy, transparent employee privacy notice, Kandji MDM automated policy enforcement. | Head of People & IT Operations Lead |
-| **Critical Cloud Vendors (AWS, Okta, Datadog)** | External (Supply Chain) | Strict compliance with terms of service, prompt invoice payment, adherence to responsible disclosure programs. | Vendor Risk Management (TPRM) assessments, annual SIG Lite questionnaires, executed DPAs. | Associate GRC Analyst |
+| Enterprise customers | External (Commercial) | 99.9% availability, isolated tenant data, access to annual SOC 2 and ISO 27001 reports, 72-hour breach notice. | Multi-tenant logical isolation, annual audits shared under NDA, signed Data Processing Agreements with Standard Contractual Clauses. | CISO and General Counsel |
+| Data subjects | External (Statutory) | Lawful handling, timely response to access and deletion requests (DSARs), clear privacy notices. | Privacy Hub with 30-day request tracking, Article 30 records of processing activities. | Data Protection Officer |
+| Regulators (EDPB, FTC, India DPA) | External (Statutory) | Compliance with GDPR, CPRA, and India DPDP Act. Timely incident notifications. | Legal register, annual third-party penetration tests, designated EU and UK Article 27 representatives. | General Counsel and DPO |
+| Board and executives | Internal (Governance) | Managed risk exposure, measurable return on security spend, visibility into residual risk. | Quarterly board audit reports, FAIR loss modeling, defined risk thresholds. | CISO |
+| Employees and contractors | Internal (Operational) | Clear acceptable use rules, equipment support, privacy on personal accounts. | Acceptable Use Policy, employee privacy notice, Kandji MDM configurations. | Head of People and IT Operations Lead |
+| Core vendors (AWS, Okta, Datadog) | External (Supply chain) | Compliance with terms of service, timely payment, coordinated vulnerability disclosure. | Vendor security assessments, annual SIG questionnaires, signed DPAs. | Associate GRC Analyst |
