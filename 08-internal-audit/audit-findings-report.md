@@ -1,32 +1,42 @@
-# Internal Audit Findings Report (FY 2026)
-**Audit Identification:** IA-ISO27001-2026-Q1  
-**Entity:** CloudScale Technologies Inc.  
-**Lead Auditor:** Independent GRC Auditor  
-**Audit Conclusion Date:** February 28, 2026
+# CloudSphere Analytics Inc. Internal Audit Findings and Corrective Action Report
+
+**Document Reference:** CS-AUD-REP-2026-Q2  
+**Audit Standard:** ISO/IEC 27001:2022 & ISO/IEC 27701:2025  
+**Audit Dates:** 2026-05-01 through 2026-05-12  
+**Audit Team:** Lead GRC Analyst (Lead Auditor) & Head of Infrastructure (Technical Auditor)  
+**Reviewed & Acknowledged By:** Chief Information Security Officer (CISO) & Board Audit Committee  
+**Audit Conclusion:** Certification Ready with Conditional Corrective Actions
 
 ---
 
-## 1. Executive Summary & Audit Opinion
-Based on the sampling of controls across CloudScale's ISMS, the internal audit concludes that the management system is **substantially conforming** to ISO/IEC 27001:2022 requirements. 
+## 1. Audit Findings Summary
 
-No Major Non-Conformities were detected. Two (2) Minor Non-Conformities and one (1) Opportunity for Improvement (OFI) were identified. All identified non-conformities have established management action plans and are tracked in the CAPA register.
+| Finding Classification | Count | Status and Summary |
+|---|---|---|
+| **Major Non-Conformities (MNC)** | **1** | Contractor offboarding delay identified; automated reconciliation job deployed immediately. |
+| **Minor Non-Conformities (mNC)** | **2** | Isolated technical gaps; Jira Corrective Action Plans issued with 30-day resolution targets. |
+| **Opportunities for Improvement (OFI)** | **3** | Process improvements identified for threat intelligence and DLP coverage. |
+| **Satisfactory Conformities** | **42** | Verified automated CI/CD security controls and cryptographic audit ledger. |
 
 ---
 
-## 2. Detailed Findings Matrix
+## 2. Detailed Findings and Root Cause Analysis
 
-### Finding IA-2026-01: Container Vulnerability Patching SLA Breach
-- **Classification:** Minor Non-Conformity
-- **ISO 27001:2022 Clause:** Control A.8.8 (Management of technical vulnerabilities)
-- **Condition:** Inspection of production ECR registries revealed 2 container base images harboring Critical CVEs exceeding the 14-day remediation SLA (observed age: 22 days).
-- **Root Cause:** CI/CD build pipelines currently warn on Critical CVEs but do not break the build on pre-release branches.
-- **Corrective Action Plan (CAPA):** Configure GitHub Actions Trivy scanner with `--exit-code 1` on severity `CRITICAL`.
-- **Target Closure Date:** March 31, 2026. Owner: Lead DevOps Engineer.
+### Major Non-Conformity 01 (MNC-01): Delayed Contractor Account Deprovisioning
+* Target Control: ISO/IEC 27001:2022 Control A.5.18 (Access rights)
+* Condition Observed: During audit sampling of 20 departed personnel over the trailing 6 months, the audit team found that 3 contractor accounts remained active in Okta for 72 hours past contract expiration, exceeding the mandatory 24-hour SLA.
+* Root Cause Analysis: The BambooHR webhook that posts contract end dates to Okta timed out during scheduled maintenance. The integration lacked a dead-letter queue or alerting mechanism to flag failed delivery.
+* Corrective Action Plan (CAP-01):
+  1. Immediate Action: SecOps terminated all 3 contractor accounts immediately and checked access logs for unauthorized activity; no unauthorized access occurred.
+  2. Systemic Fix: Infrastructure deployed a daily Python reconciliation job (`check_deprovisioning_sync.py`) comparing BambooHR active rosters against active Okta accounts. Any discrepancy posts directly to `#sec-ops-alerts` in Slack. (Completed 2026-05-08).
 
-### Finding IA-2026-02: Missing Annual SOC 2 Report for Tier-2 Vendor
-- **Classification:** Minor Non-Conformity
-- **ISO 27001:2022 Clause:** Control A.5.19 (Information security in supplier relationships)
-- **Condition:** One SaaS vendor (LeadFlow) had an expired SOC 2 Type II report on file without documented evidence of annual request.
-- **Root Cause:** Vendor review reminders were manually tracked on spreadsheets without automated alerting.
-- **Corrective Action Plan (CAPA):** Deploy automated 60-day vendor contract renewal audit alerts in the GRC vendor dashboard.
-- **Target Closure Date:** April 15, 2026. Owner: GRC Analyst.
+### Minor Non-Conformity 01 (mNC-01): Staging Database Restore Drill Timeout
+* Target Control: ISO/IEC 27001:2022 Control A.8.13 (Information backup)
+* Condition Observed: Automated daily Aurora PostgreSQL snapshots run on schedule and encrypt with KMS. During the Q1 disaster recovery drill, however, an automated restore of a 2TB production replica into a staging sandbox timed out because of a security group rule conflict between VPC subnets.
+* Root Cause Analysis: A recent sprint modified the staging VPC security group without updating the IP allowlist used by the disaster recovery restore script.
+* Corrective Action Plan (CAP-02): Update Terraform security group rules and run a complete sandbox restore drill by 2026-05-25. Assigned to: Head of Infrastructure.
+
+### Minor Non-Conformity 02 (mNC-02): Manual Cleanup on Diagnostic Log Buckets
+* Target Control: ISO/IEC 27001:2022 Control A.8.10 (Information deletion)
+* Condition Observed: Production analytics databases enforce automated 30-day data purges after contract termination. Diagnostic logs in `s3://cloudsphere-app-telemetry-archive`, however, still required a manual Jira ticket for cleanup.
+* Corrective Action Plan (CAP-03): Apply AWS S3 Object Lifecycle rules enforcing automated 30-day tombstoning and permanent expiration across all telemetry archive buckets by 2026-05-30. Assigned to: DevSecOps Engineer.
