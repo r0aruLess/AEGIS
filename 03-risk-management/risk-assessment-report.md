@@ -1,41 +1,43 @@
-# CloudSphere Analytics Inc. • Comprehensive Risk Assessment Report
+# Risk Assessment Report
 
-**Document Reference:** CS-RISK-REP-2026-Q2  
-**Standard Alignment:** ISO/IEC 27001:2022 (Clause 6.1.2) & ISO/IEC 27701:2025 (Clause 6.1.2)  
-**Classification:** Confidential / Executive Disclosable  
-**Assessment Period:** 2026-05-01 through 2026-05-15  
-**Assessor:** Lead GRC Analyst | Technical Review: Head of Infrastructure & SRE | Approval: CISO
-
----
-
-## 1. Executive Summary & Enterprise Risk Profile
-During Q2 2026, CloudSphere's Information Security and GRC team conducted an organization-wide risk assessment across all operational assets, cloud infrastructure (AWS), remote endpoints, and SaaS vendor integrations.
-
-### Key Risk Posture Metrics:
-*   **Total Identified Threats:** 8 primary enterprise risk scenarios.
-*   **Inherent Risk Distribution:** 2 Critical (25.0%), 4 High (50.0%), 2 Medium (25.0%), 0 Low.
-*   **Residual Risk Posture (Post-Control Mitigation):** 0 Critical, 0 High, 7 Medium (87.5%), 1 Low (12.5%).
-*   **Defensible Posture Verdict:** **Controlled within Executive Appetite.** No unmitigated Critical or High residual risks remain unassigned. All risks exceeding appetite have funded, active treatment plans scheduled for completion by Q3 2026.
+Document reference: CS-RISK-REP-2026-Q2  
+Standards: ISO/IEC 27001:2022 (Clause 6.1.2), ISO/IEC 27701:2025 (Clause 6.1.2)  
+Assessment window: May 1 to May 15, 2026  
+Assessed by: Lead GRC Analyst  
+Reviewed by: Head of Infrastructure and SRE  
+Approved by: CISO  
 
 ---
 
-## 2. Quantitative & Qualitative Risk Analysis
+## 1. Overview of Risks
 
-### A. 5×5 Matrix Qualitative Profile
-The enterprise risk engine maps inherent likelihood and impact against validated control effectiveness ratings derived from automated technical checks and audit sampling.
-*   **Highest Inherent Risk:** `RSK-01` (Ransomware extortion against Aurora DB, Score 20) and `RSK-02` (Privileged credential phishing against Okta, Score 20).
-*   **Mitigation Impact:** Enforced FIDO2 WebAuthn (YubiKeys) and automated multi-AZ Aurora backups with KMS customer-managed keys reduce these inherent threats to an acceptable Residual Score of 6 (Medium).
+The security and GRC team reviewed CloudSphere's operational assets, AWS infrastructure, employee laptops, and SaaS vendor accounts during the first two weeks of May 2026.
 
-### B. FAIR Quantitative Validation (Annualized Loss Expectancy)
-To translate ordinal 5×5 heatmap scores into executive financial metrics for Board reporting, CloudSphere executed a 10,000-iteration FAIR (Factor Analysis of Information Risk) Monte Carlo simulation modeling CloudSphere's primary threat event frequencies and loss magnitudes:
-*   **Mean Annualized Loss Expectancy (ALE):** **$124,350 / year**
-*   **10th Percentile (Optimistic Year):** **$31,200**
-*   **50th Percentile (Median Probable Loss):** **$112,800**
-*   **90% Value-at-Risk (VaR Threshold):** **$287,500** (90% statistical probability that annual loss will not exceed this threshold).
-
-> **Cost-Benefit Justification:** CloudSphere's annual security tooling and assurance budget ($68,500 across EDR, YubiKeys, MDM, and external penetration testing) provides mathematically defensible protection against a modeled 90% VaR of $287,500.
+### Summary Metrics
+- Total evaluated scenarios: 8
+- Inherent risk: 2 Critical (25%), 4 High (50%), 2 Medium (25%), 0 Low
+- Residual risk: 0 Critical, 0 High, 7 Medium (88%), 1 Low (12%)
+- Posture: Within defined risk appetite. Every risk above appetite has a funded remediation plan due by Q3 2026.
 
 ---
 
-## 3. Residual Risk Sign-Off & Governance
-In accordance with CloudSphere's Risk Methodology, all 7 Medium residual risks (Scores 6–8) have been formally reviewed and signed off by the CISO. Action items are tracked weekly in Jira (`SEC-RISK` project).
+## 2. Analysis
+
+### 5×5 Matrix Findings
+- Highest inherent risks: RSK-01 (ransomware threat to Aurora database, score 20) and RSK-02 (credential phishing against Okta administrators, score 20).
+- Effect of controls: FIDO2 hardware keys and automated multi-AZ Aurora backups reduce both risks to a residual score of 6 (Medium).
+
+### FAIR Quantitative Estimates
+To give the board financial loss projections alongside matrix scores, the team ran a 10,000-iteration FAIR Monte Carlo simulation:
+- Mean annual loss expectancy (ALE): $124,350 per year
+- 10th percentile (low-loss year): $31,200
+- 50th percentile (median year): $112,800
+- 90% Value-at-Risk (VaR): $287,500 (losses are expected to stay under this level in 9 out of 10 years)
+
+CloudSphere's security budget is $68,500 across EDR, YubiKeys, MDM, and external penetration tests, protecting against the modeled $287,500 90% VaR exposure.
+
+---
+
+## 3. Residual Risk Sign-Off
+
+The CISO reviewed and signed off on all seven Medium residual risks (scores 6 to 8). Tasks are tracked weekly in the Jira SEC-RISK board.
