@@ -1,29 +1,31 @@
-# CloudSphere Analytics Inc. • ISO/IEC 27001:2022 Baseline Gap Assessment
+# ISO/IEC 27001:2022 Gap Assessment Summary
 
-**Document Reference:** CS-GRC-GAP-2026-Q1  
-**Target Standard:** ISO/IEC 27001:2022 (Annex A 93 Controls & Management Clauses 4–10)  
-**Conducted By:** Lead GRC Analyst & Head of Infrastructure  
-**Reviewed By:** Chief Information Security Officer (CISO)  
-**Assessment Date:** 2026-04-20 | Overall Readiness Score: **86.0% (Stage 1 Audit Ready)**
-
----
-
-## 1. Executive Summary & Audit Posture
-A comprehensive internal baseline gap assessment was executed across all 93 controls of ISO/IEC 27001:2022 to benchmark CloudSphere's information security posture prior to formal Stage 1 external certification.
-
-### Quantitative Readiness Breakdown:
-*   **Fully Implemented & Verified Controls (PASSED):** **80 controls (86.0%)** — Technical controls validated via automated SHA-256 evidence digests or policy inspection.
-*   **Partially Implemented Controls (WARNING):** **9 controls (9.7%)** — Remediation action plans logged in Jira with 30–60 day target completion dates.
-*   **Controls Excluded with Justification (EXEMPT):** **4 controls (4.3%)** — Physical data center utilities (A.7.11–A.7.14) inherited from AWS under Shared Responsibility.
-*   **Major Deficiencies (FAILED):** **0 controls** — No catastrophic systemic security absences identified.
+Document reference: CS-GRC-GAP-2026-Q1  
+Target standard: ISO/IEC 27001:2022 (Annex A controls and Clauses 4–10)  
+Assessment date: April 20, 2026  
+Assessed by: Lead GRC Analyst and Head of Infrastructure  
+Reviewed by: CISO  
+Readiness score: 86.0% (Stage 1 audit ready)  
 
 ---
 
-## 2. Key Gaps Identified & Corrective Actions
+## 1. Summary of Findings
 
-| Control ID & Title | Theme | Baseline Status | Specific Gap Description | Assigned Owner | Corrective Action & Target Date |
+The GRC team reviewed CloudSphere's controls against all 93 Annex A controls in ISO/IEC 27001:2022 ahead of external certification.
+
+### Status Breakdown
+- Passed (80 controls, 86.0%): Verified through automated technical checks, configuration files, or approved policies.
+- Warning (9 controls, 9.7%): Partially in place. Remediation tasks are open in Jira with 30-to-60-day deadlines.
+- Exempt (4 controls, 4.3%): Physical facility controls (A.7.11 to A.7.14) inherited from AWS under the Shared Responsibility Model.
+- Failed (0 controls): No critical control failures found.
+
+---
+
+## 2. Open Gaps and Remediation Plans
+
+| Control | Theme | Status | Identified Gap | Owner | Action and Due Date |
 |---|---|---|---|---|---|
-| **A.5.7 Threat intelligence** | Organizational | WARNING | Threat intelligence ingest is currently ad-hoc via open-source feeds (CISA KEV); lacks commercial feed integration. | SecOps Lead | Integrate AlienVault OTX and AWS GuardDuty automated threat feeds by 2026-06-15. |
-| **A.8.10 Information deletion** | Technological | WARNING | Customer data deletion is automated in Aurora PostgreSQL via API, but S3 log archive cleanup requires manual ticket sign-off. | Head of Infrastructure | Deploy S3 Object Lifecycle expiration rules (30-day automated tombstoning) by 2026-05-30. |
-| **A.8.12 Data leakage prevention** | Technological | WARNING | Endpoint DLP relies on Kandji MDM native restrictions; no content-inspection DLP agent deployed on remote engineer endpoints. | IT Operations Lead | Roll out Google Workspace DLP rules and Nightfall DLP for Slack Enterprise by 2026-06-30. |
-| **A.8.13 Information backup** | Technological | WARNING | Automated Aurora PostgreSQL daily snapshots exist; however, Q1 staging restore drill timed out due to a security group rule mismatch. | Head of Infrastructure | Reconfigure VPC peering rules and complete automated monthly sandbox restore validation by 2026-05-25. |
+| A.5.7 Threat intelligence | Organizational | Warning | Feed intake relies on CISA alerts without automated commercial feeds. | SecOps Lead | Add AlienVault OTX and AWS GuardDuty feeds by June 15, 2026. |
+| A.8.10 Information deletion | Technological | Warning | Database deletions run automatically via API, but S3 log cleanup still requires a manual ticket. | Head of Infrastructure | Add S3 lifecycle rules to expire logs after 30 days by May 30, 2026. |
+| A.8.12 Data leakage prevention | Technological | Warning | Laptops use basic MDM file restrictions without deep content inspection. | IT Operations Lead | Turn on Google Workspace DLP and Slack Enterprise DLP by June 30, 2026. |
+| A.8.13 Information backup | Technological | Warning | Daily Aurora backups run, but the Q1 staging restore test timed out over a security group rule. | Head of Infrastructure | Fix VPC routing rules and rerun the restore test by May 25, 2026. |
