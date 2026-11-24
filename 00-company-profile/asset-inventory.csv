@@ -1,21 +1,11 @@
-Asset_ID,Asset_Name,Asset_Type,Owner,Hosting_Environment,Data_Classification,Criticality,Business_Impact_Analysis
-AST-01,Customer Production Aurora Database,Relational Database,Lead Database Admin,AWS us-east-1,Restricted,Critical,"Contains primary customer analytics data and tenant records. Outage results in immediate SLA breach."
-AST-02,Customer Telemetry S3 Data Lake,Object Storage,Data Platform Lead,AWS us-east-1,Restricted,Critical,"Stores raw historical behavioral event streams. Governed by KMS customer-managed encryption."
-AST-03,Production EKS Kubernetes Cluster,Compute Infrastructure,DevOps Lead,AWS us-east-1,Confidential,Critical,"Runs primary application microservices, API gateways, and background queue workers."
-AST-04,Okta Universal Directory Identity Provider,Identity as a Service,IT Security Lead,SaaS (Okta Cloud),Restricted,Critical,"Single sign-on gateway for all employee corporate identities, MFA tokens, and application routing."
-AST-05,GitHub Enterprise Cloud Code Repositories,Source Code Management,VP Engineering,SaaS (GitHub Cloud),Confidential,Critical,"Houses proprietary application source code, infrastructure-as-code scripts, and CI/CD pipelines."
-AST-06,Staging AWS Landing Zone,Cloud Infrastructure,DevOps Lead,AWS us-east-1,Internal,Medium,"Staging environment for pre-production integration testing. Synthetic test data only."
-AST-07,Corporate Workstation Fleet (macOS / Windows),User Endpoints,IT Operations Lead,Distributed Remote,Confidential,High,"150 employee laptops protected by MDM configuration profiles, FileVault/BitLocker, and EDR."
-AST-08,Datadog Centralized SIEM Pipeline,Observability & Logging,SOC Lead,SaaS (Datadog Cloud),Confidential,High,"Collects real-time security events, application logs, and AWS CloudTrail audit telemetry."
-AST-09,Stripe Payment Processing Gateway,Payment SaaS,Finance Director,SaaS (Stripe Inc.),Restricted,High,"Processes client subscription billing. Zero raw credit card storage on internal systems (PCI SAQ-A)."
-AST-10,Google Workspace Corporate Email & Docs,Communications & Office,IT Operations Lead,SaaS (Google Cloud),Confidential,High,"Corporate communications, executive documents, internal compliance policies, and drives."
-AST-11,Cloudflare Enterprise Edge WAF,Perimeter & CDN,Cloud Network Engineer,SaaS (Cloudflare Edge),Confidential,Critical,"Provides front-door DDoS mitigation, rate limiting, and SSL/TLS 1.3 edge termination."
-AST-12,AWS Key Management Service (KMS) CMK,Cryptographic Keys,DevSecOps Lead,AWS us-east-1,Restricted,Critical,"Master encryption keys used to encrypt production databases, backups, and S3 data lakes."
-AST-13,PagerDuty Emergency Incident Dispatch,Incident Escalation,SOC Lead,SaaS (PagerDuty Cloud),Internal,High,"Automated paging system routing critical production and security alerts to on-call commanders."
-AST-14,Checkr Background Screening Portal,HR Operations,HR Director,SaaS (Checkr Inc.),Confidential,Medium,"Conducts pre-employment background screening and verification for permanent staff and contractors."
-AST-15,KnowBe4 Security Awareness LMS,Training & Phishing,Security Awareness Lead,SaaS (KnowBe4 Cloud),Internal,Medium,"Delivers quarterly security training modules and automated monthly simulated phishing tests."
-AST-16,OneTrust Privacy Management Platform,Privacy & DSAR,Data Protection Officer,SaaS (OneTrust Cloud),Confidential,High,"Houses RoPA records, cookie consent audit trails, and data subject access requests."
-AST-17,DocuSign Legal Contract Archive,Legal & Governance,General Counsel,SaaS (DocuSign Cloud),Confidential,High,"Stores customer Master Services Agreements (MSAs), NDAs, and executed vendor DPAs."
-AST-18,Terraform Cloud Infrastructure Registry,Infrastructure as Code,DevOps Lead,SaaS (HashiCorp Cloud),Confidential,High,"Manages immutable infrastructure code state files and automated pull-request drift detection."
-AST-19,Production Redis In-Memory Cache Cluster,Memory Cache,Platform Architect,AWS us-east-1,Confidential,Medium,"Provides transient session caching and high-speed query indexing. Ephemeral data only."
-AST-20,San Francisco HQ Administrative Network,Physical Office Network,Facilities Lead,On-Premise (SF Office),Internal,Low,"Local Wi-Fi and Brivo badge access system for corporate office suites. Zero production access."
+Asset_ID,Asset_Name,Asset_Category,Hosting_Location,Data_Classification,Responsible_Owner,Backup_Frequency,Encryption_Standard
+AST-01,Amazon Aurora PostgreSQL (Analytics DB),Database,AWS us-east-1 (VPC 10.100.0.0/16),Tier 1: Restricted,Head of Infrastructure & SRE,Daily automated snapshots (30-day retention),AES-256 AWS KMS (CMK)
+AST-02,Amazon S3 Compliance Evidence Vault,Object Storage,AWS us-east-1,Tier 1: Restricted,Lead GRC Analyst,Object versioning + cross-region replica,AES-256 AWS KMS with Object Lock
+AST-03,Amazon EKS Kubernetes Cluster (Core API),Compute,AWS us-east-1,Tier 2: Confidential,Head of Infrastructure & SRE,Terraform IaC recreation,mTLS (Envoy service mesh)
+AST-04,Okta Universal Directory & SSO,Identity Provider,SaaS (Okta Cloud),Tier 1: Restricted,IT Operations & Identity Lead,SaaS native vendor backup,TLS 1.3 / FIDO2 WebAuthn
+AST-05,GitHub Enterprise Cloud (Source Repos),Code Repository,SaaS (GitHub Cloud),Tier 2: Confidential,DevSecOps Engineer,Daily automated Git bundle to S3,TLS 1.3 / GPG Signed Commits
+AST-06,Datadog SIEM & CloudTrail Archive,Monitoring & Logs,SaaS (Datadog US-1) & AWS S3,Tier 2: Confidential,SecOps & Incident Response Lead,365-day immutable S3 Glacier,AES-256 KMS with SHA-256 validation
+AST-07,Corporate Laptops (Apple MacBook Pro 150x),User Endpoints,Remote Worker Locations,Tier 2: Confidential,IT Operations & Identity Lead,Automated Google Drive / Cloud Sync,FileVault 2 (XTS-AES 128) + Kandji MDM
+AST-08,Google Workspace (Gmail & Drive),Collaboration / Productivity,SaaS (Google Cloud),Tier 2: Confidential,IT Operations & Identity Lead,Google Vault retention (7 years),TLS 1.3 / OAuth2 tokenized
+AST-09,Jira & Confluence Cloud,Work Tracking & Documentation,SaaS (Atlassian Cloud),Tier 3: Internal,Lead GRC Analyst,Atlassian automated snapshots,TLS 1.3 / Okta SSO enforced
+AST-10,Cloudflare Enterprise Edge (WAF & DNS),Perimeter Security,SaaS (Cloudflare Anycast),Tier 2: Confidential,Head of Infrastructure & SRE,Terraform version-controlled config,TLS 1.3 / HSTS preloaded

@@ -1,51 +1,45 @@
-# CloudSphere Analytics Inc. • Data Flow Architecture Diagram
-**Document Reference:** CLOUDSPHERE-ARCH-001  
-**Classification:** Confidential / Auditor Disclosable  
-**Scope:** Production SaaS Ingestion & Storage Pipeline  
+# Customer Telemetry Data Flow and Trust Boundaries
+
+Document reference: CS-ARCH-DFD-001  
+Owner: Head of Infrastructure and SRE  
+Approved by: CISO  
+Last reviewed: May 15, 2026  
 
 ---
 
-## Data Ingestion & Boundary Flow Diagram
+## 1. Ingestion Flow
 
-```text
-[ Enterprise Client Browser / API Clients ]
-                      │
-                      │ HTTPS / TLS 1.3
-                      ▼
-       [ Cloudflare Edge WAF & DDoS Shield ]
-       - Bot management & Rate limiting
-       - Geo-fencing & TLS termination
-                      │
-                      │ Mutual TLS (mTLS)
-                      ▼
-         [ AWS Application Load Balancer ]
-                      │
-                      │ Private Subnet Routing
-                      ▼
-       [ Amazon EKS Kubernetes Cluster ]
-       - Microservices: Auth, Analytics, Ingestion
-       - Calico Network Policies (Zero Trust)
-       - Dynamic PII Masking & Tokenization
-                      │
-          ┌───────────┴───────────┐
-          │                       │
-          ▼                       ▼
-[ Aurora PostgreSQL ]    [ Amazon S3 Data Lake ]
-- AES-256 KMS Encrypted  - SSE-KMS Customer Key
-- Multi-AZ Replica       - Automated Lifecycle
-- Row-Level Security     - Object-Lock Air-Gap
-          │                       │
-          └───────────┬───────────┘
-                      │
-                      ▼
-     [ Datadog Centralized SIEM Pipeline ]
-     - Immutable Audit Trail & Log Archives
+```
+[Customer Client Application / Web SDK]
+                  │
+                  ▼ HTTPS / TLS 1.3 via Cloudflare WAF
+[Cloudflare Edge Network]
+                  │
+                  ▼ mTLS via AWS Application Load Balancer
+[AWS EKS Production Cluster / Envoy Proxy]
+                  │
+                  ▼ Token validation via Okta OAuth2
+[Ingestion Microservices]
+                  ├──► [Kafka and Kinesis Event Streams (24-hour buffer)]
+                  │                 │
+                  │                 ▼
+                  │    [Analytics Processing Workers]
+                  │                 │
+                  │                 ├──► [Amazon Aurora PostgreSQL (Aggregated data)]
+                  │                 │    Encrypted at rest with KMS, Multi-AZ
+                  │                 │
+                  │                 └──► [Amazon S3 (Raw partitioned events)]
+                  │                      Encrypted with KMS, 30-day lifecycle expiry
+                  │
+                  └──► [Datadog SIEM (PII stripped / tokenized)]
 ```
 
 ---
 
-## Key Data Flow Safeguards:
-1.  **Ingress Security (Control A.8.20 & A.8.21):** All client traffic passes through Cloudflare WAF before reaching AWS ALBs.
-2.  **Internal Network Isolation (Control A.8.22):** EKS pods run in private VPC subnets with zero public IP addresses.
-3.  **Storage Encryption (Control A.8.24):** All persistent data in Aurora and S3 is encrypted with AWS KMS customer-managed keys (CMKs).
-4.  **Audit Logging (Control A.8.15):** API calls, logins, and database queries generate immutable CloudTrail and Datadog audit trails.
+## 2. Trust Boundaries
+
+1. Public internet to Cloudflare: Traffic passes through Cloudflare WAF with rate limiting, geo-blocking, and managed OWASP rules.
+2. Cloudflare to AWS load balancers: AWS security groups drop any connection not coming from verified Cloudflare IP addresses on port 443.
+3. Ingress to microservices: Traffic inside Kubernetes clusters uses Kubernetes network policies and mutual TLS through Envoy proxies.
+4. Services to databases and storage: Aurora and S3 live in private subnets with no internet gateway. Workloads connect using IAM roles and port 5432 security groups.
+5. Administrative access: No direct SSH or database ports face the internet. Engineers access production by assuming temporary 60-minute IAM roles through AWS IAM Identity Center and Okta WebAuthn.
