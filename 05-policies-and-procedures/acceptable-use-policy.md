@@ -1,24 +1,44 @@
-# Acceptable Use Policy (POL-006)
-**Document Owner:** Chief Information Security Officer (CISO)  
-**Approved By:** VP People & CISO  
-**Version:** 3.0  
-**Effective Date:** January 1, 2026  
-**Target Audience:** All Personnel  
-**ISO/IEC 27001:2022 Mapping:** Control A.5.10, A.6.2, A.8.1
+# Acceptable Use Policy
+
+Policy reference: CS-POL-003  
+Standards: ISO/IEC 27001:2022 (Controls A.5.10, A.8.1, A.8.2, A.8.7, A.8.12), SOC 2 (CC6.1, CC6.6, CC6.8)  
+Effective date: May 15, 2026 (Version 3.0)  
+Owner: Head of People and IT Operations Lead  
+Approved by: CISO  
 
 ---
 
-## 1. User Responsibilities
-All personnel granted access to CloudScale networks, hardware, or cloud systems must safeguard organizational assets:
-- **Workstations:** Must remain encrypted via FileVault (macOS) or BitLocker (Windows), managed via MDM (Kandji), with screens locked when unattended.
-- **Software Installation:** Users may not install unauthorized software, torrent clients, or unapproved browser extensions.
-- **Generative AI Tools:** Production source code, customer personal data, and proprietary algorithms must never be pasted into public AI models without enterprise confidentiality agreements in place.
+## 1. Scope
 
-## 2. Prohibited Activities
-1. Sharing login credentials, MFA tokens, or private SSH keys.
-2. Circumventing security controls, firewalls, or EDR endpoint monitoring.
-3. Engaging in unauthorized security scanning, packet sniffing, or penetration testing against company assets.
-4. Storing company confidential information on personal USB drives or personal cloud accounts (Dropbox, personal Google Drive).
+This policy applies to all hardware, networks, SaaS accounts, and communication tools provided to CloudSphere employees and contractors.
 
-## 3. Reporting Obligations
-Personnel must immediately report lost hardware, suspected phishing attempts, or unauthorized access observations to `security@cloudscale.io` or the `#security-incident` Slack channel.
+---
+
+## 2. Hardware and Endpoint Rules
+
+Work must take place on company-issued MacBooks enrolled in Kandji MDM. Personal computers cannot connect to production environments or internal source repositories.
+
+Kandji enforces the following settings on all laptops:
+- FileVault full-disk encryption remains on, with recovery keys backed up to Kandji.
+- Screens lock automatically after five minutes of inactivity, requiring TouchID or a password to unlock.
+- The CrowdStrike Falcon sensor must run continuously. Disabling the sensor triggers an alert to the SecOps team.
+- Operating system updates must install within 14 days of release. Critical zero-day patches force a restart within 72 hours.
+- Writing to USB flash drives or external storage is blocked.
+
+---
+
+## 3. Allowed and Prohibited Use
+
+Incidental personal use (like checking personal email or news) is allowed if it does not disrupt work or violate company standards.
+
+The following activities are prohibited:
+- Uploading company data to unapproved cloud storage (such as personal Dropbox or Google Drive accounts).
+- Pasting client data or proprietary code into external generative AI tools that train on user inputs.
+- Running torrent software, P2P file-sharing tools, or cryptocurrency miners.
+- Copying source code or database dumps to personal GitHub accounts, personal drives, or unapproved devices.
+
+---
+
+## 4. Endpoint Monitoring
+
+CloudSphere monitors company hardware, network connections, installed applications, and authentication events to detect threats and maintain compliance. Staff do not have an expectation of privacy on company equipment or corporate cloud services.

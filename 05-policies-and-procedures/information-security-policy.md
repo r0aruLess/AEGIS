@@ -1,29 +1,64 @@
-# Information Security Policy (POL-001)
-**Document Owner:** Chief Information Security Officer (CISO)  
-**Approved By:** Chief Executive Officer (CEO) & Board of Directors  
-**Version:** 3.0  
-**Effective Date:** January 1, 2026  
-**Review Cycle:** Annual  
-**ISO/IEC 27001:2022 Mapping:** Control A.5.1 (Policies for information security)
+# Information Security Policy
+
+Policy reference: CS-POL-001  
+Standards: ISO/IEC 27001:2022 (Clause 5.2, Controls A.5.1 to A.5.4), SOC 2 (CC1.1, CC1.2, CC2.1)  
+Effective date: May 15, 2026 (Version 3.0)  
+Owner: CISO  
+Approved by: CEO and Board Audit Committee  
 
 ---
 
-## 1. Purpose & Scope
-This overarching Information Security Policy defines executive intent, governance structures, and security principles for CloudScale Technologies Inc. ("CloudScale"). It applies to all permanent employees, contractors, third-party service providers, and all information systems processing CloudScale or customer data.
+## 1. Purpose
 
-## 2. Policy Statements
-1. **Confidentiality, Integrity, and Availability (CIA):** All corporate and customer information assets shall be classified, labeled, and protected based on their business sensitivity and regulatory exposure.
-2. **Executive Commitment:** Management ensures adequate resources, budget, and cross-functional tooling are allocated to maintain ISO/IEC 27001:2022 and ISO/IEC 27701:2025 compliance.
-3. **Risk-Driven Governance:** All system changes, cloud architecture deployments, and vendor contracts must undergo formal risk assessment prior to production launch.
-4. **Zero Tolerance for Unauthorized Access:** Multi-Factor Authentication (MFA) and Role-Based Access Control (RBAC) are mandatory across all corporate and production systems.
-5. **Continuous Compliance:** Compliance status is monitored programmatically via automated evidence collection, CI/CD static scans, and internal audits.
+This policy sets security requirements for all staff, contractors, systems, and client data at CloudSphere Analytics.
 
-## 3. Roles and Responsibilities
-- **CEO & Executive Board:** Ultimate oversight, resource authorization, and approval of risk appetite.
-- **CISO:** Strategy design, maintenance of ISMS policies, incident escalation, and reporting to the board.
-- **GRC Team:** Gap assessments, risk register management, audit coordination, and compliance tracking.
-- **Engineering & DevOps:** Technical control enforcement, patching, infrastructure-as-code hardening, and backup verification.
-- **All Employees:** Strict adherence to acceptable use, data privacy guidelines, and prompt incident reporting.
+---
 
-## 4. Policy Exceptions & Non-Compliance
-Exceptions to this policy must be documented via formal GRC Exception Request, approved by the CISO, and recorded in the Risk Register for a maximum duration of 90 days. Violations are subject to disciplinary action up to and including termination and legal prosecution.
+## 2. Security Principles
+
+1. Zero Trust: Every microservice, laptop, and network connection must authenticate directly. Firewalls alone do not grant trust.
+2. Least privilege and separation: Engineers cannot push unreviewed code directly to production. Pull requests require an independent reviewer.
+3. Deny by default: Security groups, IAM policies, and cloud firewalls block all inbound traffic unless an explicit rule opens a port.
+4. Encryption everywhere: Network traffic uses TLS 1.3. Stored data uses AES-256 with customer-managed KMS keys that rotate annually.
+
+---
+
+## 3. Governance and Roles
+
+```
++-------------------------------------------------------------+
+|              Board Audit Committee & CEO                    |
+|      (Executive oversight, risk limits, budget approval)    |
++------------------------------+------------------------------+
+                               |
+                               v
++-------------------------------------------------------------+
+|          Chief Information Security Officer (CISO)          |
+|      (Security strategy, policy sign-off, escalations)      |
++------------------------------+------------------------------+
+                               |
+         +---------------------+---------------------+
+         |                                           |
+         v                                           v
++-------------------------------+   +-------------------------------+
+|     Lead GRC Analyst          |   |  Head of Infrastructure & SRE |
+| (Audit, SoA, Risk Register,   |   | (AWS IAM, Encryption, Backups,|
+|  Policy Review, TPRM Oversight|   |  VPC Architecture, CI/CD Gate)|
++-------------------------------+   +-------------------------------+
+```
+
+---
+
+## 4. Security Rules
+
+- Single sign-on: Work apps use Okta with hardware YubiKeys or Okta Verify. Password-only and SMS logins are blocked.
+- Access reviews: The GRC team and department managers review user accounts in Jira every quarter. Unused accounts are removed within five business days.
+- Patching: Critical bugs (CVSS 9.0+) in production containers or packages must be patched within 7 days. High-severity bugs (CVSS 7.0–8.9) must be patched within 30 days.
+- Logging: AWS CloudTrail, EKS logs, and Okta events ship to Datadog and archive to S3 Glacier with log validation enabled for 365 days.
+
+---
+
+## 5. Exceptions and Violations
+
+- Exceptions: Any temporary exception requires a Jira ticket (SEC-EXCEPTION), a documented mitigation, and written approval from the CISO. Exceptions expire after 90 days.
+- Violations: Deliberate failure to follow this policy may lead to revoking system access, ending employment or contracts, and legal action if warranted.

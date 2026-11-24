@@ -1,25 +1,34 @@
-# Data Retention and Disposal Policy (POL-005)
-**Document Owner:** Data Protection Officer (DPO) & Lead Architect  
-**Approved By:** CISO & General Counsel  
-**Version:** 2.1  
-**Effective Date:** January 10, 2026  
-**ISO/IEC 27001:2022 Mapping:** Control A.8.10 (Information deletion), Control A.8.14
+# CloudSphere Analytics Inc. Data Retention and Secure Disposal Policy
+
+**Policy Reference:** CS-POL-006  
+**ISO/IEC 27001:2022 Alignment:** Controls A.8.10 (Information deletion), A.8.14 (Redundancy)  
+**ISO/IEC 27701:2025 Alignment:** Clauses 6.5, 7.4 (PIMS Data Retention & Disposal)  
+**Classification:** Internal / Auditor Disclosable  
+**Effective Date:** 2026-05-15 | Version: 3.0  
+**Policy Owner:** Data Protection Officer (DPO) & Head of Infrastructure | Approved By: CISO
 
 ---
 
-## 1. Principle of Storage Limitation
-In alignment with ISO/IEC 27701:2025 and GDPR Article 5(1)(e), personal data is retained only for as long as necessary to fulfill the documented business purpose or comply with statutory retention mandates.
+## 1. Purpose and Data Minimization
 
-## 2. Retention Schedules
-| Data Category | Specific Record Type | Mandatory Retention Period | Destruction Method |
-| :--- | :--- | :--- | :--- |
-| **Customer Data** | SaaS Tenant Application Data | Contract Term + 30 Days | Cryptographic erasure / RDS purge |
-| **Audit Logs** | Security, Access & System Logs | 365 Days (1 Year) | S3 Glacier automated expiration rule |
-| **Financial Records**| Invoices, Tax Records, Billing | 7 Years | Secure physical shredding / digital archive |
-| **HR Records** | Employee Personnel Files | Employment Term + 6 Years | HRIS file deletion |
-| **Candidate Resumes**| Unsuccessful Job Applicants | 12 Months (with consent) | ATS automated deletion |
-| **Source Code** | Git Repositories and Builds | Indefinite (Company IP) | Maintained in protected VCS |
+This policy defines statutory and contractual retention periods, automated purging technical architectures, and sanitization standards across all databases, cloud storage buckets, and endpoint hardware operated by CloudSphere Analytics Inc.
 
-## 3. Secure Disposal & Sanitization Standards
-- **Digital Media:** AWS S3 lifecycle rules execute irreversible cryptographic erasure. Local testing media is sanitized according to **NIST SP 800-88 Rev 1 (Clear/Purge)**.
-- **Physical Hardware:** End-of-life laptops and hard drives are destroyed by an R2-certified electronic recycling vendor with serialized Certificates of Destruction.
+---
+
+## 2. Master Data Retention Schedule
+
+| Data Category | Data Sub-Types | Regulatory / Business Basis | Mandatory Retention Period | Automated Purging Architecture |
+|---|---|---|---|---|
+| **Customer Telemetry & Raw Events** | Ingested clickstream logs, device telemetry, raw JSON event payloads. | Customer Master Services Agreement (MSA) | **Duration of contract + 30 calendar days** | AWS S3 Lifecycle Rule (`ExpireAfterDays: 30`) with automated partition tombstoning. |
+| **Aggregated Customer Analytics** | Pre-computed hourly/daily rollups, reporting dashboards, churn scores. | Contractual SLA reporting | **Duration of contract + 90 calendar days** | Automated PostgreSQL deletion worker executed via cron; hard purge across tenant partitions. |
+| **Security & Operational Audit Logs** | AWS CloudTrail, EKS audit logs, Okta authentication logs, Datadog SIEM events. | ISO 27001 Control A.8.15 & SOC 2 CC7.2 | **365 calendar days (1 year)** | S3 Object Lock compliance mode; transitioned to S3 Glacier Flexible Archive after 90 days, purged at 365 days. |
+| **Employee & Payroll Records** | Tax records, payroll slips, employment agreements, background checks. | IRS, California Labor Code, statutory tax rules | **7 years post-termination** | Google Vault retention rules; access restricted strictly to Head of People and Corporate Controller. |
+| **Customer Financial & Billing Data** | Stripe invoices, transaction logs, enterprise wire receipts. | GAAP & Corporate Tax Laws | **7 years** | Stripe automated vaulting; corporate accounting exports stored in encrypted financial S3 bucket. |
+
+---
+
+## 3. Cryptographic Erasure and Hardware Sanitization Standards
+
+1. Cloud Database Record Purging (PostgreSQL): When a customer contract terminates or the privacy team approves a Right-to-Erasure (DSAR) request, the data engineering pipeline triggers `tenant_purge_worker`. The worker deletes records directly (`DELETE FROM analytics WHERE tenant_id = X`). To prevent lingering data in automated snapshot archives, backups expire and clear naturally under CloudSphere's 30-day snapshot lifecycle.
+2. S3 Object Storage Sanitization: S3 bucket objects carry tenant tags. Upon contract termination, a tombstone event triggers permanent deletion of all historical versions, followed by cryptographic erasure of the KMS key material associated with that customer's tenant partition.
+3. Physical Endpoint Laptop Sanitization: When a remote employee departs CloudSphere, IT wipes their MacBook through Kandji MDM using an automated Apple APFS cryptographic wipe (`eraseinstall --erase-system-volume`). This destroys all cryptographic keys on the Apple Secure Enclave, rendering residual disk sectors unrecoverable per NIST SP 800-88 Rev 1 guidelines.

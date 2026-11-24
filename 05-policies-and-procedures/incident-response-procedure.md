@@ -1,33 +1,68 @@
-# Incident Response Procedure (SOP-003)
-**Document Owner:** Incident Commander / Lead SecOps  
-**Approved By:** CISO  
-**Version:** 2.5  
-**Effective Date:** January 15, 2026  
-**ISO/IEC 27001:2022 Mapping:** Control A.5.24, A.5.25, A.5.26, A.5.28
+# CloudSphere Analytics Inc. Incident Management and Regulatory Reporting Procedure
+
+**Procedure Reference:** CS-SOP-004  
+**ISO/IEC 27001:2022 Alignment:** Controls A.5.24, A.5.25, A.5.26, A.5.27, A.5.28, A.6.8  
+**ISO/IEC 27701:2025 Alignment:** Clause 8.2, Annex A.4.2 (Breach notification to controllers)  
+**Classification:** Confidential / Auditor Disclosable  
+**Effective Date:** 2026-05-15 | Version: 3.0  
+**Procedure Owner:** SecOps & Incident Response Lead | Approved By: CISO & General Counsel
 
 ---
 
-## 1. Purpose & Incident Phases
-This Standard Operating Procedure establishes the protocol for managing information security and privacy incidents following the NIST SP 800-61 / ISO 27035 lifecycle:
+## 1. Incident Severity Tiers and 24/7 On-Call Model
+
+To maintain 24/7 incident response across a 10-person security team, CloudSphere runs a hybrid on-call model:
+* Tier 1 Off-Hours Alert Monitoring: Rapid7 MDR monitors Datadog SIEM, CrowdStrike EDR, and AWS GuardDuty alerts around the clock.
+* Tier 2 and 3 Escalation: Rapid7 pages CloudSphere's primary on-call SecOps engineer through PagerDuty for any verified security incident.
+
+| Severity Tier | Incident Definition & Impact Criteria | Target Triage SLA | Escalation Path | Mandatory Notification Target |
+|---|---|---|---|---|
+| **SEV-1: Critical** | Confirmed customer PII exfiltration, active ransomware on AWS workloads, unauthorized production database admin access, or major analytics outage. | **15 minutes** (Rapid7 MDR / PagerDuty) | PagerDuty high-urgency call to SecOps Lead, CISO, and CTO. CISO notifies CEO and General Counsel within 1 hour. | **72 hours** under EU GDPR (EDPB) / **6 hours** for critical system disruptions under India CERT-In directions. |
+| **SEV-2: High** | Targeted credential stuffing on Okta, single production host compromised without lateral movement, critical CVE actively exploited in staging. | **30 minutes** | SecOps Lead and Lead Infrastructure Engineer paged. CISO notified in Slack `#incident-sev2`. | Customer notification evaluated within 24 hours based on DPA terms. |
+| **SEV-3: Medium** | Isolated employee laptop malware blocked by EDR, unapproved S3 bucket configuration flagged in staging, suspicious failed logins. | **4 hours** | Ticket assigned to Security Operations Engineer in Jira Service Management queue. | Internal incident log only. |
+| **SEV-4: Low** | Phishing email reported via KnowBe4 button, minor port scan detected on Cloudflare perimeter, routine audit finding. | **24 hours** | Handled during standard business hours by SecOps team. | None. |
+
+---
+
+## 2. Four-Phase Incident Response Lifecycle (NIST SP 800-61 Rev 2)
 
 ```
-[Preparation] -> [Detection & Analysis] -> [Containment] -> [Eradication] -> [Recovery] -> [Post-Incident Review]
+[Phase 1: Detection & Triage]
+       │ (Datadog SIEM Alert -> Rapid7 MDR / PagerDuty -> On-Call SecOps Engineer)
+       ▼
+[Phase 2: Containment & Isolation]
+       │ (EKS Pod Quarantine, AWS Security Group Revocation, Okta Session Invalidation)
+       ▼
+[Phase 3: Eradication & Recovery]
+       │ (KMS Key Rotation, Clean AMI/Container Redeployment, Snapshot Restoration)
+       ▼
+[Phase 4: Post-Incident Review & Evidence Preservation]
+       │ (Root Cause Analysis, SHA-256 Forensic Image Vaulting, 30-Day CAP Tracking)
 ```
 
-## 2. Incident Classification & Severity Matrix
-- **SEV-1 (Critical):** Confirmed active customer data breach, ransomware, or full production outage.  
-  *Response SLA:* 15 minutes. *Notification:* C-Suite immediately, Regulators within 72 hours.
-- **SEV-2 (High):** Integrity compromise of production microservice, compromised admin credential without confirmed exfiltration.  
-  *Response SLA:* 30 minutes.
-- **SEV-3 (Medium):** Localized malware on single non-critical endpoint, failed exploit attempt against API.  
-  *Response SLA:* 2 hours.
-- **SEV-4 (Low):** Phishing email reported by employee, minor policy infraction.  
-  *Response SLA:* 24 hours.
+### Detailed Phase Runbooks
 
-## 3. Communication & Regulatory Escalation
-- **Customer Notification:** As stipulated in Customer Data Processing Agreements (DPA), affected enterprise customers will be notified within 24 to 48 hours of confirmed breach verification.
-- **Regulatory Reporting:** GDPR Art. 33 and India DPDP Act compliance mandates lead supervisory authority notification within **72 hours** of becoming aware of personal data breach.
-- **Internal Comms:** Managed exclusively by Legal and Corporate Comms; technical responders are prohibited from public commentary.
+1. Phase 1: Detection and Initial Triage:
+   * Incident Commander (SecOps Lead) opens an incident channel in Slack (`#inc-YYYYMMDD-title`) and a dedicated Zoom room.
+   * The team creates an incident ticket in Jira (`INC-XXXX`) to record timestamped events.
+2. Phase 2: Short-Term and Long-Term Containment:
+   * Host Isolation: CrowdStrike Falcon network containment API isolates affected EKS nodes or MacBooks.
+   * Identity Revocation: Okta Admin API terminates compromised user sessions immediately (`clearUserSessions` and password reset).
+   * Network Isolation: Infrastructure team applies Terraform emergency hotfixes to AWS Security Groups to stop traffic between affected instances and Aurora databases.
+3. Phase 3: Eradication and Recovery:
+   * CI/CD pipelines replace vulnerable container images with patched builds from clean GitHub main branch commits.
+   * Engineers rotate AWS IAM credentials, database passwords, and KMS data keys if they suspect exposure.
+   * Database administrators restore data from known-good encrypted snapshots verified prior to the breach timestamp.
+4. Phase 4: Evidence Preservation and Post-Mortem (Root Cause Analysis):
+   * SecOps exports memory dumps, container logs, and CloudTrail logs to the immutable S3 Compliance Vault with SHA-256 hashes.
+   * The team holds a blameless post-mortem within 5 business days with executive leadership, documents the root cause analysis, and tracks corrective action plans in Jira with 30-day resolution SLAs.
 
-## 4. Post-Incident Review (Lessons Learned)
-Within 5 business days of incident resolution, the Incident Commander must conduct a blameless post-mortem, document root causes, and enter corrective actions into the CAPA Tracker.
+---
+
+## 3. Statutory Breach Notification Runbook (GDPR and CERT-In)
+
+When the team confirms compromise of customer personal data (PII):
+1. Hour 0 to 2: CISO and General Counsel convene the Incident Steering Committee.
+2. Hour 2 to 6: General Counsel evaluates reporting requirements under GDPR Article 33 and CERT-In directions. If Indian critical infrastructure or customer records are affected, the team submits initial notice to `incident@cert-in.org.in` using standard CERT-In reporting forms.
+3. Hour 6 to 72: SecOps and legal transmit formal notification to the lead supervisory authority (such as the Data Protection Commission of Ireland for EU operations). The notice details the nature of the breach, affected customer volumes, likely consequences, and remediation measures taken.
+4. Enterprise Customer Notification: Communications distributes contractual notices to affected B2B enterprise customers within the window specified in each client's Data Processing Agreement (typically 48 to 72 hours).
